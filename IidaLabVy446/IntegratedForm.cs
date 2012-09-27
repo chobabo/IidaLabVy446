@@ -156,11 +156,7 @@ namespace IidaLabVy446
         /// </summary>
         private void CombineBodyConnect()
         {
-            if (this.BodyReadCheckBox.Checked == true)
-            {
- 
-            }
-            else
+            if (this.BodyReadCheckBox.Checked == false)
             {
                 this._bodySerialConnect = new CombineBody.SerialConnect(
                     this.BodyPortTxtBox.Text,
@@ -174,7 +170,14 @@ namespace IidaLabVy446
                         this.BodySaveCheckBox.Checked,
                         this.BodyReadCheckBox.Checked
                         );
-                }
+                } 
+            }
+            else
+            {
+                this._bodyFile = new CombineBody.File(
+                    this.BodySaveCheckBox.Checked,
+                    this.BodyReadCheckBox.Checked
+                    );
             }
 
             if (this.BodyModelComboBox.SelectedIndex == 0)
@@ -193,11 +196,7 @@ namespace IidaLabVy446
         /// </summary>
         private void CombineBodyPlay()
         {
-            if (this.BodyReadCheckBox.Checked == true)
-            { 
-
-            }
-            else
+            if (this.BodyReadCheckBox.Checked == false)
             {
                 this._bodySerialConnect.DataReceived();
 
@@ -215,6 +214,21 @@ namespace IidaLabVy446
                 {
                     this.CombineVy446Info(this._bodySerialConnect.orgList);
                 }
+            }
+            else
+            {
+                List<int> cmdData = this._bodyFile.ReadCommandData(this.readCount, this._bodyFile.readData);
+
+                if (this.BodyModelComboBox.SelectedIndex == 0 && cmdData.Count == 82)
+                {
+                    this.CombineVy50Info(cmdData);
+                }
+
+                if (this.BodyModelComboBox.SelectedIndex == 1 && cmdData.Count == 142)
+                {
+                    this.CombineVy446Info(cmdData);
+                }
+
             }
         }
 
@@ -387,14 +401,20 @@ namespace IidaLabVy446
 
                 if (this.BodyAvailableCheckBox.Checked == true)
                 {
-                    if (this.BodySaveCheckBox.Checked == true)
+                    if (this.BodyReadCheckBox.Checked == false)
                     {
-                        this._bodyFile.closeSave();
-                    }
+                        if (this.BodySaveCheckBox.Checked == true)
+                        {
+                            this._bodyFile.closeSave();
+                        }
 
-                    this._bodySerialConnect.Dispose();
+                        this._bodySerialConnect.Dispose();
+                    }
                 }
 
+            }
+            else 
+            { 
             }
         }
 

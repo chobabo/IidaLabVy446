@@ -26,19 +26,30 @@ namespace CombineBody
         private StreamWriter measuredBodyData;
 
         /// <summary>
+        /// gets or sets current count of read data
+        /// </summary>
+        public int currentCount { get; set; }
+
+        /// <summary>
+        /// read combine body data of string array type from txt file 
+        /// </summary>
+        public string[] readData;
+
+        /// <summary>
         /// basic constructor
         /// </summary>
         public File(bool save, bool read)
         {
             if (save == true)
             {
-                this.filename = this.saveLidarDialog();
+                this.filename = this.SaveBodyDialog();
                 this.measuredBodyData = new StreamWriter(this.filename);
             }
 
             if (read == true)
             {
-                //this.readData = this.ReadLidarDialog();
+                this.readData = this.ReadBodyDialog();
+                this.currentCount = 0;
             }
         }
 
@@ -50,7 +61,7 @@ namespace CombineBody
         {
             string dataStr = readCount + " ";
 
-            if (data.Count != 0 && data[0] == 205 && data[data.Count - 1] == 10)
+            if ((data.Count == 142 || data.Count == 82) && data[0] == 205 && data[data.Count - 1] == 10)
             {
                 for (int i = 0; i < data.Count; i++)
                 {
@@ -84,7 +95,7 @@ namespace CombineBody
         /// save file dialog
         /// </summary>
         /// <returns></returns>
-        private string saveLidarDialog()
+        private string SaveBodyDialog()
         {
             string fileName = null;
 
@@ -109,5 +120,78 @@ namespace CombineBody
 
             return fileName;
         }
+
+        /// <summary>
+        /// read file dialog
+        /// </summary>
+        /// <returns></returns>
+        private string[] ReadBodyDialog()
+        {
+            Stream myStream = null;
+
+            OpenFileDialog ofDialog = new OpenFileDialog();
+            List<string> savedData = new List<string>();
+            string[] dataLines;
+
+            ofDialog.Title = "Read Combine Body data from txt file";
+            ofDialog.InitialDirectory = @"C:\Users\cho\Documents\Visual Studio 2010\Projects\ProjectData";
+            ofDialog.Filter = "txt files (*.txt)|*.txt";
+            ofDialog.FilterIndex = 1;
+            ofDialog.RestoreDirectory = true;
+
+            if (ofDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = ofDialog.OpenFile()) != null)
+                    {
+                        using (StreamReader sr = new StreamReader(myStream))
+                        {
+                            string line;
+
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                savedData.Add(line);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.debugMsg = ex.Message;
+                }
+            }
+
+            dataLines = savedData.ToArray();
+
+            return dataLines;
+        }
+
+        /// <summary>
+        /// read command data from string array data
+        /// </summary>
+        /// <param name="_readCount"></param>
+        /// <param name="_readData"></param>
+        /// <returns></returns>
+        public List<int> ReadCommandData(int _readCount, string[] _readData)
+        {
+            List<int> result = new List<int>();
+
+            string[] lineArr = _readData[this.currentCount].Split(' ');
+
+            if (_readCount == Convert.ToInt32(lineArr[0]))
+            {
+                for (int i = 1; i < lineArr.Length; i++)
+                {
+                    int val = Convert.ToInt32(lineArr[i]);
+                    result.Add(val);
+                }
+
+                this.currentCount++;
+            }
+
+            return result;
+        }
+
     }
 }

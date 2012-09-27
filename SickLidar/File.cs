@@ -37,7 +37,7 @@ namespace SickLidar
         {
             if (save == true)
             {
-                this.filename = this.saveLidarDialog();
+                this.filename = this.SaveLidarDialog();
                 this.measuredLrfData = new StreamWriter(this.filename);
             }
 
@@ -51,7 +51,7 @@ namespace SickLidar
         /// save file dialog
         /// </summary>
         /// <returns></returns>
-        private string saveLidarDialog()
+        private string SaveLidarDialog()
         {
             string fileName = null;
 

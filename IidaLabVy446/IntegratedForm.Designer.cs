@@ -129,57 +129,57 @@
             this.Vy50_us_LRPos_TxtBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.Vy446_gps_Utc_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.Vy446_gps_Longitude_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Altitude_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Sv_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_avilability_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_heading_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_compass_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_compass_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_pitch_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_roll_TxtBox = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.Vy446_DT_SOKO_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_DT_HST_TxtBox = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.Vy446_rpm_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_feed_rpm_TxtBox = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.Vy446_speed_TxtBox = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.Vy446_AD_SUI_K_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_AD_SUI_R_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_AD_SUI_L_TxtBox = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.Vy446_AUGER_MTR_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_AUGER_CLD_TxtBox = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.Vy446_RESERVE_B_TxtBox = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
+            this.Vy446_RESERVE_B_TxtBox = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.Vy446_AUGER_CLD_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_AUGER_MTR_TxtBox = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.Vy446_AD_SUI_L_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_AD_SUI_R_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_AD_SUI_K_TxtBox = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.Vy446_speed_TxtBox = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.Vy446_feed_rpm_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_rpm_TxtBox = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.Vy446_DT_HST_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_DT_SOKO_TxtBox = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Vy446_roll_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_pitch_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_compass_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_compass_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_heading_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_avilability_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Sv_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Altitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Longitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.Vy446_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Utc_TxtBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).BeginInit();
@@ -194,8 +194,8 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -525,6 +525,7 @@
             this.BodyModelComboBox.Name = "BodyModelComboBox";
             this.BodyModelComboBox.Size = new System.Drawing.Size(100, 20);
             this.BodyModelComboBox.TabIndex = 13;
+            //this.BodyModelComboBox.SelectedIndexChanged += new System.EventHandler(this.BodyModelComboBox_SelectedIndexChanged);
             // 
             // label36
             // 
@@ -1160,231 +1161,6 @@
             this.tabPage4.Text = "VY446";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label49);
-            this.groupBox8.Controls.Add(this.label48);
-            this.groupBox8.Controls.Add(this.label47);
-            this.groupBox8.Controls.Add(this.label46);
-            this.groupBox8.Controls.Add(this.label45);
-            this.groupBox8.Controls.Add(this.label44);
-            this.groupBox8.Controls.Add(this.label43);
-            this.groupBox8.Controls.Add(this.label42);
-            this.groupBox8.Controls.Add(this.label41);
-            this.groupBox8.Controls.Add(this.label40);
-            this.groupBox8.Controls.Add(this.Vy446_roll_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_pitch_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_compass_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_compass_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_heading_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_avilability_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Quality_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Sv_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Altitude_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Longitude_TxtBox);
-            this.groupBox8.Controls.Add(this.label39);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Latitude_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Utc_TxtBox);
-            this.groupBox8.Controls.Add(this.label38);
-            this.groupBox8.Location = new System.Drawing.Point(279, 6);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(267, 330);
-            this.groupBox8.TabIndex = 2;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Received GPS";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(6, 25);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(54, 12);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "UTC時刻:";
-            // 
-            // Vy446_gps_Utc_TxtBox
-            // 
-            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(153, 18);
-            this.Vy446_gps_Utc_TxtBox.Name = "Vy446_gps_Utc_TxtBox";
-            this.Vy446_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Utc_TxtBox.TabIndex = 1;
-            // 
-            // Vy446_gps_Latitude_TxtBox
-            // 
-            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(153, 43);
-            this.Vy446_gps_Latitude_TxtBox.Name = "Vy446_gps_Latitude_TxtBox";
-            this.Vy446_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Latitude_TxtBox.TabIndex = 2;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 46);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(31, 12);
-            this.label39.TabIndex = 3;
-            this.label39.Text = "緯度:";
-            // 
-            // Vy446_gps_Longitude_TxtBox
-            // 
-            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(153, 68);
-            this.Vy446_gps_Longitude_TxtBox.Name = "Vy446_gps_Longitude_TxtBox";
-            this.Vy446_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Longitude_TxtBox.TabIndex = 4;
-            // 
-            // Vy446_gps_Altitude_TxtBox
-            // 
-            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(153, 93);
-            this.Vy446_gps_Altitude_TxtBox.Name = "Vy446_gps_Altitude_TxtBox";
-            this.Vy446_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Altitude_TxtBox.TabIndex = 5;
-            // 
-            // Vy446_gps_Sv_TxtBox
-            // 
-            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(153, 118);
-            this.Vy446_gps_Sv_TxtBox.Name = "Vy446_gps_Sv_TxtBox";
-            this.Vy446_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Sv_TxtBox.TabIndex = 3;
-            // 
-            // Vy446_gps_Quality_TxtBox
-            // 
-            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(153, 143);
-            this.Vy446_gps_Quality_TxtBox.Name = "Vy446_gps_Quality_TxtBox";
-            this.Vy446_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Quality_TxtBox.TabIndex = 6;
-            // 
-            // Vy446_avilability_TxtBox
-            // 
-            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(153, 168);
-            this.Vy446_avilability_TxtBox.Name = "Vy446_avilability_TxtBox";
-            this.Vy446_avilability_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_avilability_TxtBox.TabIndex = 7;
-            // 
-            // Vy446_heading_TxtBox
-            // 
-            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(153, 193);
-            this.Vy446_heading_TxtBox.Name = "Vy446_heading_TxtBox";
-            this.Vy446_heading_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_heading_TxtBox.TabIndex = 8;
-            // 
-            // Vy446_compass_TxtBox
-            // 
-            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(153, 218);
-            this.Vy446_compass_TxtBox.Name = "Vy446_compass_TxtBox";
-            this.Vy446_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_compass_TxtBox.TabIndex = 9;
-            // 
-            // Vy446_gps_compass_TxtBox
-            // 
-            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(153, 243);
-            this.Vy446_gps_compass_TxtBox.Name = "Vy446_gps_compass_TxtBox";
-            this.Vy446_gps_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_compass_TxtBox.TabIndex = 10;
-            // 
-            // Vy446_pitch_TxtBox
-            // 
-            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(153, 268);
-            this.Vy446_pitch_TxtBox.Name = "Vy446_pitch_TxtBox";
-            this.Vy446_pitch_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_pitch_TxtBox.TabIndex = 11;
-            // 
-            // Vy446_roll_TxtBox
-            // 
-            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(153, 293);
-            this.Vy446_roll_TxtBox.Name = "Vy446_roll_TxtBox";
-            this.Vy446_roll_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_roll_TxtBox.TabIndex = 12;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(6, 71);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(31, 12);
-            this.label40.TabIndex = 13;
-            this.label40.Text = "経度:";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 96);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(31, 12);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "高度:";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 121);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(43, 12);
-            this.label42.TabIndex = 3;
-            this.label42.Text = "衛星数:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 146);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(31, 12);
-            this.label43.TabIndex = 3;
-            this.label43.Text = "品質:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 171);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(58, 12);
-            this.label44.TabIndex = 3;
-            this.label44.Text = "Avilability:";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 196);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(67, 12);
-            this.label45.TabIndex = 3;
-            this.label45.Text = "磁気コンパス:";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(6, 221);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(67, 12);
-            this.label46.TabIndex = 3;
-            this.label46.Text = "ジャイロ方位:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(6, 246);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(65, 12);
-            this.label47.TabIndex = 3;
-            this.label47.Text = "GPSコンパス:";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 271);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(32, 12);
-            this.label48.TabIndex = 3;
-            this.label48.Text = "ピッチ:";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(6, 296);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(36, 12);
-            this.label49.TabIndex = 3;
-            this.label49.Text = "ロール:";
-            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.label63);
@@ -1419,185 +1195,21 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Received Combine Body Data";
             // 
-            // label50
+            // label63
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 28);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(75, 12);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "操向ポテンショ:";
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(6, 371);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(35, 12);
+            this.label63.TabIndex = 4;
+            this.label63.Text = "刈高: ";
             // 
-            // Vy446_DT_SOKO_TxtBox
+            // Vy446_RESERVE_B_TxtBox
             // 
-            this.Vy446_DT_SOKO_TxtBox.Location = new System.Drawing.Point(153, 25);
-            this.Vy446_DT_SOKO_TxtBox.Name = "Vy446_DT_SOKO_TxtBox";
-            this.Vy446_DT_SOKO_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_DT_SOKO_TxtBox.TabIndex = 1;
-            // 
-            // Vy446_DT_HST_TxtBox
-            // 
-            this.Vy446_DT_HST_TxtBox.Location = new System.Drawing.Point(153, 50);
-            this.Vy446_DT_HST_TxtBox.Name = "Vy446_DT_HST_TxtBox";
-            this.Vy446_DT_HST_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_DT_HST_TxtBox.TabIndex = 2;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(6, 53);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(87, 12);
-            this.label51.TabIndex = 3;
-            this.label51.Text = "主変速ポテンショ:";
-            // 
-            // Vy446_rpm_TxtBox
-            // 
-            this.Vy446_rpm_TxtBox.Location = new System.Drawing.Point(153, 75);
-            this.Vy446_rpm_TxtBox.Name = "Vy446_rpm_TxtBox";
-            this.Vy446_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_rpm_TxtBox.TabIndex = 4;
-            // 
-            // Vy446_feed_rpm_TxtBox
-            // 
-            this.Vy446_feed_rpm_TxtBox.Location = new System.Drawing.Point(153, 100);
-            this.Vy446_feed_rpm_TxtBox.Name = "Vy446_feed_rpm_TxtBox";
-            this.Vy446_feed_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_feed_rpm_TxtBox.TabIndex = 5;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 78);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(80, 12);
-            this.label52.TabIndex = 6;
-            this.label52.Text = "エンジン回転数:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(6, 103);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(77, 12);
-            this.label53.TabIndex = 7;
-            this.label53.Text = "フィーダ回転数:";
-            // 
-            // Vy446_speed_TxtBox
-            // 
-            this.Vy446_speed_TxtBox.Location = new System.Drawing.Point(153, 125);
-            this.Vy446_speed_TxtBox.Name = "Vy446_speed_TxtBox";
-            this.Vy446_speed_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_speed_TxtBox.TabIndex = 8;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 128);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(70, 12);
-            this.label54.TabIndex = 9;
-            this.label54.Text = "ミッション速度:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label55.Location = new System.Drawing.Point(6, 171);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(57, 12);
-            this.label55.TabIndex = 10;
-            this.label55.Text = "水平制御";
-            // 
-            // Vy446_AD_SUI_K_TxtBox
-            // 
-            this.Vy446_AD_SUI_K_TxtBox.Location = new System.Drawing.Point(153, 193);
-            this.Vy446_AD_SUI_K_TxtBox.Name = "Vy446_AD_SUI_K_TxtBox";
-            this.Vy446_AD_SUI_K_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_AD_SUI_K_TxtBox.TabIndex = 11;
-            // 
-            // Vy446_AD_SUI_R_TxtBox
-            // 
-            this.Vy446_AD_SUI_R_TxtBox.Location = new System.Drawing.Point(153, 218);
-            this.Vy446_AD_SUI_R_TxtBox.Name = "Vy446_AD_SUI_R_TxtBox";
-            this.Vy446_AD_SUI_R_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_AD_SUI_R_TxtBox.TabIndex = 12;
-            // 
-            // Vy446_AD_SUI_L_TxtBox
-            // 
-            this.Vy446_AD_SUI_L_TxtBox.Location = new System.Drawing.Point(153, 243);
-            this.Vy446_AD_SUI_L_TxtBox.Name = "Vy446_AD_SUI_L_TxtBox";
-            this.Vy446_AD_SUI_L_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_AD_SUI_L_TxtBox.TabIndex = 13;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(6, 196);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(60, 12);
-            this.label56.TabIndex = 14;
-            this.label56.Text = "傾斜センサ:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(6, 221);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(54, 12);
-            this.label57.TabIndex = 15;
-            this.label57.Text = "右シリンダ:";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(6, 246);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(54, 12);
-            this.label58.TabIndex = 16;
-            this.label58.Text = "左シリンダ:";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label59.Location = new System.Drawing.Point(6, 271);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(63, 12);
-            this.label59.TabIndex = 17;
-            this.label59.Text = "排出オーガ";
-            // 
-            // Vy446_AUGER_MTR_TxtBox
-            // 
-            this.Vy446_AUGER_MTR_TxtBox.Location = new System.Drawing.Point(153, 293);
-            this.Vy446_AUGER_MTR_TxtBox.Name = "Vy446_AUGER_MTR_TxtBox";
-            this.Vy446_AUGER_MTR_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_AUGER_MTR_TxtBox.TabIndex = 4;
-            // 
-            // Vy446_AUGER_CLD_TxtBox
-            // 
-            this.Vy446_AUGER_CLD_TxtBox.Location = new System.Drawing.Point(153, 318);
-            this.Vy446_AUGER_CLD_TxtBox.Name = "Vy446_AUGER_CLD_TxtBox";
-            this.Vy446_AUGER_CLD_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_AUGER_CLD_TxtBox.TabIndex = 4;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(6, 296);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(55, 12);
-            this.label60.TabIndex = 4;
-            this.label60.Text = "左右旋回:";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(6, 321);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(55, 12);
-            this.label61.TabIndex = 4;
-            this.label61.Text = "上下旋回:";
+            this.Vy446_RESERVE_B_TxtBox.Location = new System.Drawing.Point(153, 368);
+            this.Vy446_RESERVE_B_TxtBox.Name = "Vy446_RESERVE_B_TxtBox";
+            this.Vy446_RESERVE_B_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_RESERVE_B_TxtBox.TabIndex = 19;
             // 
             // label62
             // 
@@ -1609,21 +1221,410 @@
             this.label62.TabIndex = 4;
             this.label62.Text = "前処理";
             // 
-            // Vy446_RESERVE_B_TxtBox
+            // label61
             // 
-            this.Vy446_RESERVE_B_TxtBox.Location = new System.Drawing.Point(153, 368);
-            this.Vy446_RESERVE_B_TxtBox.Name = "Vy446_RESERVE_B_TxtBox";
-            this.Vy446_RESERVE_B_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_RESERVE_B_TxtBox.TabIndex = 19;
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(6, 321);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(55, 12);
+            this.label61.TabIndex = 4;
+            this.label61.Text = "上下旋回:";
             // 
-            // label63
+            // label60
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(6, 371);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(35, 12);
-            this.label63.TabIndex = 4;
-            this.label63.Text = "刈高: ";
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(6, 296);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(55, 12);
+            this.label60.TabIndex = 4;
+            this.label60.Text = "左右旋回:";
+            // 
+            // Vy446_AUGER_CLD_TxtBox
+            // 
+            this.Vy446_AUGER_CLD_TxtBox.Location = new System.Drawing.Point(153, 318);
+            this.Vy446_AUGER_CLD_TxtBox.Name = "Vy446_AUGER_CLD_TxtBox";
+            this.Vy446_AUGER_CLD_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_AUGER_CLD_TxtBox.TabIndex = 4;
+            // 
+            // Vy446_AUGER_MTR_TxtBox
+            // 
+            this.Vy446_AUGER_MTR_TxtBox.Location = new System.Drawing.Point(153, 293);
+            this.Vy446_AUGER_MTR_TxtBox.Name = "Vy446_AUGER_MTR_TxtBox";
+            this.Vy446_AUGER_MTR_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_AUGER_MTR_TxtBox.TabIndex = 4;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label59.Location = new System.Drawing.Point(6, 271);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(63, 12);
+            this.label59.TabIndex = 17;
+            this.label59.Text = "排出オーガ";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(6, 246);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(54, 12);
+            this.label58.TabIndex = 16;
+            this.label58.Text = "左シリンダ:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(6, 221);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(54, 12);
+            this.label57.TabIndex = 15;
+            this.label57.Text = "右シリンダ:";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(6, 196);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(60, 12);
+            this.label56.TabIndex = 14;
+            this.label56.Text = "傾斜センサ:";
+            // 
+            // Vy446_AD_SUI_L_TxtBox
+            // 
+            this.Vy446_AD_SUI_L_TxtBox.Location = new System.Drawing.Point(153, 243);
+            this.Vy446_AD_SUI_L_TxtBox.Name = "Vy446_AD_SUI_L_TxtBox";
+            this.Vy446_AD_SUI_L_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_AD_SUI_L_TxtBox.TabIndex = 13;
+            // 
+            // Vy446_AD_SUI_R_TxtBox
+            // 
+            this.Vy446_AD_SUI_R_TxtBox.Location = new System.Drawing.Point(153, 218);
+            this.Vy446_AD_SUI_R_TxtBox.Name = "Vy446_AD_SUI_R_TxtBox";
+            this.Vy446_AD_SUI_R_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_AD_SUI_R_TxtBox.TabIndex = 12;
+            // 
+            // Vy446_AD_SUI_K_TxtBox
+            // 
+            this.Vy446_AD_SUI_K_TxtBox.Location = new System.Drawing.Point(153, 193);
+            this.Vy446_AD_SUI_K_TxtBox.Name = "Vy446_AD_SUI_K_TxtBox";
+            this.Vy446_AD_SUI_K_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_AD_SUI_K_TxtBox.TabIndex = 11;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label55.Location = new System.Drawing.Point(6, 171);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(57, 12);
+            this.label55.TabIndex = 10;
+            this.label55.Text = "水平制御";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(6, 128);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(70, 12);
+            this.label54.TabIndex = 9;
+            this.label54.Text = "ミッション速度:";
+            // 
+            // Vy446_speed_TxtBox
+            // 
+            this.Vy446_speed_TxtBox.Location = new System.Drawing.Point(153, 125);
+            this.Vy446_speed_TxtBox.Name = "Vy446_speed_TxtBox";
+            this.Vy446_speed_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_speed_TxtBox.TabIndex = 8;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(6, 103);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(77, 12);
+            this.label53.TabIndex = 7;
+            this.label53.Text = "フィーダ回転数:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 78);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(80, 12);
+            this.label52.TabIndex = 6;
+            this.label52.Text = "エンジン回転数:";
+            // 
+            // Vy446_feed_rpm_TxtBox
+            // 
+            this.Vy446_feed_rpm_TxtBox.Location = new System.Drawing.Point(153, 100);
+            this.Vy446_feed_rpm_TxtBox.Name = "Vy446_feed_rpm_TxtBox";
+            this.Vy446_feed_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_feed_rpm_TxtBox.TabIndex = 5;
+            // 
+            // Vy446_rpm_TxtBox
+            // 
+            this.Vy446_rpm_TxtBox.Location = new System.Drawing.Point(153, 75);
+            this.Vy446_rpm_TxtBox.Name = "Vy446_rpm_TxtBox";
+            this.Vy446_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_rpm_TxtBox.TabIndex = 4;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(6, 53);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(87, 12);
+            this.label51.TabIndex = 3;
+            this.label51.Text = "主変速ポテンショ:";
+            // 
+            // Vy446_DT_HST_TxtBox
+            // 
+            this.Vy446_DT_HST_TxtBox.Location = new System.Drawing.Point(153, 50);
+            this.Vy446_DT_HST_TxtBox.Name = "Vy446_DT_HST_TxtBox";
+            this.Vy446_DT_HST_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_DT_HST_TxtBox.TabIndex = 2;
+            // 
+            // Vy446_DT_SOKO_TxtBox
+            // 
+            this.Vy446_DT_SOKO_TxtBox.Location = new System.Drawing.Point(153, 25);
+            this.Vy446_DT_SOKO_TxtBox.Name = "Vy446_DT_SOKO_TxtBox";
+            this.Vy446_DT_SOKO_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_DT_SOKO_TxtBox.TabIndex = 1;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(6, 28);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(75, 12);
+            this.label50.TabIndex = 0;
+            this.label50.Text = "操向ポテンショ:";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label49);
+            this.groupBox8.Controls.Add(this.label48);
+            this.groupBox8.Controls.Add(this.label47);
+            this.groupBox8.Controls.Add(this.label46);
+            this.groupBox8.Controls.Add(this.label45);
+            this.groupBox8.Controls.Add(this.label44);
+            this.groupBox8.Controls.Add(this.label43);
+            this.groupBox8.Controls.Add(this.label42);
+            this.groupBox8.Controls.Add(this.label41);
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Controls.Add(this.Vy446_roll_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_pitch_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_compass_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_compass_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_heading_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_avilability_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Quality_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Sv_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Altitude_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Longitude_TxtBox);
+            this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Latitude_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Utc_TxtBox);
+            this.groupBox8.Controls.Add(this.label38);
+            this.groupBox8.Location = new System.Drawing.Point(279, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(267, 330);
+            this.groupBox8.TabIndex = 2;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Received GPS";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(6, 296);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(36, 12);
+            this.label49.TabIndex = 3;
+            this.label49.Text = "ロール:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(6, 271);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(32, 12);
+            this.label48.TabIndex = 3;
+            this.label48.Text = "ピッチ:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 246);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(65, 12);
+            this.label47.TabIndex = 3;
+            this.label47.Text = "GPSコンパス:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(6, 221);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(67, 12);
+            this.label46.TabIndex = 3;
+            this.label46.Text = "ジャイロ方位:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 196);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 12);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "磁気コンパス:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 171);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(58, 12);
+            this.label44.TabIndex = 3;
+            this.label44.Text = "Avilability:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 146);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(31, 12);
+            this.label43.TabIndex = 3;
+            this.label43.Text = "品質:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 121);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 12);
+            this.label42.TabIndex = 3;
+            this.label42.Text = "衛星数:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 96);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(31, 12);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "高度:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 71);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(31, 12);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "経度:";
+            // 
+            // Vy446_roll_TxtBox
+            // 
+            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(153, 293);
+            this.Vy446_roll_TxtBox.Name = "Vy446_roll_TxtBox";
+            this.Vy446_roll_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_roll_TxtBox.TabIndex = 12;
+            // 
+            // Vy446_pitch_TxtBox
+            // 
+            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(153, 268);
+            this.Vy446_pitch_TxtBox.Name = "Vy446_pitch_TxtBox";
+            this.Vy446_pitch_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_pitch_TxtBox.TabIndex = 11;
+            // 
+            // Vy446_gps_compass_TxtBox
+            // 
+            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(153, 243);
+            this.Vy446_gps_compass_TxtBox.Name = "Vy446_gps_compass_TxtBox";
+            this.Vy446_gps_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_compass_TxtBox.TabIndex = 10;
+            // 
+            // Vy446_compass_TxtBox
+            // 
+            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(153, 218);
+            this.Vy446_compass_TxtBox.Name = "Vy446_compass_TxtBox";
+            this.Vy446_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_compass_TxtBox.TabIndex = 9;
+            // 
+            // Vy446_heading_TxtBox
+            // 
+            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(153, 193);
+            this.Vy446_heading_TxtBox.Name = "Vy446_heading_TxtBox";
+            this.Vy446_heading_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_heading_TxtBox.TabIndex = 8;
+            // 
+            // Vy446_avilability_TxtBox
+            // 
+            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(153, 168);
+            this.Vy446_avilability_TxtBox.Name = "Vy446_avilability_TxtBox";
+            this.Vy446_avilability_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_avilability_TxtBox.TabIndex = 7;
+            // 
+            // Vy446_gps_Quality_TxtBox
+            // 
+            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(153, 143);
+            this.Vy446_gps_Quality_TxtBox.Name = "Vy446_gps_Quality_TxtBox";
+            this.Vy446_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Quality_TxtBox.TabIndex = 6;
+            // 
+            // Vy446_gps_Sv_TxtBox
+            // 
+            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(153, 118);
+            this.Vy446_gps_Sv_TxtBox.Name = "Vy446_gps_Sv_TxtBox";
+            this.Vy446_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Sv_TxtBox.TabIndex = 3;
+            // 
+            // Vy446_gps_Altitude_TxtBox
+            // 
+            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(153, 93);
+            this.Vy446_gps_Altitude_TxtBox.Name = "Vy446_gps_Altitude_TxtBox";
+            this.Vy446_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Altitude_TxtBox.TabIndex = 5;
+            // 
+            // Vy446_gps_Longitude_TxtBox
+            // 
+            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(153, 68);
+            this.Vy446_gps_Longitude_TxtBox.Name = "Vy446_gps_Longitude_TxtBox";
+            this.Vy446_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Longitude_TxtBox.TabIndex = 4;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 46);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(31, 12);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "緯度:";
+            // 
+            // Vy446_gps_Latitude_TxtBox
+            // 
+            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(153, 43);
+            this.Vy446_gps_Latitude_TxtBox.Name = "Vy446_gps_Latitude_TxtBox";
+            this.Vy446_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Latitude_TxtBox.TabIndex = 2;
+            // 
+            // Vy446_gps_Utc_TxtBox
+            // 
+            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(153, 18);
+            this.Vy446_gps_Utc_TxtBox.Name = "Vy446_gps_Utc_TxtBox";
+            this.Vy446_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Utc_TxtBox.TabIndex = 1;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 25);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(54, 12);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "UTC時刻:";
             // 
             // IntegratedForm
             // 
@@ -1655,10 +1656,10 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
