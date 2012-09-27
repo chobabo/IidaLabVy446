@@ -13,20 +13,24 @@ using ZedGraph;
 using OpenCvSharp;
 using MachineVision;
 using CombineBody;
+using FieldMap;
 
 namespace IidaLabVy446
 {
-
     public partial class IntegratedForm : Form
     {
+        #region Shared Fields
+
+        //for read file
+        private int readCount { get; set; }
+
+        #endregion
+
         #region Laser Range Finder
 
         private SickLidar.Graph graph;
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
-
-        //for read file
-        private int readCount { get; set; }
 
         /// <summary>
         /// Initialize Lidar Sensor
@@ -150,6 +154,7 @@ namespace IidaLabVy446
         private CombineBody.File _bodyFile;
         private CombineBody.Vy50 _vy50;
         private CombineBody.Vy446 _vy446;
+        private FieldMap.DrawMap _drawMap;
 
         /// <summary>
         /// Connect Combine Body using RS-232C
@@ -178,6 +183,11 @@ namespace IidaLabVy446
                     this.BodySaveCheckBox.Checked,
                     this.BodyReadCheckBox.Checked
                     );
+
+                if (this.BodyGeMapCheckBox.Checked == true)
+                {
+                    this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
+                }
             }
 
             if (this.BodyModelComboBox.SelectedIndex == 0)
@@ -287,6 +297,8 @@ namespace IidaLabVy446
                 this.Vy446_heading_TxtBox.Text = Convert.ToString(this._vy446.heading);
                 this.Vy446_pitch_TxtBox.Text = Convert.ToString(this._vy446.pitch);
                 this.Vy446_roll_TxtBox.Text = Convert.ToString(this._vy446.roll);
+
+                this.CombineGoogleMap(this._vy446.gps_Latitude, this._vy446.gps_Longitude);
             }
         }
 
@@ -326,7 +338,25 @@ namespace IidaLabVy446
                 this.Vy50_us_AdSuihei_TxtBox.Text = Convert.ToString(this._vy50.us_AdSuihei);
                 this.Vy50_us_LRPos_TxtBox.Text = Convert.ToString(this._vy50.us_LRPos);
                 this.Vy50_us_UDPos_TxtBox.Text = Convert.ToString(this._vy50.us_UDPos);
+
+                this.CombineGoogleMap(this._vy50.gps_Latitude, this._vy50.gps_Longitude);
             }
+        }
+
+        /// <summary>
+        /// draw on the map using google earth
+        /// </summary>
+        /// <param name="_lat"></param>
+        /// <param name="_lng"></param>
+        private void CombineGoogleMap(double _lat, double _lng)
+        {
+            if (this._drawMap.IsInitialize == false)
+            {
+                this._drawMap.CreateLookAt(_lat, _lng, 0, 200);
+                this._drawMap.IsInitialize = true;
+            }
+
+            this._drawMap.ReceiveGpsData(_lat, _lng);
         }
 
         #endregion
@@ -409,6 +439,13 @@ namespace IidaLabVy446
                         }
 
                         this._bodySerialConnect.Dispose();
+                    }
+                    else
+                    {
+                        if (this.BodyGeMapCheckBox.Checked == true)
+                        {
+                            this._drawMap.Dispose(this.GeWebBrowser);
+                        }
                     }
                 }
 

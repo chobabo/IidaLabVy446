@@ -180,6 +180,9 @@
             this.Vy446_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy446_gps_Utc_TxtBox = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.GeWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.BodyGeMapCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).BeginInit();
@@ -196,6 +199,7 @@
             this.tabPage4.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -494,6 +498,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BodyGeMapCheckBox);
             this.groupBox3.Controls.Add(this.BodyModelComboBox);
             this.groupBox3.Controls.Add(this.label36);
             this.groupBox3.Controls.Add(this.label35);
@@ -521,16 +526,15 @@
             this.BodyModelComboBox.Items.AddRange(new object[] {
             "Vy50",
             "Vy446"});
-            this.BodyModelComboBox.Location = new System.Drawing.Point(94, 208);
+            this.BodyModelComboBox.Location = new System.Drawing.Point(94, 192);
             this.BodyModelComboBox.Name = "BodyModelComboBox";
             this.BodyModelComboBox.Size = new System.Drawing.Size(100, 20);
             this.BodyModelComboBox.TabIndex = 13;
-            //this.BodyModelComboBox.SelectedIndexChanged += new System.EventHandler(this.BodyModelComboBox_SelectedIndexChanged);
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 211);
+            this.label36.Location = new System.Drawing.Point(6, 195);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(41, 12);
             this.label36.TabIndex = 12;
@@ -539,7 +543,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 180);
+            this.label35.Location = new System.Drawing.Point(6, 164);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(97, 12);
             this.label35.TabIndex = 11;
@@ -548,7 +552,7 @@
             // BodyReadCheckBox
             // 
             this.BodyReadCheckBox.AutoSize = true;
-            this.BodyReadCheckBox.Location = new System.Drawing.Point(92, 281);
+            this.BodyReadCheckBox.Location = new System.Drawing.Point(94, 247);
             this.BodyReadCheckBox.Name = "BodyReadCheckBox";
             this.BodyReadCheckBox.Size = new System.Drawing.Size(50, 16);
             this.BodyReadCheckBox.TabIndex = 10;
@@ -558,7 +562,7 @@
             // BodySaveCheckBox
             // 
             this.BodySaveCheckBox.AutoSize = true;
-            this.BodySaveCheckBox.Location = new System.Drawing.Point(6, 281);
+            this.BodySaveCheckBox.Location = new System.Drawing.Point(8, 247);
             this.BodySaveCheckBox.Name = "BodySaveCheckBox";
             this.BodySaveCheckBox.Size = new System.Drawing.Size(49, 16);
             this.BodySaveCheckBox.TabIndex = 9;
@@ -568,7 +572,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(4, 257);
+            this.label13.Location = new System.Drawing.Point(6, 223);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 12);
             this.label13.TabIndex = 8;
@@ -652,6 +656,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1626,6 +1631,37 @@
             this.label38.TabIndex = 0;
             this.label38.Text = "UTC時刻:";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.GeWebBrowser);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(631, 577);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "GoogleEarth";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // GeWebBrowser
+            // 
+            this.GeWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GeWebBrowser.Location = new System.Drawing.Point(3, 3);
+            this.GeWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.GeWebBrowser.Name = "GeWebBrowser";
+            this.GeWebBrowser.ScrollBarsEnabled = false;
+            this.GeWebBrowser.Size = new System.Drawing.Size(625, 571);
+            this.GeWebBrowser.TabIndex = 0;
+            // 
+            // BodyGeMapCheckBox
+            // 
+            this.BodyGeMapCheckBox.AutoSize = true;
+            this.BodyGeMapCheckBox.Location = new System.Drawing.Point(8, 269);
+            this.BodyGeMapCheckBox.Name = "BodyGeMapCheckBox";
+            this.BodyGeMapCheckBox.Size = new System.Drawing.Size(90, 16);
+            this.BodyGeMapCheckBox.TabIndex = 14;
+            this.BodyGeMapCheckBox.Text = "Google Earth";
+            this.BodyGeMapCheckBox.UseVisualStyleBackColor = true;
+            // 
             // IntegratedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1660,6 +1696,7 @@
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1818,5 +1855,8 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.TextBox Vy446_RESERVE_B_TxtBox;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.WebBrowser GeWebBrowser;
+        private System.Windows.Forms.CheckBox BodyGeMapCheckBox;
     }
 }

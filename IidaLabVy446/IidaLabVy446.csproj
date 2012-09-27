@@ -38,6 +38,9 @@
     <Reference Include="CombineBody">
       <HintPath>..\CombineBody\bin\Debug\CombineBody.dll</HintPath>
     </Reference>
+    <Reference Include="FieldMap">
+      <HintPath>..\FieldMap\bin\Debug\FieldMap.dll</HintPath>
+    </Reference>
     <Reference Include="MachineVision">
       <HintPath>..\MachineVision\bin\Debug\MachineVision.dll</HintPath>
     </Reference>
