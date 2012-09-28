@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Amedas">
+      <HintPath>..\Amedas\bin\Debug\Amedas.dll</HintPath>
+    </Reference>
     <Reference Include="CombineBody">
       <HintPath>..\CombineBody\bin\Debug\CombineBody.dll</HintPath>
     </Reference>

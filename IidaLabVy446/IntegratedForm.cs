@@ -14,6 +14,8 @@ using OpenCvSharp;
 using MachineVision;
 using CombineBody;
 using FieldMap;
+using System.Xml;
+using Amedas;
 
 namespace IidaLabVy446
 {
@@ -186,7 +188,7 @@ namespace IidaLabVy446
 
                 if (this.BodyGeMapCheckBox.Checked == true)
                 {
-                    this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
+                    //this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
                 }
             }
 
@@ -364,11 +366,43 @@ namespace IidaLabVy446
 
         #endregion
 
+        #region Amedas Weather
+
+        private Amedas.Amedas ad;
+
+        /// <summary>
+        /// Save Amedas data to Xml file
+        /// </summary>
+        private void AmedasSaveDataToXml()
+        {
+            this.ad = new Amedas.Amedas(this.AmedasWebBrowser);
+            this.ad.SelectedLocal = this.AmedasComBox.SelectedIndex;
+            this.ad.Step_MoveToAmedasPage(this.ad.AmedasAddressString(this.AmedasComBox.SelectedIndex));
+            this.AmedasWebBrowser.DocumentCompleted += this.ad.webBrowser_DocumentCompleted;
+        }
+
+        /// <summary>
+        /// Grid Amedas xml data
+        /// </summary>
+        private void AmedasXmlToGrid()
+        {
+            string fileName = this.ad.ReadXmlDialog();
+
+            XmlReader xmlFile;
+            xmlFile = XmlReader.Create(fileName, new XmlReaderSettings());
+            DataSet ds = new DataSet();
+            ds.ReadXml(xmlFile);
+            dataGridView1.DataSource = ds.Tables["AmedasXml"];
+        }
+
+        #endregion
+
         #region Constructor
 
         public IntegratedForm()
         {
             InitializeComponent();
+            this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
         }
 
         #endregion
@@ -499,6 +533,26 @@ namespace IidaLabVy446
             this.toolStripStatusLabel2.Text =
                 Convert.ToString(watch.Elapsed.TotalMilliseconds) + " milliseconds";
             this.toolStripStatusLabel4.Text = Convert.ToString(this.readCount);
+        }
+
+        /// <summary>
+        /// amedas weather - save event button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AmedasSaveButton_Click(object sender, EventArgs e)
+        {
+            this.AmedasSaveDataToXml();
+        }
+
+        /// <summary>
+        /// amedas weather - show event button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AmedasShowButton_Click(object sender, EventArgs e)
+        {
+            this.AmedasXmlToGrid();
         }
 
         #endregion

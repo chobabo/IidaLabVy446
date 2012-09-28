@@ -79,9 +79,6 @@ namespace FieldMap
                 this.external = new External();
                 this.GE = new GoogleEarth();
 
-                //--debug for whether selected or not selected--//
-                GE.StartGoogleEarth = true;
-
                 //--connect event handler--//
                 this.external.PluginReady += this.GE.external_PluginReady;
                 //this.external.KmlMouseClickEvent += this.GE.external_MouseClick;
@@ -96,6 +93,9 @@ namespace FieldMap
                 this.data.Clear();
                 this.IsInitialize = false;
                 this.readCnt = 0;
+
+                //--debug for whether selected or not selected--//
+                GE.StartGoogleEarth = true;
 
                 this.debugMsg = "Start Google Earth";
             }

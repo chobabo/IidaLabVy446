@@ -62,6 +62,7 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.IntegratedTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BodyGeMapCheckBox = new System.Windows.Forms.CheckBox();
             this.BodyModelComboBox = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -78,6 +79,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.AmedasSaveButton = new System.Windows.Forms.Button();
+            this.AmedasWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.AmedasShowButton = new System.Windows.Forms.Button();
+            this.AmedasComBox = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -182,7 +189,8 @@
             this.label38 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.GeWebBrowser = new System.Windows.Forms.WebBrowser();
-            this.BodyGeMapCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).BeginInit();
@@ -190,6 +198,7 @@
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -200,6 +209,8 @@
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -520,6 +531,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Combine Body";
             // 
+            // BodyGeMapCheckBox
+            // 
+            this.BodyGeMapCheckBox.AutoSize = true;
+            this.BodyGeMapCheckBox.Location = new System.Drawing.Point(8, 273);
+            this.BodyGeMapCheckBox.Name = "BodyGeMapCheckBox";
+            this.BodyGeMapCheckBox.Size = new System.Drawing.Size(90, 16);
+            this.BodyGeMapCheckBox.TabIndex = 14;
+            this.BodyGeMapCheckBox.Text = "Google Earth";
+            this.BodyGeMapCheckBox.UseVisualStyleBackColor = true;
+            // 
             // BodyModelComboBox
             // 
             this.BodyModelComboBox.FormattingEnabled = true;
@@ -657,6 +678,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -665,6 +687,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox10);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.label8);
@@ -680,6 +703,69 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Setting";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.AmedasSaveButton);
+            this.groupBox10.Controls.Add(this.AmedasWebBrowser);
+            this.groupBox10.Controls.Add(this.AmedasShowButton);
+            this.groupBox10.Controls.Add(this.AmedasComBox);
+            this.groupBox10.Controls.Add(this.label64);
+            this.groupBox10.Location = new System.Drawing.Point(6, 373);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(204, 198);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Amedas Weather";
+            // 
+            // AmedasSaveButton
+            // 
+            this.AmedasSaveButton.Location = new System.Drawing.Point(36, 54);
+            this.AmedasSaveButton.Name = "AmedasSaveButton";
+            this.AmedasSaveButton.Size = new System.Drawing.Size(75, 23);
+            this.AmedasSaveButton.TabIndex = 10;
+            this.AmedasSaveButton.Text = "Save";
+            this.AmedasSaveButton.UseVisualStyleBackColor = true;
+            this.AmedasSaveButton.Click += new System.EventHandler(this.AmedasSaveButton_Click);
+            // 
+            // AmedasWebBrowser
+            // 
+            this.AmedasWebBrowser.Location = new System.Drawing.Point(173, 172);
+            this.AmedasWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.AmedasWebBrowser.Name = "AmedasWebBrowser";
+            this.AmedasWebBrowser.ScrollBarsEnabled = false;
+            this.AmedasWebBrowser.Size = new System.Drawing.Size(20, 20);
+            this.AmedasWebBrowser.TabIndex = 11;
+            // 
+            // AmedasShowButton
+            // 
+            this.AmedasShowButton.Location = new System.Drawing.Point(117, 54);
+            this.AmedasShowButton.Name = "AmedasShowButton";
+            this.AmedasShowButton.Size = new System.Drawing.Size(76, 23);
+            this.AmedasShowButton.TabIndex = 10;
+            this.AmedasShowButton.Text = "Show";
+            this.AmedasShowButton.UseVisualStyleBackColor = true;
+            this.AmedasShowButton.Click += new System.EventHandler(this.AmedasShowButton_Click);
+            // 
+            // AmedasComBox
+            // 
+            this.AmedasComBox.FormattingEnabled = true;
+            this.AmedasComBox.Items.AddRange(new object[] {
+            "園部(ソノベ)",
+            "京都(キョウト)"});
+            this.AmedasComBox.Location = new System.Drawing.Point(93, 28);
+            this.AmedasComBox.Name = "AmedasComBox";
+            this.AmedasComBox.Size = new System.Drawing.Size(100, 20);
+            this.AmedasComBox.TabIndex = 10;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(6, 31);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(50, 12);
+            this.label64.TabIndex = 10;
+            this.label64.Text = "Location:";
             // 
             // groupBox5
             // 
@@ -1652,15 +1738,26 @@
             this.GeWebBrowser.Size = new System.Drawing.Size(625, 571);
             this.GeWebBrowser.TabIndex = 0;
             // 
-            // BodyGeMapCheckBox
+            // tabPage6
             // 
-            this.BodyGeMapCheckBox.AutoSize = true;
-            this.BodyGeMapCheckBox.Location = new System.Drawing.Point(8, 269);
-            this.BodyGeMapCheckBox.Name = "BodyGeMapCheckBox";
-            this.BodyGeMapCheckBox.Size = new System.Drawing.Size(90, 16);
-            this.BodyGeMapCheckBox.TabIndex = 14;
-            this.BodyGeMapCheckBox.Text = "Google Earth";
-            this.BodyGeMapCheckBox.UseVisualStyleBackColor = true;
+            this.tabPage6.Controls.Add(this.dataGridView1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(631, 577);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Weather";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(619, 565);
+            this.dataGridView1.TabIndex = 0;
             // 
             // IntegratedForm
             // 
@@ -1681,6 +1778,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1697,6 +1796,8 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1858,5 +1959,13 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.WebBrowser GeWebBrowser;
         private System.Windows.Forms.CheckBox BodyGeMapCheckBox;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button AmedasShowButton;
+        private System.Windows.Forms.ComboBox AmedasComBox;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.WebBrowser AmedasWebBrowser;
+        private System.Windows.Forms.Button AmedasSaveButton;
     }
 }

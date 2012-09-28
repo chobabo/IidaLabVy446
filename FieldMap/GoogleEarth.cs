@@ -78,7 +78,7 @@ namespace FieldMap
         /// Create look at mode
         /// </summary>
         public void CreateLookAt()
-        {
+        {           
             KmlLookAtCoClass lookAt = ge.createLookAt("");
             
             lookAt.set(Latitude, Longitude, Altitude, ge.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, Range);
