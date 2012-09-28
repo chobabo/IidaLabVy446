@@ -80,6 +80,7 @@ namespace FieldMap
         public void CreateLookAt()
         {
             KmlLookAtCoClass lookAt = ge.createLookAt("");
+            
             lookAt.set(Latitude, Longitude, Altitude, ge.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, Range);
             ge.getView().setAbstractView(lookAt);
 
@@ -97,6 +98,7 @@ namespace FieldMap
             placemark.setGeometry(point);
 
             ge.getFeatures().appendChild(placemark);
+            
         }
 
         /// <summary>

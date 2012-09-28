@@ -177,17 +177,20 @@ namespace CombineBody
         {
             List<int> result = new List<int>();
 
-            string[] lineArr = _readData[this.currentCount].Split(' ');
-
-            if (_readCount == Convert.ToInt32(lineArr[0]))
+            if (this.currentCount < _readData.Length)
             {
-                for (int i = 1; i < lineArr.Length; i++)
-                {
-                    int val = Convert.ToInt32(lineArr[i]);
-                    result.Add(val);
-                }
+                string[] lineArr = _readData[this.currentCount].Split(' ');
 
-                this.currentCount++;
+                if (_readCount == Convert.ToInt32(lineArr[0]))
+                {
+                    for (int i = 1; i < lineArr.Length; i++)
+                    {
+                        int val = Convert.ToInt32(lineArr[i]);
+                        result.Add(val);
+                    }
+
+                    this.currentCount++;
+                }                
             }
 
             return result;

@@ -350,13 +350,16 @@ namespace IidaLabVy446
         /// <param name="_lng"></param>
         private void CombineGoogleMap(double _lat, double _lng)
         {
-            if (this._drawMap.IsInitialize == false)
+            if (this.BodyGeMapCheckBox.Checked == true)
             {
-                this._drawMap.CreateLookAt(_lat, _lng, 0, 200);
-                this._drawMap.IsInitialize = true;
-            }
+                if (this._drawMap.IsInitialize == false)
+                {
+                    this._drawMap.CreateLookAt(_lat, _lng, 0, 200);
+                    this._drawMap.IsInitialize = true;
+                }
 
-            this._drawMap.ReceiveGpsData(_lat, _lng);
+                this._drawMap.ReceiveGpsData(_lat, _lng);
+            }
         }
 
         #endregion
