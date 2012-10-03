@@ -191,6 +191,43 @@
             this.GeWebBrowser = new System.Windows.Forms.WebBrowser();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.Vy50_ROBOTMODE_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_AUGER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_AUGERHOME_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_AUGERPOS_CheckBox = new System.Windows.Forms.CheckBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.Vy50_CMDLRPOS_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_CMDUDPOS_TxtBox = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.Vy50_CMDFINPOS_TxtBox = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.Vy50_HSTCMD_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_SAGYOUKI_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_KARITORI_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_KAKIKOMI_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_TOFUKU_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_SHITUDEN_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_LEFTWINKER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_RIGHTWINKER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_HAZARD_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_BUZZER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_ENGINESTOP_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_SUIHEI_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_CMDLEFTCYLINDER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_KARITAKASA_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_CMDSUIHEI_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_CMDLEFTCYLINDER_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_KARITAKASA_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_SendData_Button = new System.Windows.Forms.Button();
+            this.Vy50_REDPATLITE_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_YELLOWPATLITE_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy50_BUZZERPATLITE_CheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).BeginInit();
@@ -211,6 +248,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -816,6 +854,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox11);
             this.tabPage3.Controls.Add(this.groupBox7);
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -842,16 +881,16 @@
             this.groupBox7.Controls.Add(this.Vy50_gps_Latitude_TxtBox);
             this.groupBox7.Controls.Add(this.Vy50_gps_Utc_TxtBox);
             this.groupBox7.Controls.Add(this.label28);
-            this.groupBox7.Location = new System.Drawing.Point(279, 6);
+            this.groupBox7.Location = new System.Drawing.Point(6, 464);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(267, 205);
+            this.groupBox7.Size = new System.Drawing.Size(619, 102);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Received GPS";
             // 
             // Vy50_gps_Sv_TxtBox
             // 
-            this.Vy50_gps_Sv_TxtBox.Location = new System.Drawing.Point(153, 172);
+            this.Vy50_gps_Sv_TxtBox.Location = new System.Drawing.Point(352, 47);
             this.Vy50_gps_Sv_TxtBox.Name = "Vy50_gps_Sv_TxtBox";
             this.Vy50_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Sv_TxtBox.TabIndex = 14;
@@ -859,7 +898,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 175);
+            this.label34.Location = new System.Drawing.Point(315, 50);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(22, 12);
             this.label34.TabIndex = 13;
@@ -868,7 +907,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(6, 150);
+            this.label33.Location = new System.Drawing.Point(172, 50);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(31, 12);
             this.label33.TabIndex = 12;
@@ -877,7 +916,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 125);
+            this.label32.Location = new System.Drawing.Point(6, 50);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(31, 12);
             this.label32.TabIndex = 11;
@@ -886,7 +925,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 100);
+            this.label31.Location = new System.Drawing.Point(458, 25);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(31, 12);
             this.label31.TabIndex = 10;
@@ -895,7 +934,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 75);
+            this.label30.Location = new System.Drawing.Point(315, 25);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(31, 12);
             this.label30.TabIndex = 9;
@@ -904,7 +943,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 50);
+            this.label29.Location = new System.Drawing.Point(172, 25);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 12);
             this.label29.TabIndex = 8;
@@ -912,42 +951,42 @@
             // 
             // Vy50_gps_Quality_TxtBox
             // 
-            this.Vy50_gps_Quality_TxtBox.Location = new System.Drawing.Point(153, 147);
+            this.Vy50_gps_Quality_TxtBox.Location = new System.Drawing.Point(209, 47);
             this.Vy50_gps_Quality_TxtBox.Name = "Vy50_gps_Quality_TxtBox";
             this.Vy50_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Quality_TxtBox.TabIndex = 7;
             // 
             // Vy50_gps_Heading_TxtBox
             // 
-            this.Vy50_gps_Heading_TxtBox.Location = new System.Drawing.Point(153, 122);
+            this.Vy50_gps_Heading_TxtBox.Location = new System.Drawing.Point(66, 47);
             this.Vy50_gps_Heading_TxtBox.Name = "Vy50_gps_Heading_TxtBox";
             this.Vy50_gps_Heading_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Heading_TxtBox.TabIndex = 6;
             // 
             // Vy50_gps_Altitude_TxtBox
             // 
-            this.Vy50_gps_Altitude_TxtBox.Location = new System.Drawing.Point(153, 97);
+            this.Vy50_gps_Altitude_TxtBox.Location = new System.Drawing.Point(495, 22);
             this.Vy50_gps_Altitude_TxtBox.Name = "Vy50_gps_Altitude_TxtBox";
             this.Vy50_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Altitude_TxtBox.TabIndex = 5;
             // 
             // Vy50_gps_Longitude_TxtBox
             // 
-            this.Vy50_gps_Longitude_TxtBox.Location = new System.Drawing.Point(153, 72);
+            this.Vy50_gps_Longitude_TxtBox.Location = new System.Drawing.Point(352, 22);
             this.Vy50_gps_Longitude_TxtBox.Name = "Vy50_gps_Longitude_TxtBox";
             this.Vy50_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Longitude_TxtBox.TabIndex = 4;
             // 
             // Vy50_gps_Latitude_TxtBox
             // 
-            this.Vy50_gps_Latitude_TxtBox.Location = new System.Drawing.Point(153, 47);
+            this.Vy50_gps_Latitude_TxtBox.Location = new System.Drawing.Point(209, 22);
             this.Vy50_gps_Latitude_TxtBox.Name = "Vy50_gps_Latitude_TxtBox";
             this.Vy50_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Latitude_TxtBox.TabIndex = 3;
             // 
             // Vy50_gps_Utc_TxtBox
             // 
-            this.Vy50_gps_Utc_TxtBox.Location = new System.Drawing.Point(153, 22);
+            this.Vy50_gps_Utc_TxtBox.Location = new System.Drawing.Point(66, 22);
             this.Vy50_gps_Utc_TxtBox.Name = "Vy50_gps_Utc_TxtBox";
             this.Vy50_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Utc_TxtBox.TabIndex = 2;
@@ -995,7 +1034,7 @@
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(267, 452);
+            this.groupBox6.Size = new System.Drawing.Size(246, 452);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Received Combine Body Data";
@@ -1011,7 +1050,7 @@
             // 
             // Vy50_ReadCnt_TxtBox
             // 
-            this.Vy50_ReadCnt_TxtBox.Location = new System.Drawing.Point(153, 376);
+            this.Vy50_ReadCnt_TxtBox.Location = new System.Drawing.Point(135, 374);
             this.Vy50_ReadCnt_TxtBox.Name = "Vy50_ReadCnt_TxtBox";
             this.Vy50_ReadCnt_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_ReadCnt_TxtBox.TabIndex = 3;
@@ -1054,35 +1093,35 @@
             // 
             // Vy50_us_AdRightCylinder_TxtBox
             // 
-            this.Vy50_us_AdRightCylinder_TxtBox.Location = new System.Drawing.Point(153, 351);
+            this.Vy50_us_AdRightCylinder_TxtBox.Location = new System.Drawing.Point(135, 349);
             this.Vy50_us_AdRightCylinder_TxtBox.Name = "Vy50_us_AdRightCylinder_TxtBox";
             this.Vy50_us_AdRightCylinder_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_us_AdRightCylinder_TxtBox.TabIndex = 1;
             // 
             // Vy50_us_AdLeftCylinder_TxtBox
             // 
-            this.Vy50_us_AdLeftCylinder_TxtBox.Location = new System.Drawing.Point(153, 326);
+            this.Vy50_us_AdLeftCylinder_TxtBox.Location = new System.Drawing.Point(135, 324);
             this.Vy50_us_AdLeftCylinder_TxtBox.Name = "Vy50_us_AdLeftCylinder_TxtBox";
             this.Vy50_us_AdLeftCylinder_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_us_AdLeftCylinder_TxtBox.TabIndex = 1;
             // 
             // Vy50_us_AdSuihei_TxtBox
             // 
-            this.Vy50_us_AdSuihei_TxtBox.Location = new System.Drawing.Point(153, 301);
+            this.Vy50_us_AdSuihei_TxtBox.Location = new System.Drawing.Point(135, 299);
             this.Vy50_us_AdSuihei_TxtBox.Name = "Vy50_us_AdSuihei_TxtBox";
             this.Vy50_us_AdSuihei_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_us_AdSuihei_TxtBox.TabIndex = 1;
             // 
             // Vy50_uc_MacAir_TxtBox
             // 
-            this.Vy50_uc_MacAir_TxtBox.Location = new System.Drawing.Point(153, 276);
+            this.Vy50_uc_MacAir_TxtBox.Location = new System.Drawing.Point(135, 274);
             this.Vy50_uc_MacAir_TxtBox.Name = "Vy50_uc_MacAir_TxtBox";
             this.Vy50_uc_MacAir_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_MacAir_TxtBox.TabIndex = 14;
             // 
             // Vy50_uc_RcvFinPos_TxtBox
             // 
-            this.Vy50_uc_RcvFinPos_TxtBox.Location = new System.Drawing.Point(153, 251);
+            this.Vy50_uc_RcvFinPos_TxtBox.Location = new System.Drawing.Point(135, 249);
             this.Vy50_uc_RcvFinPos_TxtBox.Name = "Vy50_uc_RcvFinPos_TxtBox";
             this.Vy50_uc_RcvFinPos_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_RcvFinPos_TxtBox.TabIndex = 1;
@@ -1107,14 +1146,14 @@
             // 
             // Vy50_uc_FinPos_TxtBox
             // 
-            this.Vy50_uc_FinPos_TxtBox.Location = new System.Drawing.Point(153, 224);
+            this.Vy50_uc_FinPos_TxtBox.Location = new System.Drawing.Point(135, 222);
             this.Vy50_uc_FinPos_TxtBox.Name = "Vy50_uc_FinPos_TxtBox";
             this.Vy50_uc_FinPos_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_FinPos_TxtBox.TabIndex = 13;
             // 
             // Vy50_uc_HeaderPos_TxtBox
             // 
-            this.Vy50_uc_HeaderPos_TxtBox.Location = new System.Drawing.Point(153, 199);
+            this.Vy50_uc_HeaderPos_TxtBox.Location = new System.Drawing.Point(135, 197);
             this.Vy50_uc_HeaderPos_TxtBox.Name = "Vy50_uc_HeaderPos_TxtBox";
             this.Vy50_uc_HeaderPos_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_HeaderPos_TxtBox.TabIndex = 12;
@@ -1139,14 +1178,14 @@
             // 
             // Vy50_uc_SteerPotentio_TxtBox
             // 
-            this.Vy50_uc_SteerPotentio_TxtBox.Location = new System.Drawing.Point(153, 174);
+            this.Vy50_uc_SteerPotentio_TxtBox.Location = new System.Drawing.Point(135, 172);
             this.Vy50_uc_SteerPotentio_TxtBox.Name = "Vy50_uc_SteerPotentio_TxtBox";
             this.Vy50_uc_SteerPotentio_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_SteerPotentio_TxtBox.TabIndex = 9;
             // 
             // Vy50_uc_MainPotentio_TxtBox
             // 
-            this.Vy50_uc_MainPotentio_TxtBox.Location = new System.Drawing.Point(153, 149);
+            this.Vy50_uc_MainPotentio_TxtBox.Location = new System.Drawing.Point(135, 147);
             this.Vy50_uc_MainPotentio_TxtBox.Name = "Vy50_uc_MainPotentio_TxtBox";
             this.Vy50_uc_MainPotentio_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_uc_MainPotentio_TxtBox.TabIndex = 8;
@@ -1162,7 +1201,7 @@
             // 
             // Vy50_d_FeederSpd_TxtBox
             // 
-            this.Vy50_d_FeederSpd_TxtBox.Location = new System.Drawing.Point(153, 124);
+            this.Vy50_d_FeederSpd_TxtBox.Location = new System.Drawing.Point(135, 122);
             this.Vy50_d_FeederSpd_TxtBox.Name = "Vy50_d_FeederSpd_TxtBox";
             this.Vy50_d_FeederSpd_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_d_FeederSpd_TxtBox.TabIndex = 6;
@@ -1178,7 +1217,7 @@
             // 
             // Vy50_d_Speed_TxtBox
             // 
-            this.Vy50_d_Speed_TxtBox.Location = new System.Drawing.Point(153, 99);
+            this.Vy50_d_Speed_TxtBox.Location = new System.Drawing.Point(135, 97);
             this.Vy50_d_Speed_TxtBox.Name = "Vy50_d_Speed_TxtBox";
             this.Vy50_d_Speed_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_d_Speed_TxtBox.TabIndex = 4;
@@ -1194,7 +1233,7 @@
             // 
             // Vy50_d_EngineRpm_TxtBox
             // 
-            this.Vy50_d_EngineRpm_TxtBox.Location = new System.Drawing.Point(153, 74);
+            this.Vy50_d_EngineRpm_TxtBox.Location = new System.Drawing.Point(135, 72);
             this.Vy50_d_EngineRpm_TxtBox.Name = "Vy50_d_EngineRpm_TxtBox";
             this.Vy50_d_EngineRpm_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_d_EngineRpm_TxtBox.TabIndex = 1;
@@ -1210,7 +1249,7 @@
             // 
             // Vy50_us_UDPos_TxtBox
             // 
-            this.Vy50_us_UDPos_TxtBox.Location = new System.Drawing.Point(153, 49);
+            this.Vy50_us_UDPos_TxtBox.Location = new System.Drawing.Point(135, 47);
             this.Vy50_us_UDPos_TxtBox.Name = "Vy50_us_UDPos_TxtBox";
             this.Vy50_us_UDPos_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_us_UDPos_TxtBox.TabIndex = 3;
@@ -1226,7 +1265,7 @@
             // 
             // Vy50_us_LRPos_TxtBox
             // 
-            this.Vy50_us_LRPos_TxtBox.Location = new System.Drawing.Point(153, 24);
+            this.Vy50_us_LRPos_TxtBox.Location = new System.Drawing.Point(135, 22);
             this.Vy50_us_LRPos_TxtBox.Name = "Vy50_us_LRPos_TxtBox";
             this.Vy50_us_LRPos_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_us_LRPos_TxtBox.TabIndex = 1;
@@ -1281,7 +1320,7 @@
             this.groupBox9.Controls.Add(this.label50);
             this.groupBox9.Location = new System.Drawing.Point(6, 6);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(267, 492);
+            this.groupBox9.Size = new System.Drawing.Size(208, 492);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Received Combine Body Data";
@@ -1297,7 +1336,7 @@
             // 
             // Vy446_RESERVE_B_TxtBox
             // 
-            this.Vy446_RESERVE_B_TxtBox.Location = new System.Drawing.Point(153, 368);
+            this.Vy446_RESERVE_B_TxtBox.Location = new System.Drawing.Point(99, 368);
             this.Vy446_RESERVE_B_TxtBox.Name = "Vy446_RESERVE_B_TxtBox";
             this.Vy446_RESERVE_B_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_RESERVE_B_TxtBox.TabIndex = 19;
@@ -1332,14 +1371,14 @@
             // 
             // Vy446_AUGER_CLD_TxtBox
             // 
-            this.Vy446_AUGER_CLD_TxtBox.Location = new System.Drawing.Point(153, 318);
+            this.Vy446_AUGER_CLD_TxtBox.Location = new System.Drawing.Point(99, 318);
             this.Vy446_AUGER_CLD_TxtBox.Name = "Vy446_AUGER_CLD_TxtBox";
             this.Vy446_AUGER_CLD_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_AUGER_CLD_TxtBox.TabIndex = 4;
             // 
             // Vy446_AUGER_MTR_TxtBox
             // 
-            this.Vy446_AUGER_MTR_TxtBox.Location = new System.Drawing.Point(153, 293);
+            this.Vy446_AUGER_MTR_TxtBox.Location = new System.Drawing.Point(99, 293);
             this.Vy446_AUGER_MTR_TxtBox.Name = "Vy446_AUGER_MTR_TxtBox";
             this.Vy446_AUGER_MTR_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_AUGER_MTR_TxtBox.TabIndex = 4;
@@ -1383,21 +1422,21 @@
             // 
             // Vy446_AD_SUI_L_TxtBox
             // 
-            this.Vy446_AD_SUI_L_TxtBox.Location = new System.Drawing.Point(153, 243);
+            this.Vy446_AD_SUI_L_TxtBox.Location = new System.Drawing.Point(99, 243);
             this.Vy446_AD_SUI_L_TxtBox.Name = "Vy446_AD_SUI_L_TxtBox";
             this.Vy446_AD_SUI_L_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_AD_SUI_L_TxtBox.TabIndex = 13;
             // 
             // Vy446_AD_SUI_R_TxtBox
             // 
-            this.Vy446_AD_SUI_R_TxtBox.Location = new System.Drawing.Point(153, 218);
+            this.Vy446_AD_SUI_R_TxtBox.Location = new System.Drawing.Point(99, 218);
             this.Vy446_AD_SUI_R_TxtBox.Name = "Vy446_AD_SUI_R_TxtBox";
             this.Vy446_AD_SUI_R_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_AD_SUI_R_TxtBox.TabIndex = 12;
             // 
             // Vy446_AD_SUI_K_TxtBox
             // 
-            this.Vy446_AD_SUI_K_TxtBox.Location = new System.Drawing.Point(153, 193);
+            this.Vy446_AD_SUI_K_TxtBox.Location = new System.Drawing.Point(99, 193);
             this.Vy446_AD_SUI_K_TxtBox.Name = "Vy446_AD_SUI_K_TxtBox";
             this.Vy446_AD_SUI_K_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_AD_SUI_K_TxtBox.TabIndex = 11;
@@ -1423,7 +1462,7 @@
             // 
             // Vy446_speed_TxtBox
             // 
-            this.Vy446_speed_TxtBox.Location = new System.Drawing.Point(153, 125);
+            this.Vy446_speed_TxtBox.Location = new System.Drawing.Point(99, 125);
             this.Vy446_speed_TxtBox.Name = "Vy446_speed_TxtBox";
             this.Vy446_speed_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_speed_TxtBox.TabIndex = 8;
@@ -1448,14 +1487,14 @@
             // 
             // Vy446_feed_rpm_TxtBox
             // 
-            this.Vy446_feed_rpm_TxtBox.Location = new System.Drawing.Point(153, 100);
+            this.Vy446_feed_rpm_TxtBox.Location = new System.Drawing.Point(99, 100);
             this.Vy446_feed_rpm_TxtBox.Name = "Vy446_feed_rpm_TxtBox";
             this.Vy446_feed_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_feed_rpm_TxtBox.TabIndex = 5;
             // 
             // Vy446_rpm_TxtBox
             // 
-            this.Vy446_rpm_TxtBox.Location = new System.Drawing.Point(153, 75);
+            this.Vy446_rpm_TxtBox.Location = new System.Drawing.Point(99, 75);
             this.Vy446_rpm_TxtBox.Name = "Vy446_rpm_TxtBox";
             this.Vy446_rpm_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_rpm_TxtBox.TabIndex = 4;
@@ -1471,14 +1510,14 @@
             // 
             // Vy446_DT_HST_TxtBox
             // 
-            this.Vy446_DT_HST_TxtBox.Location = new System.Drawing.Point(153, 50);
+            this.Vy446_DT_HST_TxtBox.Location = new System.Drawing.Point(99, 50);
             this.Vy446_DT_HST_TxtBox.Name = "Vy446_DT_HST_TxtBox";
             this.Vy446_DT_HST_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_DT_HST_TxtBox.TabIndex = 2;
             // 
             // Vy446_DT_SOKO_TxtBox
             // 
-            this.Vy446_DT_SOKO_TxtBox.Location = new System.Drawing.Point(153, 25);
+            this.Vy446_DT_SOKO_TxtBox.Location = new System.Drawing.Point(99, 25);
             this.Vy446_DT_SOKO_TxtBox.Name = "Vy446_DT_SOKO_TxtBox";
             this.Vy446_DT_SOKO_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_DT_SOKO_TxtBox.TabIndex = 1;
@@ -1518,9 +1557,9 @@
             this.groupBox8.Controls.Add(this.Vy446_gps_Latitude_TxtBox);
             this.groupBox8.Controls.Add(this.Vy446_gps_Utc_TxtBox);
             this.groupBox8.Controls.Add(this.label38);
-            this.groupBox8.Location = new System.Drawing.Point(279, 6);
+            this.groupBox8.Location = new System.Drawing.Point(220, 6);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(267, 330);
+            this.groupBox8.Size = new System.Drawing.Size(194, 330);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Received GPS";
@@ -1617,70 +1656,70 @@
             // 
             // Vy446_roll_TxtBox
             // 
-            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(153, 293);
+            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(80, 293);
             this.Vy446_roll_TxtBox.Name = "Vy446_roll_TxtBox";
             this.Vy446_roll_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_roll_TxtBox.TabIndex = 12;
             // 
             // Vy446_pitch_TxtBox
             // 
-            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(153, 268);
+            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(80, 268);
             this.Vy446_pitch_TxtBox.Name = "Vy446_pitch_TxtBox";
             this.Vy446_pitch_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_pitch_TxtBox.TabIndex = 11;
             // 
             // Vy446_gps_compass_TxtBox
             // 
-            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(153, 243);
+            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(80, 243);
             this.Vy446_gps_compass_TxtBox.Name = "Vy446_gps_compass_TxtBox";
             this.Vy446_gps_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_compass_TxtBox.TabIndex = 10;
             // 
             // Vy446_compass_TxtBox
             // 
-            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(153, 218);
+            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(80, 218);
             this.Vy446_compass_TxtBox.Name = "Vy446_compass_TxtBox";
             this.Vy446_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_compass_TxtBox.TabIndex = 9;
             // 
             // Vy446_heading_TxtBox
             // 
-            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(153, 193);
+            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(80, 193);
             this.Vy446_heading_TxtBox.Name = "Vy446_heading_TxtBox";
             this.Vy446_heading_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_heading_TxtBox.TabIndex = 8;
             // 
             // Vy446_avilability_TxtBox
             // 
-            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(153, 168);
+            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(80, 168);
             this.Vy446_avilability_TxtBox.Name = "Vy446_avilability_TxtBox";
             this.Vy446_avilability_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_avilability_TxtBox.TabIndex = 7;
             // 
             // Vy446_gps_Quality_TxtBox
             // 
-            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(153, 143);
+            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(80, 143);
             this.Vy446_gps_Quality_TxtBox.Name = "Vy446_gps_Quality_TxtBox";
             this.Vy446_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Quality_TxtBox.TabIndex = 6;
             // 
             // Vy446_gps_Sv_TxtBox
             // 
-            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(153, 118);
+            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(80, 118);
             this.Vy446_gps_Sv_TxtBox.Name = "Vy446_gps_Sv_TxtBox";
             this.Vy446_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Sv_TxtBox.TabIndex = 3;
             // 
             // Vy446_gps_Altitude_TxtBox
             // 
-            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(153, 93);
+            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(80, 93);
             this.Vy446_gps_Altitude_TxtBox.Name = "Vy446_gps_Altitude_TxtBox";
             this.Vy446_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Altitude_TxtBox.TabIndex = 5;
             // 
             // Vy446_gps_Longitude_TxtBox
             // 
-            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(153, 68);
+            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(80, 68);
             this.Vy446_gps_Longitude_TxtBox.Name = "Vy446_gps_Longitude_TxtBox";
             this.Vy446_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Longitude_TxtBox.TabIndex = 4;
@@ -1696,14 +1735,14 @@
             // 
             // Vy446_gps_Latitude_TxtBox
             // 
-            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(153, 43);
+            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(80, 43);
             this.Vy446_gps_Latitude_TxtBox.Name = "Vy446_gps_Latitude_TxtBox";
             this.Vy446_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Latitude_TxtBox.TabIndex = 2;
             // 
             // Vy446_gps_Utc_TxtBox
             // 
-            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(153, 18);
+            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(80, 18);
             this.Vy446_gps_Utc_TxtBox.Name = "Vy446_gps_Utc_TxtBox";
             this.Vy446_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy446_gps_Utc_TxtBox.TabIndex = 1;
@@ -1759,6 +1798,388 @@
             this.dataGridView1.Size = new System.Drawing.Size(619, 565);
             this.dataGridView1.TabIndex = 0;
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.Vy50_BUZZERPATLITE_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_YELLOWPATLITE_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_REDPATLITE_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_SendData_Button);
+            this.groupBox11.Controls.Add(this.Vy50_KARITAKASA_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDRIGHTCYLINDER_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDLEFTCYLINDER_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDSUIHEI_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_KARITAKASA_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDRIGHTCYLINDER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDLEFTCYLINDER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_SUIHEI_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_ENGINESTOP_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_BUZZER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_HAZARD_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_RIGHTWINKER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_LEFTWINKER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_SHITUDEN_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_TOFUKU_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_KAKIKOMI_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_KARITORI_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_SAGYOUKI_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDSTEERPOTENTIO_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_HSTCMD_TxtBox);
+            this.groupBox11.Controls.Add(this.label69);
+            this.groupBox11.Controls.Add(this.label68);
+            this.groupBox11.Controls.Add(this.Vy50_CMDFINPOS_TxtBox);
+            this.groupBox11.Controls.Add(this.label67);
+            this.groupBox11.Controls.Add(this.Vy50_CMDUDPOS_TxtBox);
+            this.groupBox11.Controls.Add(this.Vy50_CMDLRPOS_TxtBox);
+            this.groupBox11.Controls.Add(this.label66);
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.Vy50_AUGERPOS_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_AUGERHOME_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_AUGER_CheckBox);
+            this.groupBox11.Controls.Add(this.Vy50_ROBOTMODE_CheckBox);
+            this.groupBox11.Location = new System.Drawing.Point(258, 6);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(367, 452);
+            this.groupBox11.TabIndex = 2;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Send Command Data to Combine ECU";
+            // 
+            // Vy50_ROBOTMODE_CheckBox
+            // 
+            this.Vy50_ROBOTMODE_CheckBox.AutoSize = true;
+            this.Vy50_ROBOTMODE_CheckBox.Location = new System.Drawing.Point(6, 24);
+            this.Vy50_ROBOTMODE_CheckBox.Name = "Vy50_ROBOTMODE_CheckBox";
+            this.Vy50_ROBOTMODE_CheckBox.Size = new System.Drawing.Size(86, 16);
+            this.Vy50_ROBOTMODE_CheckBox.TabIndex = 0;
+            this.Vy50_ROBOTMODE_CheckBox.Text = "ロボットモード";
+            this.Vy50_ROBOTMODE_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_AUGER_CheckBox
+            // 
+            this.Vy50_AUGER_CheckBox.AutoSize = true;
+            this.Vy50_AUGER_CheckBox.Location = new System.Drawing.Point(6, 49);
+            this.Vy50_AUGER_CheckBox.Name = "Vy50_AUGER_CheckBox";
+            this.Vy50_AUGER_CheckBox.Size = new System.Drawing.Size(109, 16);
+            this.Vy50_AUGER_CheckBox.TabIndex = 1;
+            this.Vy50_AUGER_CheckBox.Text = "排出オーガクラッチ";
+            this.Vy50_AUGER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_AUGERHOME_CheckBox
+            // 
+            this.Vy50_AUGERHOME_CheckBox.AutoSize = true;
+            this.Vy50_AUGERHOME_CheckBox.Location = new System.Drawing.Point(6, 74);
+            this.Vy50_AUGERHOME_CheckBox.Name = "Vy50_AUGERHOME_CheckBox";
+            this.Vy50_AUGERHOME_CheckBox.Size = new System.Drawing.Size(125, 16);
+            this.Vy50_AUGERHOME_CheckBox.TabIndex = 2;
+            this.Vy50_AUGERHOME_CheckBox.Text = "排出オーガ自動収納";
+            this.Vy50_AUGERHOME_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_AUGERPOS_CheckBox
+            // 
+            this.Vy50_AUGERPOS_CheckBox.AutoSize = true;
+            this.Vy50_AUGERPOS_CheckBox.Location = new System.Drawing.Point(6, 99);
+            this.Vy50_AUGERPOS_CheckBox.Name = "Vy50_AUGERPOS_CheckBox";
+            this.Vy50_AUGERPOS_CheckBox.Size = new System.Drawing.Size(171, 16);
+            this.Vy50_AUGERPOS_CheckBox.TabIndex = 3;
+            this.Vy50_AUGERPOS_CheckBox.Text = "排出オーガ自動位置決め制御";
+            this.Vy50_AUGERPOS_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(6, 125);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(79, 12);
+            this.label65.TabIndex = 4;
+            this.label65.Text = "左右旋回関節:";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(6, 150);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(79, 12);
+            this.label66.TabIndex = 5;
+            this.label66.Text = "上下旋回関節:";
+            // 
+            // Vy50_CMDLRPOS_TxtBox
+            // 
+            this.Vy50_CMDLRPOS_TxtBox.Location = new System.Drawing.Point(91, 122);
+            this.Vy50_CMDLRPOS_TxtBox.Name = "Vy50_CMDLRPOS_TxtBox";
+            this.Vy50_CMDLRPOS_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_CMDLRPOS_TxtBox.TabIndex = 6;
+            this.Vy50_CMDLRPOS_TxtBox.Text = "93";
+            // 
+            // Vy50_CMDUDPOS_TxtBox
+            // 
+            this.Vy50_CMDUDPOS_TxtBox.Location = new System.Drawing.Point(91, 147);
+            this.Vy50_CMDUDPOS_TxtBox.Name = "Vy50_CMDUDPOS_TxtBox";
+            this.Vy50_CMDUDPOS_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_CMDUDPOS_TxtBox.TabIndex = 7;
+            this.Vy50_CMDUDPOS_TxtBox.Text = "152";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(6, 175);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(129, 12);
+            this.label67.TabIndex = 8;
+            this.label67.Text = "フィン開度(0-255)[AD値]:";
+            // 
+            // Vy50_CMDFINPOS_TxtBox
+            // 
+            this.Vy50_CMDFINPOS_TxtBox.Location = new System.Drawing.Point(141, 172);
+            this.Vy50_CMDFINPOS_TxtBox.Name = "Vy50_CMDFINPOS_TxtBox";
+            this.Vy50_CMDFINPOS_TxtBox.Size = new System.Drawing.Size(50, 19);
+            this.Vy50_CMDFINPOS_TxtBox.TabIndex = 9;
+            this.Vy50_CMDFINPOS_TxtBox.Text = "128";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(6, 200);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(67, 12);
+            this.label68.TabIndex = 10;
+            this.label68.Text = "主変速指令:";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(6, 227);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(55, 12);
+            this.label69.TabIndex = 11;
+            this.label69.Text = "操向指令:";
+            // 
+            // Vy50_HSTCMD_TxtBox
+            // 
+            this.Vy50_HSTCMD_TxtBox.Location = new System.Drawing.Point(91, 197);
+            this.Vy50_HSTCMD_TxtBox.Name = "Vy50_HSTCMD_TxtBox";
+            this.Vy50_HSTCMD_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_HSTCMD_TxtBox.TabIndex = 12;
+            this.Vy50_HSTCMD_TxtBox.Text = "1950";
+            // 
+            // Vy50_CMDSTEERPOTENTIO_TxtBox
+            // 
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox.Location = new System.Drawing.Point(91, 224);
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox.Name = "Vy50_CMDSTEERPOTENTIO_TxtBox";
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox.TabIndex = 13;
+            this.Vy50_CMDSTEERPOTENTIO_TxtBox.Text = "120";
+            // 
+            // Vy50_SAGYOUKI_CheckBox
+            // 
+            this.Vy50_SAGYOUKI_CheckBox.AutoSize = true;
+            this.Vy50_SAGYOUKI_CheckBox.Location = new System.Drawing.Point(6, 251);
+            this.Vy50_SAGYOUKI_CheckBox.Name = "Vy50_SAGYOUKI_CheckBox";
+            this.Vy50_SAGYOUKI_CheckBox.Size = new System.Drawing.Size(78, 16);
+            this.Vy50_SAGYOUKI_CheckBox.TabIndex = 14;
+            this.Vy50_SAGYOUKI_CheckBox.Text = "作業機オン";
+            this.Vy50_SAGYOUKI_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_KARITORI_CheckBox
+            // 
+            this.Vy50_KARITORI_CheckBox.AutoSize = true;
+            this.Vy50_KARITORI_CheckBox.Location = new System.Drawing.Point(6, 276);
+            this.Vy50_KARITORI_CheckBox.Name = "Vy50_KARITORI_CheckBox";
+            this.Vy50_KARITORI_CheckBox.Size = new System.Drawing.Size(66, 16);
+            this.Vy50_KARITORI_CheckBox.TabIndex = 15;
+            this.Vy50_KARITORI_CheckBox.Text = "刈取オン";
+            this.Vy50_KARITORI_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_KAKIKOMI_CheckBox
+            // 
+            this.Vy50_KAKIKOMI_CheckBox.AutoSize = true;
+            this.Vy50_KAKIKOMI_CheckBox.Location = new System.Drawing.Point(6, 301);
+            this.Vy50_KAKIKOMI_CheckBox.Name = "Vy50_KAKIKOMI_CheckBox";
+            this.Vy50_KAKIKOMI_CheckBox.Size = new System.Drawing.Size(72, 16);
+            this.Vy50_KAKIKOMI_CheckBox.TabIndex = 16;
+            this.Vy50_KAKIKOMI_CheckBox.Text = "強制掻込";
+            this.Vy50_KAKIKOMI_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_TOFUKU_CheckBox
+            // 
+            this.Vy50_TOFUKU_CheckBox.AutoSize = true;
+            this.Vy50_TOFUKU_CheckBox.Location = new System.Drawing.Point(6, 327);
+            this.Vy50_TOFUKU_CheckBox.Name = "Vy50_TOFUKU_CheckBox";
+            this.Vy50_TOFUKU_CheckBox.Size = new System.Drawing.Size(82, 16);
+            this.Vy50_TOFUKU_CheckBox.TabIndex = 17;
+            this.Vy50_TOFUKU_CheckBox.Text = "倒伏スイッチ";
+            this.Vy50_TOFUKU_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_SHITUDEN_CheckBox
+            // 
+            this.Vy50_SHITUDEN_CheckBox.AutoSize = true;
+            this.Vy50_SHITUDEN_CheckBox.Location = new System.Drawing.Point(6, 353);
+            this.Vy50_SHITUDEN_CheckBox.Name = "Vy50_SHITUDEN_CheckBox";
+            this.Vy50_SHITUDEN_CheckBox.Size = new System.Drawing.Size(82, 16);
+            this.Vy50_SHITUDEN_CheckBox.TabIndex = 18;
+            this.Vy50_SHITUDEN_CheckBox.Text = "湿田スイッチ";
+            this.Vy50_SHITUDEN_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_LEFTWINKER_CheckBox
+            // 
+            this.Vy50_LEFTWINKER_CheckBox.AutoSize = true;
+            this.Vy50_LEFTWINKER_CheckBox.Location = new System.Drawing.Point(91, 251);
+            this.Vy50_LEFTWINKER_CheckBox.Name = "Vy50_LEFTWINKER_CheckBox";
+            this.Vy50_LEFTWINKER_CheckBox.Size = new System.Drawing.Size(70, 16);
+            this.Vy50_LEFTWINKER_CheckBox.TabIndex = 19;
+            this.Vy50_LEFTWINKER_CheckBox.Text = "左ウィンカ";
+            this.Vy50_LEFTWINKER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_RIGHTWINKER_CheckBox
+            // 
+            this.Vy50_RIGHTWINKER_CheckBox.AutoSize = true;
+            this.Vy50_RIGHTWINKER_CheckBox.Location = new System.Drawing.Point(91, 276);
+            this.Vy50_RIGHTWINKER_CheckBox.Name = "Vy50_RIGHTWINKER_CheckBox";
+            this.Vy50_RIGHTWINKER_CheckBox.Size = new System.Drawing.Size(70, 16);
+            this.Vy50_RIGHTWINKER_CheckBox.TabIndex = 20;
+            this.Vy50_RIGHTWINKER_CheckBox.Text = "右ウィンカ";
+            this.Vy50_RIGHTWINKER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_HAZARD_CheckBox
+            // 
+            this.Vy50_HAZARD_CheckBox.AutoSize = true;
+            this.Vy50_HAZARD_CheckBox.Location = new System.Drawing.Point(91, 301);
+            this.Vy50_HAZARD_CheckBox.Name = "Vy50_HAZARD_CheckBox";
+            this.Vy50_HAZARD_CheckBox.Size = new System.Drawing.Size(63, 16);
+            this.Vy50_HAZARD_CheckBox.TabIndex = 21;
+            this.Vy50_HAZARD_CheckBox.Text = "ハザード";
+            this.Vy50_HAZARD_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_BUZZER_CheckBox
+            // 
+            this.Vy50_BUZZER_CheckBox.AutoSize = true;
+            this.Vy50_BUZZER_CheckBox.Location = new System.Drawing.Point(91, 327);
+            this.Vy50_BUZZER_CheckBox.Name = "Vy50_BUZZER_CheckBox";
+            this.Vy50_BUZZER_CheckBox.Size = new System.Drawing.Size(53, 16);
+            this.Vy50_BUZZER_CheckBox.TabIndex = 22;
+            this.Vy50_BUZZER_CheckBox.Text = "ブザー";
+            this.Vy50_BUZZER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_ENGINESTOP_CheckBox
+            // 
+            this.Vy50_ENGINESTOP_CheckBox.AutoSize = true;
+            this.Vy50_ENGINESTOP_CheckBox.Location = new System.Drawing.Point(91, 353);
+            this.Vy50_ENGINESTOP_CheckBox.Name = "Vy50_ENGINESTOP_CheckBox";
+            this.Vy50_ENGINESTOP_CheckBox.Size = new System.Drawing.Size(85, 16);
+            this.Vy50_ENGINESTOP_CheckBox.TabIndex = 23;
+            this.Vy50_ENGINESTOP_CheckBox.Text = "エンジン停止";
+            this.Vy50_ENGINESTOP_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_SUIHEI_CheckBox
+            // 
+            this.Vy50_SUIHEI_CheckBox.AutoSize = true;
+            this.Vy50_SUIHEI_CheckBox.Location = new System.Drawing.Point(190, 251);
+            this.Vy50_SUIHEI_CheckBox.Name = "Vy50_SUIHEI_CheckBox";
+            this.Vy50_SUIHEI_CheckBox.Size = new System.Drawing.Size(96, 16);
+            this.Vy50_SUIHEI_CheckBox.TabIndex = 24;
+            this.Vy50_SUIHEI_CheckBox.Text = "左右水平自動";
+            this.Vy50_SUIHEI_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_CMDLEFTCYLINDER_CheckBox
+            // 
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.AutoSize = true;
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.Location = new System.Drawing.Point(190, 276);
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.Name = "Vy50_CMDLEFTCYLINDER_CheckBox";
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.Size = new System.Drawing.Size(95, 16);
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.TabIndex = 25;
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.Text = "左シリンダ指令";
+            this.Vy50_CMDLEFTCYLINDER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_CMDRIGHTCYLINDER_CheckBox
+            // 
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.AutoSize = true;
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.Location = new System.Drawing.Point(190, 301);
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.Name = "Vy50_CMDRIGHTCYLINDER_CheckBox";
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.Size = new System.Drawing.Size(95, 16);
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.TabIndex = 26;
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.Text = "右シリンダ指令";
+            this.Vy50_CMDRIGHTCYLINDER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_KARITAKASA_CheckBox
+            // 
+            this.Vy50_KARITAKASA_CheckBox.AutoSize = true;
+            this.Vy50_KARITAKASA_CheckBox.Location = new System.Drawing.Point(190, 326);
+            this.Vy50_KARITAKASA_CheckBox.Name = "Vy50_KARITAKASA_CheckBox";
+            this.Vy50_KARITAKASA_CheckBox.Size = new System.Drawing.Size(85, 16);
+            this.Vy50_KARITAKASA_CheckBox.TabIndex = 27;
+            this.Vy50_KARITAKASA_CheckBox.Text = "刈高ポジコン";
+            this.Vy50_KARITAKASA_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_CMDSUIHEI_TxtBox
+            // 
+            this.Vy50_CMDSUIHEI_TxtBox.Location = new System.Drawing.Point(292, 249);
+            this.Vy50_CMDSUIHEI_TxtBox.Name = "Vy50_CMDSUIHEI_TxtBox";
+            this.Vy50_CMDSUIHEI_TxtBox.Size = new System.Drawing.Size(69, 19);
+            this.Vy50_CMDSUIHEI_TxtBox.TabIndex = 28;
+            this.Vy50_CMDSUIHEI_TxtBox.Text = "0";
+            // 
+            // Vy50_CMDLEFTCYLINDER_TxtBox
+            // 
+            this.Vy50_CMDLEFTCYLINDER_TxtBox.Location = new System.Drawing.Point(292, 274);
+            this.Vy50_CMDLEFTCYLINDER_TxtBox.Name = "Vy50_CMDLEFTCYLINDER_TxtBox";
+            this.Vy50_CMDLEFTCYLINDER_TxtBox.Size = new System.Drawing.Size(69, 19);
+            this.Vy50_CMDLEFTCYLINDER_TxtBox.TabIndex = 29;
+            this.Vy50_CMDLEFTCYLINDER_TxtBox.Text = "0";
+            // 
+            // Vy50_CMDRIGHTCYLINDER_TxtBox
+            // 
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox.Location = new System.Drawing.Point(292, 299);
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox.Name = "Vy50_CMDRIGHTCYLINDER_TxtBox";
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox.Size = new System.Drawing.Size(69, 19);
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox.TabIndex = 30;
+            this.Vy50_CMDRIGHTCYLINDER_TxtBox.Text = "0";
+            // 
+            // Vy50_KARITAKASA_TxtBox
+            // 
+            this.Vy50_KARITAKASA_TxtBox.Location = new System.Drawing.Point(292, 325);
+            this.Vy50_KARITAKASA_TxtBox.Name = "Vy50_KARITAKASA_TxtBox";
+            this.Vy50_KARITAKASA_TxtBox.Size = new System.Drawing.Size(69, 19);
+            this.Vy50_KARITAKASA_TxtBox.TabIndex = 31;
+            this.Vy50_KARITAKASA_TxtBox.Text = "30";
+            // 
+            // Vy50_SendData_Button
+            // 
+            this.Vy50_SendData_Button.Location = new System.Drawing.Point(6, 423);
+            this.Vy50_SendData_Button.Name = "Vy50_SendData_Button";
+            this.Vy50_SendData_Button.Size = new System.Drawing.Size(355, 23);
+            this.Vy50_SendData_Button.TabIndex = 32;
+            this.Vy50_SendData_Button.Text = "Vy50 Send Data";
+            this.Vy50_SendData_Button.UseVisualStyleBackColor = true;
+            this.Vy50_SendData_Button.Click += new System.EventHandler(this.Vy50_SendData_Button_Click);
+            // 
+            // Vy50_REDPATLITE_CheckBox
+            // 
+            this.Vy50_REDPATLITE_CheckBox.AutoSize = true;
+            this.Vy50_REDPATLITE_CheckBox.Location = new System.Drawing.Point(226, 124);
+            this.Vy50_REDPATLITE_CheckBox.Name = "Vy50_REDPATLITE_CheckBox";
+            this.Vy50_REDPATLITE_CheckBox.Size = new System.Drawing.Size(73, 16);
+            this.Vy50_REDPATLITE_CheckBox.TabIndex = 33;
+            this.Vy50_REDPATLITE_CheckBox.Text = "赤ﾊﾟﾄﾗｲﾄ";
+            this.Vy50_REDPATLITE_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_YELLOWPATLITE_CheckBox
+            // 
+            this.Vy50_YELLOWPATLITE_CheckBox.AutoSize = true;
+            this.Vy50_YELLOWPATLITE_CheckBox.Location = new System.Drawing.Point(226, 148);
+            this.Vy50_YELLOWPATLITE_CheckBox.Name = "Vy50_YELLOWPATLITE_CheckBox";
+            this.Vy50_YELLOWPATLITE_CheckBox.Size = new System.Drawing.Size(73, 16);
+            this.Vy50_YELLOWPATLITE_CheckBox.TabIndex = 34;
+            this.Vy50_YELLOWPATLITE_CheckBox.Text = "黄ﾊﾟﾄﾗｲﾄ";
+            this.Vy50_YELLOWPATLITE_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy50_BUZZERPATLITE_CheckBox
+            // 
+            this.Vy50_BUZZERPATLITE_CheckBox.AutoSize = true;
+            this.Vy50_BUZZERPATLITE_CheckBox.Location = new System.Drawing.Point(226, 171);
+            this.Vy50_BUZZERPATLITE_CheckBox.Name = "Vy50_BUZZERPATLITE_CheckBox";
+            this.Vy50_BUZZERPATLITE_CheckBox.Size = new System.Drawing.Size(90, 16);
+            this.Vy50_BUZZERPATLITE_CheckBox.TabIndex = 35;
+            this.Vy50_BUZZERPATLITE_CheckBox.Text = "ﾊﾟﾄﾗｲﾄﾌﾞｻﾞｰ";
+            this.Vy50_BUZZERPATLITE_CheckBox.UseVisualStyleBackColor = true;
+            // 
             // IntegratedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1767,7 +2188,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "IntegratedForm";
-            this.Text = "Device Setting Form for Integrated Control System";
+            this.Text = "Integrated Control System For Autonomous Combine Harvester";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).EndInit();
@@ -1798,6 +2219,8 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1967,5 +2390,42 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.WebBrowser AmedasWebBrowser;
         private System.Windows.Forms.Button AmedasSaveButton;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox Vy50_CMDUDPOS_TxtBox;
+        private System.Windows.Forms.TextBox Vy50_CMDLRPOS_TxtBox;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.CheckBox Vy50_AUGERPOS_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_AUGERHOME_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_AUGER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_ROBOTMODE_CheckBox;
+        private System.Windows.Forms.TextBox Vy50_CMDFINPOS_TxtBox;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox Vy50_CMDSTEERPOTENTIO_TxtBox;
+        private System.Windows.Forms.TextBox Vy50_HSTCMD_TxtBox;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.CheckBox Vy50_SHITUDEN_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_TOFUKU_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_KAKIKOMI_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_KARITORI_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_SAGYOUKI_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_ENGINESTOP_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_BUZZER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_HAZARD_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_RIGHTWINKER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_LEFTWINKER_CheckBox;
+        private System.Windows.Forms.Button Vy50_SendData_Button;
+        private System.Windows.Forms.TextBox Vy50_KARITAKASA_TxtBox;
+        private System.Windows.Forms.TextBox Vy50_CMDRIGHTCYLINDER_TxtBox;
+        private System.Windows.Forms.TextBox Vy50_CMDLEFTCYLINDER_TxtBox;
+        private System.Windows.Forms.TextBox Vy50_CMDSUIHEI_TxtBox;
+        private System.Windows.Forms.CheckBox Vy50_KARITAKASA_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_CMDRIGHTCYLINDER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_CMDLEFTCYLINDER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_SUIHEI_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_BUZZERPATLITE_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_YELLOWPATLITE_CheckBox;
+        private System.Windows.Forms.CheckBox Vy50_REDPATLITE_CheckBox;
     }
 }

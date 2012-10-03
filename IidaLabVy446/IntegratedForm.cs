@@ -346,6 +346,257 @@ namespace IidaLabVy446
         }
 
         /// <summary>
+        /// command data send to combine using serial
+        /// </summary>
+        private void CombineVy50CmdSend()
+        {
+            this._vy50.m_iCtrlMode = true;
+
+            // ロボットモード切替のチェック取得
+            if (this.Vy50_ROBOTMODE_CheckBox.Checked == true)
+            {
+                this._vy50.RobotModeChk = true;
+            }
+            else
+            {
+                this._vy50.RobotModeChk = false;
+            }
+
+            // 作業機クラッチのチェック取得
+            if (this.Vy50_SAGYOUKI_CheckBox.Checked == true)
+            {
+                this._vy50.SagyoukiChk = true;
+            }
+            else
+            {
+                this._vy50.SagyoukiChk = false;
+            }
+
+            // 刈取クラッチのチェック取得
+            if (this.Vy50_KARITORI_CheckBox.Checked == true)
+            {
+                this._vy50.KaritoriChk = true;
+            }
+            else
+            {
+                this._vy50.KaritoriChk = false;
+            }
+
+            // 刈高ポジコン取部昇降ラジオボタン取得
+            if (this.Vy50_KARITAKASA_CheckBox.Checked == true)
+            {
+                this._vy50.KaritakaChk = true;
+            }
+            else
+            {
+                this._vy50.KaritakaChk = false;
+            }
+
+            // 強制掻込スイッチのチェック取得
+            if (this.Vy50_KAKIKOMI_CheckBox.Checked == true)
+            {
+                this._vy50.KakikomiChk = true;
+            }
+            else
+            {
+                this._vy50.KakikomiChk = false;
+            }
+
+            // 倒伏スイッチのチェック取得
+            if (this.Vy50_TOFUKU_CheckBox.Checked == true)
+            {
+                this._vy50.TofukuChk = true;
+            }
+            else
+            {
+                this._vy50.TofukuChk = false;
+            }
+
+            // 湿田スイッチのチェック取得
+            if (this.Vy50_SHITUDEN_CheckBox.Checked == true)
+            {
+                this._vy50.ShitudenChk = true;
+            }
+            else
+            {
+                this._vy50.ShitudenChk = false;
+            }
+
+            // 排出オーガクラッチのチェック取得
+            if (this.Vy50_AUGER_CheckBox.Checked == true)
+            {
+                this._vy50.AugerChk = true;
+            }
+            else
+            {
+                this._vy50.AugerChk = false;
+            }
+
+            // 排出オーガ自動位置決めのチェック取得
+            if (this.Vy50_AUGERPOS_CheckBox.Checked == true)
+            {
+                this._vy50.AugerPosChk = true;
+            }
+            else
+            {
+                this._vy50.AugerPosChk = false;
+            }
+
+            // 排出オーガ収納スイッチのチェック取得
+            if (this.Vy50_AUGERHOME_CheckBox.Checked == true)
+            {
+                this._vy50.AugerHomeChk = true;
+            }
+            else
+            {
+                this._vy50.AugerHomeChk = false;
+            }
+
+            // 左右水平制御のチェック取得
+            if (this.Vy50_SUIHEI_CheckBox.Checked == true)
+            {
+                this._vy50.SuiheiChk = true;
+            }
+            else
+            {
+                this._vy50.SuiheiChk = false;
+            }
+
+            // 左シリンダ制御のチェック取得
+            if (this.Vy50_CMDLEFTCYLINDER_CheckBox.Checked == true)
+            {
+                this._vy50.LeftCylinderChk = true;
+            }
+            else
+            {
+                this._vy50.LeftCylinderChk = false;
+            }
+
+            // 右シリンダ制御のチェック取得
+            if (this.Vy50_CMDRIGHTCYLINDER_CheckBox.Checked == true)
+            {
+                this._vy50.RightCylinderChk = true;
+            }
+            else
+            {
+                this._vy50.RightCylinderChk = false;
+            }
+
+            // 左ウィンカスイッチのチェック取得
+            if (this.Vy50_LEFTWINKER_CheckBox.Checked == true)
+            {
+                this._vy50.LeftWinkerChk = true;
+            }
+            else
+            {
+                this._vy50.LeftWinkerChk = false;
+            }
+
+            // 右ウィンカスイッチのチェック取得
+            if (this.Vy50_RIGHTWINKER_CheckBox.Checked == true)
+            {
+                this._vy50.RightWinkerChk = true;
+            }
+            else
+            {
+                this._vy50.RightWinkerChk = false;
+            }
+
+            // ハザードスイッチのチェック取得
+            if (this.Vy50_HAZARD_CheckBox.Checked == true)
+            {
+                this._vy50.HazardChk = true;
+            }
+            else
+            {
+                this._vy50.HazardChk = false;
+            }
+
+            // ブザースイッチのチェック取得
+            if (this.Vy50_BUZZER_CheckBox.Checked == true)
+            {
+                this._vy50.BuzzerChk = true;
+            }
+            else
+            {
+                this._vy50.BuzzerChk = false;
+            }
+
+            // エンジン停止スイッチのチェックの取得
+            if (this.Vy50_ENGINESTOP_CheckBox.Checked == true)
+            {
+                this._vy50.EngineStopChk = true;
+            }
+            else
+            {
+                this._vy50.EngineStopChk = false;
+            }
+
+            // ブザーのチェック取得
+            if (this.Vy50_BUZZERPATLITE_CheckBox.Checked == true)
+            {
+                this._vy50.BuzzerPatliteChk = true;
+            }
+            else
+            {
+                this._vy50.BuzzerPatliteChk = false;
+            }
+
+            // 黄色ランプのチェック取得
+            if (this.Vy50_YELLOWPATLITE_CheckBox.Checked == true)
+            {
+                this._vy50.YellowPatliteChk = true;
+            }
+            else
+            {
+                this._vy50.YellowPatliteChk = false;
+            }
+
+            // 赤色ランプのチェック取得
+            if (this.Vy50_REDPATLITE_CheckBox.Checked == true)
+            {
+                this._vy50.RedPatliteChk = true;
+            }
+            else
+            {
+                this._vy50.RedPatliteChk = false;
+            }
+
+            // 操舵量指令値(0-255)
+            this._vy50.uc_CmdSteer = Convert.ToByte(this.Vy50_CMDSTEERPOTENTIO_TxtBox.Text);
+
+            // 主変速指令値の取得
+            this._vy50.us_HstCmd = Convert.ToUInt16(this.Vy50_HSTCMD_TxtBox.Text);
+
+            // 刈高さポジコン指令値(0-255)
+            this._vy50.uc_CmdKaritakasa = Convert.ToByte(this.Vy50_KARITAKASA_TxtBox.Text);
+
+            // フィン開度指令値(0-255)
+            this._vy50.uc_CmdFinPos = Convert.ToByte(this.Vy50_CMDFINPOS_TxtBox.Text);
+
+            // 排出オーガ左右旋回関節目標値(0-1023)
+            this._vy50.us_CmdLRPos = Convert.ToUInt16(this.Vy50_CMDLRPOS_TxtBox.Text);
+
+            // 排出オーガ上下旋回関節目標値(0-1023)
+            this._vy50.us_CmdUDPos = Convert.ToUInt16(this.Vy50_CMDUDPOS_TxtBox.Text);
+
+            // 左右傾斜の目標値(0-1023)
+            this._vy50.us_CmdSuihei = Convert.ToUInt16(this.Vy50_CMDSUIHEI_TxtBox.Text);
+
+            // 左シリンダの目標値(0-1023)
+            this._vy50.us_CmdLeftCylinder = Convert.ToUInt16(this.Vy50_CMDLEFTCYLINDER_TxtBox.Text);
+
+            // 右シリンダの目標値(0-1023)
+            this._vy50.us_CmdRightCylinder = Convert.ToUInt16(this.Vy50_CMDRIGHTCYLINDER_TxtBox.Text);
+
+            // write cmd
+            this._vy50.SendCmdWrite();
+
+            // data send
+            this._bodySerialConnect.DataWrite(this._vy50.ucCmdBuf);
+        }
+
+        /// <summary>
         /// draw on the map using google earth
         /// </summary>
         /// <param name="_lat"></param>
@@ -555,7 +806,19 @@ namespace IidaLabVy446
             this.AmedasXmlToGrid();
         }
 
+        /// <summary>
+        /// Send command to combine ecu event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Vy50_SendData_Button_Click(object sender, EventArgs e)
+        {
+            this.CombineVy50CmdSend();
+        }
+
         #endregion
+
+
 
     }
 }

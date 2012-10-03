@@ -51,13 +51,17 @@ namespace IidaLabVy446
 
         private void button3_Click(object sender, EventArgs e)
         {
-            byte[] bytes = new byte[4];
-            bytes[0] = 55;
-            bytes[1] = 105;
-            bytes[2] = 63;
-            bytes[3] = 65;
+            //byte[] bytes = new byte[4];
+            //bytes[0] = 55;
+            //bytes[1] = 105;
+            //bytes[2] = 63;
+            //bytes[3] = 65;
 
-            this.LogTxtBox.Text = Convert.ToString(BitConverter.ToSingle(bytes, 0));
+            //this.LogTxtBox.Text = Convert.ToString(BitConverter.ToSingle(bytes, 0));
+
+            //byte a = 0xff ^ 0x40;
+            byte a = (byte)(32768 & 0x00ff);
+            this.LogTxtBox.Text = Convert.ToString(a);
         }
     }
 }

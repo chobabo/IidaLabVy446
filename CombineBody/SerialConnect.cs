@@ -117,6 +117,20 @@ namespace CombineBody
         }
 
         /// <summary>
+        /// Writes a specified number of bytes to the serial port using data from a buffer.
+        /// </summary>
+        /// <param name="cmd"></param>
+        public void DataWrite(byte[] cmd)
+        {
+            if (this._serialPort.IsOpen == false)
+            {
+                return;
+            }
+
+            this._serialPort.Write(cmd, 0, cmd.Length);
+        }
+
+        /// <summary>
         /// dispose
         /// </summary>
         public void Dispose()
