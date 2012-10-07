@@ -82,7 +82,7 @@
         /// <summary>
         /// scaling factor of laser sensor
         /// </summary>
-        public int scalingFactor { get; set; }
+        public double scalingFactor { get; set; }
 
         /// <summary>
         /// Defines the number of items on measured output
@@ -121,7 +121,7 @@
         /// <summary>
         /// constructor - real time mode
         /// </summary>
-        public SickLidar(string _host, int _port, int _selectDevice, int _scalingFactor, bool _configureMode)
+        public SickLidar(string _host, int _port, int _selectDevice, double _scalingFactor, bool _configureMode)
         {
             this.STX = (char)2;
             this.ETX = (char)3;
@@ -161,7 +161,7 @@
         /// </summary>
         /// <param name="_selectDevice"></param>
         /// <param name="_scalingFactor"></param>
-        public SickLidar(int _selectDevice, int _scalingFactor)
+        public SickLidar(int _selectDevice, double _scalingFactor)
         {
             this.isInitializeList = false;
             this.selectDevice = _selectDevice;
@@ -334,12 +334,14 @@
 
             if (this.isInitializeList == false)
             {
+                this.orgList = new List<int>();
                 this.polarList = new List<PolarPoint>();
                 this.cartesianList = new List<CartesianPoint>();
 
                 this.isInitializeList = true;
             }
 
+            this.orgList.Clear();
             this.polarList.Clear();
 
             PolarPoint p;
@@ -348,7 +350,8 @@
             {
                 //--rowLength value is (mm)--//
                 int rowLength = Convert.ToInt32(lineArr[i]);
-             
+                this.orgList.Add(rowLength);
+
                 p.theta = ((this.steps * i) + (this.startAngle - 180.0)) * this.piBy180;
                 //--convert mm to m--//
                 p.row = (double)rowLength * this.scalingFactor / 1000;

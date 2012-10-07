@@ -35,11 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Algorithm">
+      <HintPath>..\Algorithm\bin\Debug\Algorithm.dll</HintPath>
+    </Reference>
     <Reference Include="Amedas">
       <HintPath>..\Amedas\bin\Debug\Amedas.dll</HintPath>
     </Reference>
     <Reference Include="CombineBody">
       <HintPath>..\CombineBody\bin\Debug\CombineBody.dll</HintPath>
+    </Reference>
+    <Reference Include="Communication">
+      <HintPath>..\Communication\bin\Debug\Communication.dll</HintPath>
     </Reference>
     <Reference Include="FieldMap">
       <HintPath>..\FieldMap\bin\Debug\FieldMap.dll</HintPath>

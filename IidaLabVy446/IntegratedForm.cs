@@ -16,6 +16,8 @@ using CombineBody;
 using FieldMap;
 using System.Xml;
 using Amedas;
+using Algorithm;
+using Communication;
 
 namespace IidaLabVy446
 {
@@ -33,12 +35,25 @@ namespace IidaLabVy446
         private SickLidar.Graph graph;
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
+        private Algorithm.SplitAndMerge sam;
+
+        /// <summary>
+        /// gets or sets adapt split and merge
+        /// </summary>
+        private bool isSam { get; set; }
+
+        /// <summary>
+        /// gets or sets initialize lidar info
+        /// </summary>
+        private bool isIniLidarInfo { get; set; }
 
         /// <summary>
         /// Initialize Lidar Sensor
         /// </summary>
         private void LidarConnect()
         {
+            this.isIniLidarInfo = false;
+
             this.graph = new Graph();
             this.graph.CreateGraph(zg1);
 
@@ -48,7 +63,7 @@ namespace IidaLabVy446
                     this.LidarHostTxtBox.Text,
                     Convert.ToInt32(this.LidarPortTxtBox.Text),
                     this.LidarSelectComboBox.SelectedIndex,
-                    Convert.ToInt32(this.LidarScalingTxtBox.Text),
+                    Convert.ToDouble(this.LidarScalingTxtBox.Text),
                     false
                     );
 
@@ -65,13 +80,28 @@ namespace IidaLabVy446
             {
                 this.sickLidar = new SickLidar.SickLidar(
                     this.LidarSelectComboBox.SelectedIndex,
-                    Convert.ToInt32(this.LidarScalingTxtBox.Text)
+                    Convert.ToDouble(this.LidarScalingTxtBox.Text)
                        );
 
                 this.lidarFile = new SickLidar.File(
                     this.LidarSaveCheckBox.Checked, 
                     this.LidarReadCheckBox.Checked
                     );
+            }
+
+            if (this.LidarSplitAndMergeCheckBox.Checked == true)
+            {
+                this.isSam = true;
+                this.sam = new Algorithm.SplitAndMerge(
+                    this.LidarSelectComboBox.SelectedIndex,
+                    Convert.ToDouble(this.LidarSplitAndMergeThresholdTxtBox.Text),
+                    Convert.ToDouble(this.LidarSplitAndMergeDeviationTxtBox.Text),
+                    Convert.ToInt32(this.LidarSplitAndMergeMinNoTxtBox.Text)
+                    );
+            }
+            else
+            {
+                this.isSam = false;
             }
         }
 
@@ -85,7 +115,7 @@ namespace IidaLabVy446
                 this.sickLidar.RequestScan();
                 this.sickLidar.ConvertHexToPolar();
                 this.sickLidar.ConvertPolarToCartesian();
-                this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1);
+                this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
 
                 if (this.LidarSaveCheckBox.Checked == true)
                 {
@@ -98,7 +128,7 @@ namespace IidaLabVy446
                 {
                     this.sickLidar.ConvertReadDataToPolar(this.readCount, this.lidarFile.readData);
                     this.sickLidar.ConvertPolarToCartesian();
-                    this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1);
+                    this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
                     //this.readCount++;
                 }
                 else
@@ -106,6 +136,33 @@ namespace IidaLabVy446
                     //this.SickTimer.Enabled = false;
                 }
             }
+
+            // initialize device information
+            if (this.isIniLidarInfo == false)
+            {
+                this.LidarDeviceInfoLengthTxtBox.Text = Convert.ToString(this.sickLidar.orgList.Count);
+                this.LidarDeviceInfoResolutionTxtBox.Text = Convert.ToString(this.sickLidar.steps);
+                this.LidarDeviceInfoStartAngleTxtBox.Text = Convert.ToString(this.sickLidar.startAngle);
+                this.isIniLidarInfo = true;
+            }
+
+            // split-and-merge 
+            if (this.LidarSplitAndMergeCheckBox.Checked == true)
+            {
+                this.sam.start(
+                    this.sickLidar.orgList,
+                    this.sickLidar.steps,
+                    this.sickLidar.startAngle,
+                    Convert.ToDouble(this.LidarScalingTxtBox.Text)
+                    );
+
+                this.graph.UpdataSplitAndMergeGraph(this.sam.lateralSeg, this.sam.groundHeight, zg1, this.isSam);
+
+                this.LidarSplitAndMergeSegIndexTxtBox.Text = Convert.ToString(this.sam.lateralSeg);
+                this.LidarSplitAndMergeGroundHeightTxtBox.Text = Convert.ToString(this.sam.groundHeight);
+            }
+
+
         }
         
         #endregion
@@ -648,6 +705,50 @@ namespace IidaLabVy446
 
         #endregion
 
+        #region Communication
+
+        private Communication.Connect connect;
+
+        /// <summary>
+        /// Communication Connect
+        /// </summary>
+        private void CommunicationConnect()
+        {
+            this.connect = new Communication.Connect(
+                this.TcpIpServerCheckBox.Checked,
+                this.TcpIpClientCheckBox.Checked,
+                this.TcpIpServerIpTxtBox.Text,
+                Convert.ToInt32(this.TcpIpPortTxtBox.Text)
+                );
+
+            this.TcpIpClientIpTxtBox.Text = this.connect.debugMsg;
+        }
+
+        /// <summary>
+        /// Communication Play
+        /// </summary>
+        private void CommunicationPlay()
+        {
+            if (this.TcpIpServerCheckBox.Checked == true)
+            {
+                string msg = Convert.ToString(this.readCount) + " ";
+                for (int i = 0; i < this.sickLidar.orgList.Count; i++)
+                {
+                    msg += Convert.ToString(this.sickLidar.orgList[i]) + " ";
+                }
+
+                this.connect.ServerSendDataToClient(msg);
+            }
+
+            if (this.TcpIpClientCheckBox.Checked == true)
+            {
+                this.connect.ClientReceiveDataFromServer();
+                this.TcpIpDebugTxtBox.Text = this.connect.receivedData;
+            }
+        }
+
+        #endregion
+
         #region Constructor
 
         public IntegratedForm()
@@ -686,6 +787,13 @@ namespace IidaLabVy446
 
             this.IntegratedTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
             this.IntegratedTimer.Enabled = true;
+
+            if (this.TcpIpIsAvailableCheckBox.Checked == true)
+            {
+                this.CommunicationConnect();
+                this.CommunicationTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
+                this.CommunicationTimer.Enabled = true;
+            }
         }
 
         /// <summary>
@@ -736,9 +844,29 @@ namespace IidaLabVy446
                         }
                     }
                 }
-
             }
             else 
+            { 
+            }
+
+            if (this.CommunicationTimer.Enabled == true)
+            {
+                this.CommunicationTimer.Enabled = false;
+
+                if (this.TcpIpIsAvailableCheckBox.Checked == true)
+                {
+                    if (this.TcpIpClientCheckBox.Checked == true)
+                    {
+                        this.connect.ClientDispose();
+                    }
+
+                    if (this.TcpIpServerCheckBox.Checked == true)
+                    {
+                        this.connect.ServerDispose();
+                    }
+                }
+            }
+            else
             { 
             }
         }
@@ -754,7 +882,20 @@ namespace IidaLabVy446
         }
 
         /// <summary>
-        /// Timer Event
+        /// Communication Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CommunicationTimer_Tick(object sender, EventArgs e)
+        {
+            if (this.TcpIpIsAvailableCheckBox.Checked == true)
+            {
+                this.CommunicationPlay();
+            }
+        }
+
+        /// <summary>
+        /// Hardware Timer Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -817,8 +958,6 @@ namespace IidaLabVy446
         }
 
         #endregion
-
-
 
     }
 }
