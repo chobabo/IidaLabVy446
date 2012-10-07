@@ -48,6 +48,11 @@ namespace IidaLabVy446
         private bool isIniLidarInfo { get; set; }
 
         /// <summary>
+        /// gets or sets lidar data of string type
+        /// </summary>
+        private string lidarData { get; set; }
+
+        /// <summary>
         /// Initialize Lidar Sensor
         /// </summary>
         private void LidarConnect()
@@ -162,7 +167,11 @@ namespace IidaLabVy446
                 this.LidarSplitAndMergeGroundHeightTxtBox.Text = Convert.ToString(this.sam.groundHeight);
             }
 
-
+            // server mode
+            if (this.TcpIpServerCheckBox.Checked == true)
+            {
+                this.lidarData = this.tcpFile.AddToString(this.readCount, this.sickLidar.orgList);
+            }
         }
         
         #endregion
@@ -214,6 +223,11 @@ namespace IidaLabVy446
         private CombineBody.Vy50 _vy50;
         private CombineBody.Vy446 _vy446;
         private FieldMap.DrawMap _drawMap;
+
+        /// <summary>
+        /// combine data of string type
+        /// </summary>
+        private string combineData { get; set; }
 
         /// <summary>
         /// Connect Combine Body using RS-232C
@@ -283,6 +297,12 @@ namespace IidaLabVy446
                 {
                     this.CombineVy446Info(this._bodySerialConnect.orgList);
                 }
+
+                // server mode
+                if (this.TcpIpServerCheckBox.Checked == true)
+                {
+                    this.combineData = this.tcpFile.AddToString(this.readCount, this._bodySerialConnect.orgList);
+                }
             }
             else
             {
@@ -298,6 +318,11 @@ namespace IidaLabVy446
                     this.CombineVy446Info(cmdData);
                 }
 
+                // server mode
+                if (this.TcpIpServerCheckBox.Checked == true)
+                {
+                    this.combineData = this.tcpFile.AddToString(this.readCount, cmdData);
+                }
             }
         }
 
@@ -708,18 +733,99 @@ namespace IidaLabVy446
         #region Communication
 
         private Communication.Connect connect;
+        private Communication.File tcpFile;
+
+        /// <summary>
+        /// Initialize Lidar For Client
+        /// </summary>
+        private void InitializeLidarForClient()
+        {
+            this.isIniLidarInfo = false;
+
+            this.graph = new Graph();
+            this.graph.CreateGraph(zg1);
+
+            this.sickLidar = new SickLidar.SickLidar(
+                this.LidarSelectComboBox.SelectedIndex,
+                Convert.ToDouble(this.LidarScalingTxtBox.Text)
+                   );
+        }
+
+        /// <summary>
+        /// Lidar play for client
+        /// </summary>
+        private void LidarPlayForClient()
+        {
+            // initialize device information
+            if (this.isIniLidarInfo == false)
+            {
+                this.LidarDeviceInfoLengthTxtBox.Text = Convert.ToString(this.sickLidar.dataLength);
+                this.LidarDeviceInfoResolutionTxtBox.Text = Convert.ToString(this.sickLidar.steps);
+                this.LidarDeviceInfoStartAngleTxtBox.Text = Convert.ToString(this.sickLidar.startAngle);
+                this.isIniLidarInfo = true;
+            }
+
+            if (this.tcpFile.lidarData.Count == this.sickLidar.dataLength)
+            {
+                this.sickLidar.ConvertTcpDataToPolar(this.tcpFile.lidarData);
+                this.sickLidar.ConvertPolarToCartesian();
+                this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
+
+                this.toolStripStatusLabel4.Text = Convert.ToString(this.tcpFile.lidarReadCount);
+            }
+        }
+
+        /// <summary>
+        /// Initialize Combine Body For Client
+        /// </summary>
+        private void InitializeCombineForClient()
+        {
+            if (this.BodyModelComboBox.SelectedIndex == 0)
+            {
+                this._vy50 = new CombineBody.Vy50();
+            }
+
+            if (this.BodyModelComboBox.SelectedIndex == 1)
+            {
+                this._vy446 = new CombineBody.Vy446();
+            }
+        }
+
+        /// <summary>
+        /// Combine Play For Client
+        /// </summary>
+        private void CombinePlayForClient()
+        {
+            if (this.BodyModelComboBox.SelectedIndex == 0 && this.tcpFile.bodyData.Count == 82)
+            {
+                this.CombineVy50Info(this.tcpFile.bodyData);
+            }
+
+            if (this.BodyModelComboBox.SelectedIndex == 1 && this.tcpFile.bodyData.Count == 142)
+            {
+                this.CombineVy446Info(this.tcpFile.bodyData);
+            }
+        }
 
         /// <summary>
         /// Communication Connect
         /// </summary>
         private void CommunicationConnect()
         {
+            if (this.TcpIpClientCheckBox.Checked == true)
+            {
+                this.InitializeLidarForClient();
+                this.InitializeCombineForClient();
+            }
+
             this.connect = new Communication.Connect(
                 this.TcpIpServerCheckBox.Checked,
                 this.TcpIpClientCheckBox.Checked,
                 this.TcpIpServerIpTxtBox.Text,
                 Convert.ToInt32(this.TcpIpPortTxtBox.Text)
                 );
+
+            this.tcpFile = new Communication.File();
 
             this.TcpIpClientIpTxtBox.Text = this.connect.debugMsg;
         }
@@ -731,19 +837,29 @@ namespace IidaLabVy446
         {
             if (this.TcpIpServerCheckBox.Checked == true)
             {
-                string msg = Convert.ToString(this.readCount) + " ";
-                for (int i = 0; i < this.sickLidar.orgList.Count; i++)
-                {
-                    msg += Convert.ToString(this.sickLidar.orgList[i]) + " ";
-                }
-
-                this.connect.ServerSendDataToClient(msg);
+                this.tcpFile.sendCmdToClient = this.lidarData + " " + this.combineData;
+                this.connect.ServerSendDataToClient(this.tcpFile.sendCmdToClient);
             }
 
             if (this.TcpIpClientCheckBox.Checked == true)
             {
                 this.connect.ClientReceiveDataFromServer();
-                this.TcpIpDebugTxtBox.Text = this.connect.receivedData;
+                
+                this.tcpFile.DivideStringData(
+                    this.connect.receivedData, 
+                    this.sickLidar.dataLength, 
+                    this.BodyModelComboBox.SelectedIndex
+                    );
+                
+                if (this.tcpFile.lidarData != null)
+                {
+                    this.LidarPlayForClient();
+                }
+
+                if (this.tcpFile.bodyData != null)
+                {
+                    this.CombinePlayForClient();
+                }
             }
         }
 
@@ -770,23 +886,26 @@ namespace IidaLabVy446
         {
             this.readCount = 0;
 
-            if (this.LidarAvailableCheckBox.Checked == true)
+            if (this.TcpIpClientCheckBox.Checked == false)
             {
-                this.LidarConnect();
-            }
+                if (this.LidarAvailableCheckBox.Checked == true)
+                {
+                    this.LidarConnect();
+                }
 
-            if (this.BodyAvailableCheckBox.Checked == true)
-            {
-                this.CombineBodyConnect();
-            }
+                if (this.BodyAvailableCheckBox.Checked == true)
+                {
+                    this.CombineBodyConnect();
+                }
 
-            if (this.VisionAvailableCheckBox.Checked == true)
-            {
-                this.MachineVisionConnect();
-            }
+                if (this.VisionAvailableCheckBox.Checked == true)
+                {
+                    this.MachineVisionConnect();
+                }
 
-            this.IntegratedTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
-            this.IntegratedTimer.Enabled = true;
+                this.IntegratedTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
+                this.IntegratedTimer.Enabled = true;
+            }
 
             if (this.TcpIpIsAvailableCheckBox.Checked == true)
             {

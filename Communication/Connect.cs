@@ -91,7 +91,7 @@ namespace Communication
             this.server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             this.server.Bind(ipe);
-            this.server.Listen(50);
+            this.server.Listen(10);
 
             this.client = this.server.Accept();
             this.clientEp = (IPEndPoint)this.client.RemoteEndPoint;

@@ -324,6 +324,40 @@
         }
 
         /// <summary>
+        /// Convert received data From Server
+        /// </summary>
+        /// <param name="data"></param>
+        public void ConvertTcpDataToPolar(List<int> data)
+        {
+            if (this.isInitializeList == false)
+            {
+                this.orgList = new List<int>();
+                this.polarList = new List<PolarPoint>();
+                this.cartesianList = new List<CartesianPoint>();
+
+                this.isInitializeList = true;
+            }
+
+            this.orgList.Clear();
+            this.polarList.Clear();
+
+            PolarPoint p;
+
+            for (int i = 0; i < this.dataLength; i++)
+            {
+                //--rowLength value is (mm)--//
+                int rowLength = Convert.ToInt32(data[i]);
+                this.orgList.Add(rowLength);
+
+                p.theta = ((this.steps * i) + (this.startAngle - 180.0)) * this.piBy180;
+                //--convert mm to m--//
+                p.row = (double)rowLength * this.scalingFactor / 1000;
+
+                this.polarList.Add(p);
+            }
+        }
+
+        /// <summary>
         /// Convert read data to polar coordinates system
         /// </summary>
         /// <param name="index"></param>

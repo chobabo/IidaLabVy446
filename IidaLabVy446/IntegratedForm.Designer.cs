@@ -102,7 +102,6 @@
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.TcpIpDebugTxtBox = new System.Windows.Forms.TextBox();
             this.LidarDeviceInfoStartAngleTxtBox = new System.Windows.Forms.TextBox();
             this.LidarDeviceInfoResolutionTxtBox = new System.Windows.Forms.TextBox();
             this.LidarDeviceInfoLengthTxtBox = new System.Windows.Forms.TextBox();
@@ -832,7 +831,7 @@
             // 
             // TcpIpClientIpTxtBox
             // 
-            this.TcpIpClientIpTxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.TcpIpClientIpTxtBox.BackColor = System.Drawing.Color.GreenYellow;
             this.TcpIpClientIpTxtBox.Location = new System.Drawing.Point(80, 141);
             this.TcpIpClientIpTxtBox.Name = "TcpIpClientIpTxtBox";
             this.TcpIpClientIpTxtBox.Size = new System.Drawing.Size(100, 19);
@@ -863,7 +862,7 @@
             this.TcpIpServerIpTxtBox.Name = "TcpIpServerIpTxtBox";
             this.TcpIpServerIpTxtBox.Size = new System.Drawing.Size(100, 19);
             this.TcpIpServerIpTxtBox.TabIndex = 4;
-            this.TcpIpServerIpTxtBox.Text = "172.27.3.4";
+            this.TcpIpServerIpTxtBox.Text = "10.226.128.31";
             // 
             // label80
             // 
@@ -1038,7 +1037,6 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.TcpIpDebugTxtBox);
             this.groupBox13.Controls.Add(this.LidarDeviceInfoStartAngleTxtBox);
             this.groupBox13.Controls.Add(this.LidarDeviceInfoResolutionTxtBox);
             this.groupBox13.Controls.Add(this.LidarDeviceInfoLengthTxtBox);
@@ -1051,14 +1049,6 @@
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Device Specification";
-            // 
-            // TcpIpDebugTxtBox
-            // 
-            this.TcpIpDebugTxtBox.Location = new System.Drawing.Point(8, 117);
-            this.TcpIpDebugTxtBox.Multiline = true;
-            this.TcpIpDebugTxtBox.Name = "TcpIpDebugTxtBox";
-            this.TcpIpDebugTxtBox.Size = new System.Drawing.Size(262, 141);
-            this.TcpIpDebugTxtBox.TabIndex = 6;
             // 
             // LidarDeviceInfoStartAngleTxtBox
             // 
@@ -2902,7 +2892,6 @@
         private System.Windows.Forms.TextBox TcpIpClientIpTxtBox;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.CheckBox TcpIpIsAvailableCheckBox;
-        private System.Windows.Forms.TextBox TcpIpDebugTxtBox;
         private System.Windows.Forms.Timer CommunicationTimer;
     }
 }
