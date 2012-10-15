@@ -14,6 +14,7 @@ namespace IidaLabVy446
         public Main()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +47,20 @@ namespace IidaLabVy446
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Main_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar("q"))
+            {
+                this.Close();
+            }
+
+            if (e.KeyChar == Convert.ToChar("i"))
+            {
+                IntegratedForm integratedForm = new IntegratedForm();
+                integratedForm.Show();
+            }
         }
     }
 }

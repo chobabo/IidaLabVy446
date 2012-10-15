@@ -36,6 +36,7 @@ namespace IidaLabVy446
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
         private Algorithm.SplitAndMerge sam;
+        private Algorithm.HeaderControl hControl;
 
         /// <summary>
         /// gets or sets adapt split and merge
@@ -59,7 +60,7 @@ namespace IidaLabVy446
         {
             this.isIniLidarInfo = false;
 
-            this.graph = new Graph();
+            this.graph = new SickLidar.Graph();
             this.graph.CreateGraph(zg1);
 
             if (this.LidarReadCheckBox.Checked == false)
@@ -94,20 +95,9 @@ namespace IidaLabVy446
                     );
             }
 
-            if (this.LidarSplitAndMergeCheckBox.Checked == true)
-            {
-                this.isSam = true;
-                this.sam = new Algorithm.SplitAndMerge(
-                    this.LidarSelectComboBox.SelectedIndex,
-                    Convert.ToDouble(this.LidarSplitAndMergeThresholdTxtBox.Text),
-                    Convert.ToDouble(this.LidarSplitAndMergeDeviationTxtBox.Text),
-                    Convert.ToInt32(this.LidarSplitAndMergeMinNoTxtBox.Text)
-                    );
-            }
-            else
-            {
-                this.isSam = false;
-            }
+            this.LidarInitializeSplitAndMerge();
+
+            this.LidarInitializeHeaderControl();
         }
 
         /// <summary>
@@ -142,15 +132,57 @@ namespace IidaLabVy446
                 }
             }
 
-            // initialize device information
+            this.LidarInitializeInformation();
+            this.LidarPlaySplitAndMerge();
+            this.LidarPlayHeaderControl();
+
+            // server mode
+            if (this.TcpIpServerCheckBox.Checked == true)
+            {
+                this.lidarData = this.tcpFile.AddToString(this.readCount, this.sickLidar.orgList);
+            }
+        }
+
+        /// <summary>
+        /// initialize device information
+        /// </summary>
+        private void LidarInitializeInformation()
+        {
             if (this.isIniLidarInfo == false)
             {
-                this.LidarDeviceInfoLengthTxtBox.Text = Convert.ToString(this.sickLidar.orgList.Count);
+                this.LidarDeviceInfoLengthTxtBox.Text = Convert.ToString(this.sickLidar.dataLength);
                 this.LidarDeviceInfoResolutionTxtBox.Text = Convert.ToString(this.sickLidar.steps);
                 this.LidarDeviceInfoStartAngleTxtBox.Text = Convert.ToString(this.sickLidar.startAngle);
                 this.isIniLidarInfo = true;
-            }
+            } 
+        }
 
+        /// <summary>
+        /// Lidar Initialize Split-And-Merge
+        /// </summary>
+        private void LidarInitializeSplitAndMerge()
+        {
+            if (this.LidarSplitAndMergeCheckBox.Checked == true)
+            {
+                this.isSam = true;
+                this.sam = new Algorithm.SplitAndMerge(
+                    this.LidarSelectComboBox.SelectedIndex,
+                    Convert.ToDouble(this.LidarSplitAndMergeThresholdTxtBox.Text),
+                    Convert.ToDouble(this.LidarSplitAndMergeDeviationTxtBox.Text),
+                    Convert.ToInt32(this.LidarSplitAndMergeMinNoTxtBox.Text)
+                    );
+            }
+            else
+            {
+                this.isSam = false;
+            }
+        }
+
+        /// <summary>
+        /// Lidar Play Split-And-Merge
+        /// </summary>
+        private void LidarPlaySplitAndMerge()
+        {
             // split-and-merge 
             if (this.LidarSplitAndMergeCheckBox.Checked == true)
             {
@@ -166,14 +198,88 @@ namespace IidaLabVy446
                 this.LidarSplitAndMergeSegIndexTxtBox.Text = Convert.ToString(this.sam.lateralSeg);
                 this.LidarSplitAndMergeGroundHeightTxtBox.Text = Convert.ToString(this.sam.groundHeight);
             }
+        }
 
-            // server mode
-            if (this.TcpIpServerCheckBox.Checked == true)
+        /// <summary>
+        /// Lidar Initialize Header Control
+        /// </summary>
+        private void LidarInitializeHeaderControl()
+        {
+            if (this.LidarHeaderControlCheckBox.Checked == true)
             {
-                this.lidarData = this.tcpFile.AddToString(this.readCount, this.sickLidar.orgList);
+                this.hControl = new Algorithm.HeaderControl(
+                    this.BodyModelComboBox.SelectedIndex,
+                    Convert.ToDouble(this.LidarHeightControlGroundDeviationTxtBox.Text),
+                    Convert.ToDouble(this.LidarHeightControlInitializeLateralTxtBox.Text)
+                    );
             }
         }
-        
+
+        /// <summary>
+        /// Lidar Play Header Control
+        /// </summary>
+        private void LidarPlayHeaderControl()
+        {
+            // normal mode
+            if (this.LidarHeaderControlComboBox.SelectedIndex == 0)
+            {
+                if (this.LidarHeaderControlCheckBox.Checked == true)
+                {
+                    this.hControl.CalculateAvgGndHeight(this.sickLidar.cartesianList);
+
+                    if (this.hControl.isControl == true)
+                    {
+                        this.LidarPlayHeaderControlSendCmd();
+                    }
+                }
+            }
+
+            // split-and-merge and head control
+            if (this.LidarHeaderControlComboBox.SelectedIndex == 1)
+            {
+                if (this.LidarSplitAndMergeCheckBox.Checked == true && this.LidarHeaderControlCheckBox.Checked == true)
+                {
+                    this.hControl.CalculateAdValue(this.sam.lateralSeg, this.sam.groundHeight);
+
+                    if (this.hControl.isControl == true)
+                    {
+                        this.LidarPlayHeaderControlSendCmd();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Lidar Play Header Control Send Command
+        /// </summary>
+        private void LidarPlayHeaderControlSendCmd()
+        {
+            // send header command
+            if ((this.hControl.groundHeightAD < this.hControl.maxHeight) && (this.hControl.groundHeightAD > this.hControl.minHeight))
+            {
+                this.LidarHeightControlAdTxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
+            }
+            else
+            {
+                this.LidarHeightControlAdTxtBox.Text = this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text;
+                this.hControl.groundHeightAD = Convert.ToInt32(this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text);
+            }
+
+            // lateral state debug
+            if (this.LidarLateralControlCheckBox.Checked == true)
+            {
+                this.LidarHeightControlLateralStateTxtBox.Text =
+                    this.hControl.LateralDirectionToString(this.hControl.lateralSegAD);
+            }
+
+            if (this.BodyAvailableCheckBox.Checked == true && this.BodyReadCheckBox.Checked == false)
+            {
+                // header of combine body control
+                this.CombineBodyHeaderControl(false, true);
+            }
+
+        }
+
         #endregion
 
         #region Machine Vision
@@ -222,6 +328,8 @@ namespace IidaLabVy446
         private CombineBody.File _bodyFile;
         private CombineBody.Vy50 _vy50;
         private CombineBody.Vy446 _vy446;
+        private FieldMap.Wgs84ToCartesian _wgs84;
+        private FieldMap.Graph _offLineGraph;
         private FieldMap.DrawMap _drawMap;
 
         /// <summary>
@@ -256,11 +364,6 @@ namespace IidaLabVy446
                     this.BodySaveCheckBox.Checked,
                     this.BodyReadCheckBox.Checked
                     );
-
-                if (this.BodyGeMapCheckBox.Checked == true)
-                {
-                    //this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
-                }
             }
 
             if (this.BodyModelComboBox.SelectedIndex == 0)
@@ -271,6 +374,14 @@ namespace IidaLabVy446
             if (this.BodyModelComboBox.SelectedIndex == 1)
             {
                 this._vy446 = new CombineBody.Vy446();
+            }
+
+            if (this.BodyWgs84ToCartesianCheckBox.Checked == true)
+            {
+                this._wgs84 = new Wgs84ToCartesian(5, 1);
+
+                this._offLineGraph = new FieldMap.Graph();
+                this._offLineGraph.CreateGraph(zg2);
             }
         }
 
@@ -336,6 +447,8 @@ namespace IidaLabVy446
 
             if (isReceived == true)
             {
+                this.Vy446_ReadCnt_TxtBox.Text = Convert.ToString(this.readCount);
+
                 // 傾斜センサ--ok
                 this.Vy446_AD_SUI_K_TxtBox.Text = Convert.ToString(this._vy446.AD_SUI_K);
 
@@ -347,16 +460,16 @@ namespace IidaLabVy446
 
                 // 主変速ポテンショ--ok
                 this.Vy446_DT_HST_TxtBox.Text = Convert.ToString(this._vy446.AD_FEED_M);
-                
+
                 // 操向ポテンショ--ok
                 this.Vy446_DT_SOKO_TxtBox.Text = Convert.ToString(this._vy446.AD_SOKO_A);
 
                 // フィーダ回転数
                 this.Vy446_feed_rpm_TxtBox.Text = Convert.ToString(this._vy446.feed_rpm);
-                
+
                 // エンジン回転数
                 this.Vy446_rpm_TxtBox.Text = Convert.ToString(this._vy446.rpm);
-                
+
                 // ミッション速度
                 this.Vy446_speed_TxtBox.Text = Convert.ToString(this._vy446.speed);
 
@@ -382,7 +495,15 @@ namespace IidaLabVy446
                 this.Vy446_pitch_TxtBox.Text = Convert.ToString(this._vy446.pitch);
                 this.Vy446_roll_TxtBox.Text = Convert.ToString(this._vy446.roll);
 
-                this.CombineGoogleMap(this._vy446.gps_Latitude, this._vy446.gps_Longitude);
+                if (this.BodyGeMapCheckBox.Checked == true)
+                {
+                    this.CombineGoogleMap(this._vy446.gps_Latitude, this._vy446.gps_Longitude);
+                }
+
+                if (this.BodyWgs84ToCartesianCheckBox.Checked == true)
+                {
+                    this.CombineOffLineMap(this._vy446.gps_Latitude, this._vy446.gps_Longitude, this._vy446.gps_Altitude);
+                }
             }
         }
 
@@ -423,12 +544,219 @@ namespace IidaLabVy446
                 this.Vy50_us_LRPos_TxtBox.Text = Convert.ToString(this._vy50.us_LRPos);
                 this.Vy50_us_UDPos_TxtBox.Text = Convert.ToString(this._vy50.us_UDPos);
 
-                this.CombineGoogleMap(this._vy50.gps_Latitude, this._vy50.gps_Longitude);
+                if (this.BodyGeMapCheckBox.Checked == true)
+                {
+                    this.CombineGoogleMap(this._vy50.gps_Latitude, this._vy50.gps_Longitude);
+                }
+
+                if (this.BodyWgs84ToCartesianCheckBox.Checked == true)
+                {
+                    this.CombineOffLineMap(this._vy50.gps_Latitude, this._vy50.gps_Longitude, this._vy50.gps_Altitude);
+                }
+
             }
         }
 
         /// <summary>
-        /// command data send to combine using serial
+        /// command data send to combine Vy446 ECU using serial
+        /// </summary>
+        private void CombineVy446CmdSend()
+        {
+            // 1. ロボットモード切替のチェック取得 - ok
+            if (this.Vy446_RobotMode_CheckBox.Checked == true)
+            {
+                this._vy446.m_iRobotMode = true;
+            }
+            else
+            {
+                this._vy446.m_iRobotMode = false;
+            }
+
+            // 2. 刈取クラッチのラジオボタン取得 - ok
+            if (this.Vy446_KARITORI_CheckBox.Checked == true)
+            {
+                this._vy446.KaritoriRadio = true;
+            }
+            else
+            {
+                this._vy446.KaritoriRadio = false;
+            }
+
+            // 3. 作業機クラッチのラジオボタン取得 - ok
+            if (this.Vy446_SAGYOKI_ON_CheckBox.Checked == true)
+            {
+                this._vy446.SagyokiRadio = true;
+            }
+            else
+            {
+                this._vy446.SagyokiRadio = false;
+            }
+
+            // 4. クラッチオフのラジオボタン取得 - ok
+            if (this.Vy446_SAGYOKI_OFF_CheckBox.Checked == true)
+            {
+                this._vy446.SagyokiOffRadio = true;
+            }
+            else
+            {
+                this._vy446.SagyokiOffRadio = false;
+            }
+
+            // 5. 強制掻込スイッチ - ok
+            if (this.Vy446_FgKakikomi_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgKakikomi = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgKakikomi = false;
+            }
+
+            // 6. 倒伏刈スイッチ - ok
+            if (this.Vy446_FgTofuku_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgTofuku = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgTofuku = false;
+            }
+
+            // 7. 湿田スイッチ - ok
+            if (this.Vy446_FgSitsuden_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgSitsuden = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgSitsuden = false;
+            }
+
+            // 8. エンジン停止 - ok
+            if (this.Vy446_ENGINE_STOP_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgEngineStop = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgEngineStop = false;
+            }
+
+            // 9. 警告音のチェック取得 - ok
+            if (this.Vy446_BUZZER2_CheckBox.Checked == true)
+            {
+                this._vy446.Buzzer2Chk = true;
+            }
+            else
+            {
+                this._vy446.Buzzer2Chk = false;
+            }
+
+            // 10. 黄ランプのチェック取得 - ok
+            if (this.Vy446_YELLOW_LAMP_CheckBox.Checked == true)
+            {
+                this._vy446.YellowLampChk = true;
+            }
+            else
+            {
+                this._vy446.YellowLampChk = false;
+            }
+
+            // 11. 赤ランプのチェック取得 - ok
+            if (this.Vy446_RED_LAMP_CheckBox.Checked == true)
+            {
+                this._vy446.RedLampChk = true;
+            }
+            else
+            {
+                this._vy446.RedLampChk = false;
+            }
+
+            // 12. 刈り高さ目標値 - ok
+            if (this.Vy446_KARITAKA_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgKaritakaPosCtrl = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgKaritakaPosCtrl = false;
+            }
+
+            // 13. ブザーのチェック取得 - ok
+            if (this.Vy446_BUZZER_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgBuzzer = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgBuzzer = false;
+            }
+
+            // 14. ハザードのチェック取得 - ok
+            if (this.Vy446_HAZARD_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgHazard = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgHazard = false;
+            }
+
+            // 15. オーガ自動収納のチェック取得 - ok
+            if (this.Vy446_AUTO_RETURN_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgAugerHomePos = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgAugerHomePos = false;
+            }
+
+            // 16. オーガ自動位置決めのチェック取得 - ok
+            if (this.Vy446_AUTOPOS_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgAugerAutoPos = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgAugerAutoPos = false;
+            }
+
+            // 17. オーガクラッチのチェック取得 - ok
+            if (this.Vy446_CLUTCH_CheckBox.Checked == true)
+            {
+                this._vy446.m_ucFgAugerClutch = true;
+            }
+            else
+            {
+                this._vy446.m_ucFgAugerClutch = false;
+            }
+
+
+            // 1. 操舵量コマンド：左操舵最大(250)，中立(430)，右操舵最大(660) - ok
+            this._vy446.usCmdSteer = Convert.ToUInt16(this.Vy446_CMD_SOKO_TxtBox.Text);
+
+            // 2. HST_CMD(主変速HSTレバー):前進最大(2450), 中立(1405), 後進最大(360) - ok
+            this._vy446.usCmdHst = Convert.ToUInt16(this.Vy446_CMD_HST_TxtBox.Text);
+
+            // 3. 排出オーガ左右旋回目標値
+            this._vy446.usCmdLRPos = Convert.ToUInt16(this.Vy446_CMD_AUGER_MTR_TxtBox.Text);
+
+            // 4. 排出オーガ上下旋回コマンド
+            this._vy446.usCmdUDPos = Convert.ToUInt16(this.Vy446_CMD_AUGER_CLD_TxtBox.Text);
+
+            // 5. 刈り高さ目標値
+            this._vy446.usCmdKaritaka = Convert.ToUInt16(this.Vy446_CMD_KARITAKA_TxtBox.Text);
+
+            // write cmd
+            this._vy446.SendCmdEcu();
+
+            // data send
+            this._bodySerialConnect.DataWrite(this._vy446.ucCmdBuf);
+        }
+
+        /// <summary>
+        /// command data send to combine Vy50 ECU using serial
         /// </summary>
         private void CombineVy50CmdSend()
         {
@@ -697,6 +1025,112 @@ namespace IidaLabVy446
             }
         }
 
+        /// <summary>
+        /// Draw on the zedGraph of Cartesian coordinates
+        /// </summary>
+        /// <param name="_lat"></param>
+        /// <param name="_lon"></param>
+        /// <param name="_alt"></param>
+        private void CombineOffLineMap(double _lat, double _lon, double _alt)
+        {
+            this._wgs84.Wgs84ToXyh(_lat, _lon, _alt);
+
+            this._offLineGraph.AddDataToGraph(zg2, this._wgs84.result.x, this._wgs84.result.y);
+
+            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this._wgs84.result.x);
+            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this._wgs84.result.y);
+            this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._wgs84.result.z);
+        }
+
+        /// <summary>
+        /// Combine body header control - vy446
+        /// </summary>
+        /// <param name="_ifState"></param>
+        /// <param name="_thenState"></param>
+        private void CombineBodyHeaderControlVy446(bool _ifState, bool _thenState)
+        {
+            if (this.Vy446_RobotMode_CheckBox.Checked == _ifState)
+            {
+                this.Vy446_RobotMode_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy446_SAGYOKI_ON_CheckBox.Checked == _ifState)
+            {
+                this.Vy446_SAGYOKI_ON_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy446_KARITORI_CheckBox.Checked == _ifState)
+            {
+                this.Vy446_KARITORI_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy446_KARITAKA_CheckBox.Checked == _ifState)
+            {
+                this.Vy446_KARITAKA_CheckBox.Checked = _thenState;
+            } 
+
+            this.Vy446_CMD_KARITAKA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
+
+            // send lateral command
+            if (this.LidarLateralControlCheckBox.Checked == true)
+            {
+                // 1. 操舵量コマンド：左操舵最大(250)，中立(430)，右操舵最大(660) - ok
+                this.Vy446_CMD_SOKO_TxtBox.Text = Convert.ToString(this.hControl.lateralSegAD);
+            }
+
+            this.CombineVy446CmdSend();
+        }
+
+        /// <summary>
+        /// Combine body header control - vy50
+        /// </summary>
+        /// <param name="_ifState"></param>
+        /// <param name="_thenState"></param>
+        private void CombineBodyHeaderControlVy50(bool _ifState, bool _thenState)
+        {
+            if (this.Vy50_ROBOTMODE_CheckBox.Checked == _ifState)
+            {
+                this.Vy50_ROBOTMODE_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy50_SAGYOUKI_CheckBox.Checked == _ifState)
+            {
+                this.Vy50_SAGYOUKI_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy50_KARITORI_CheckBox.Checked == _ifState)
+            {
+                this.Vy50_KARITORI_CheckBox.Checked = _thenState;
+            }
+
+            if (this.Vy50_KARITAKASA_CheckBox.Checked == _ifState)
+            {
+                this.Vy50_KARITAKASA_CheckBox.Checked = _thenState;
+            }
+
+            this.Vy50_KARITAKASA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
+
+            this.CombineVy50CmdSend();
+        }
+
+        /// <summary>
+        /// Combine body header control
+        /// </summary>
+        private void CombineBodyHeaderControl(bool _ifState, bool _thenState)
+        {
+            // vy50
+            if (this.BodyModelComboBox.SelectedIndex == 0)
+            {
+                this.CombineBodyHeaderControlVy50(_ifState, _thenState);
+            }
+
+            // vy446
+            if (this.BodyModelComboBox.SelectedIndex == 1)
+            {
+                this.CombineBodyHeaderControlVy446(_ifState, _thenState);
+            }
+        }
+
         #endregion
 
         #region Amedas Weather
@@ -742,13 +1176,15 @@ namespace IidaLabVy446
         {
             this.isIniLidarInfo = false;
 
-            this.graph = new Graph();
+            this.graph = new SickLidar.Graph();
             this.graph.CreateGraph(zg1);
 
             this.sickLidar = new SickLidar.SickLidar(
                 this.LidarSelectComboBox.SelectedIndex,
                 Convert.ToDouble(this.LidarScalingTxtBox.Text)
                    );
+
+            this.LidarInitializeSplitAndMerge();
         }
 
         /// <summary>
@@ -756,19 +1192,13 @@ namespace IidaLabVy446
         /// </summary>
         private void LidarPlayForClient()
         {
-            // initialize device information
-            if (this.isIniLidarInfo == false)
-            {
-                this.LidarDeviceInfoLengthTxtBox.Text = Convert.ToString(this.sickLidar.dataLength);
-                this.LidarDeviceInfoResolutionTxtBox.Text = Convert.ToString(this.sickLidar.steps);
-                this.LidarDeviceInfoStartAngleTxtBox.Text = Convert.ToString(this.sickLidar.startAngle);
-                this.isIniLidarInfo = true;
-            }
-
+            this.LidarInitializeInformation();
+            
             if (this.tcpFile.lidarData.Count == this.sickLidar.dataLength)
             {
                 this.sickLidar.ConvertTcpDataToPolar(this.tcpFile.lidarData);
                 this.sickLidar.ConvertPolarToCartesian();
+                this.LidarPlaySplitAndMerge();
                 this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
 
                 this.toolStripStatusLabel4.Text = Convert.ToString(this.tcpFile.lidarReadCount);
@@ -799,6 +1229,7 @@ namespace IidaLabVy446
             if (this.BodyModelComboBox.SelectedIndex == 0 && this.tcpFile.bodyData.Count == 82)
             {
                 this.CombineVy50Info(this.tcpFile.bodyData);
+                this.Vy50_ReadCnt_TxtBox.Text = Convert.ToString(this.tcpFile.bodyReadCount);
             }
 
             if (this.BodyModelComboBox.SelectedIndex == 1 && this.tcpFile.bodyData.Count == 142)
@@ -870,7 +1301,9 @@ namespace IidaLabVy446
         public IntegratedForm()
         {
             InitializeComponent();
-            this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
+            
+            // for key event
+            this.KeyPreview = true;
         }
 
         #endregion
@@ -878,11 +1311,9 @@ namespace IidaLabVy446
         #region Event Methods
 
         /// <summary>
-        /// connect event
+        /// Connect Method
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ConnectButton_Click(object sender, EventArgs e)
+        private void ConnectMethod()
         {
             this.readCount = 0;
 
@@ -913,14 +1344,23 @@ namespace IidaLabVy446
                 this.CommunicationTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
                 this.CommunicationTimer.Enabled = true;
             }
+
         }
 
         /// <summary>
-        /// disconnect event
+        /// connect event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DisconnectButton_Click(object sender, EventArgs e)
+        private void ConnectButton_Click(object sender, EventArgs e)
+        {
+            this.ConnectMethod();
+        }
+
+        /// <summary>
+        /// Disconnect Method
+        /// </summary>
+        private void DisconnectMethod()
         {
             if (this.IntegratedTimer.Enabled == true)
             {
@@ -953,6 +1393,11 @@ namespace IidaLabVy446
                             this._bodyFile.closeSave();
                         }
 
+                        if (this.LidarHeaderControlCheckBox.Checked == true)
+                        {
+                            this.CombineBodyHeaderControl(true, false);
+                        }
+                        
                         this._bodySerialConnect.Dispose();
                     }
                     else
@@ -964,8 +1409,8 @@ namespace IidaLabVy446
                     }
                 }
             }
-            else 
-            { 
+            else
+            {
             }
 
             if (this.CommunicationTimer.Enabled == true)
@@ -986,8 +1431,18 @@ namespace IidaLabVy446
                 }
             }
             else
-            { 
+            {
             }
+        }
+
+        /// <summary>
+        /// disconnect event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DisconnectButton_Click(object sender, EventArgs e)
+        {
+            this.DisconnectMethod();
         }
 
         /// <summary>
@@ -1009,7 +1464,21 @@ namespace IidaLabVy446
         {
             if (this.TcpIpIsAvailableCheckBox.Checked == true)
             {
-                this.CommunicationPlay();
+                if (this.TcpIpClientCheckBox.Checked == true)
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+
+                    this.CommunicationPlay();
+
+                    watch.Stop();
+                    this.toolStripStatusLabel2.Text =
+                        Convert.ToString(watch.Elapsed.TotalMilliseconds) + " milliseconds";
+                }
+                else
+                {
+                    this.CommunicationPlay();
+                }
             }
         }
 
@@ -1074,6 +1543,54 @@ namespace IidaLabVy446
         private void Vy50_SendData_Button_Click(object sender, EventArgs e)
         {
             this.CombineVy50CmdSend();
+        }
+
+        /// <summary>
+        /// Send command to Combine ECU event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Vy446_SendData_Button_Click(object sender, EventArgs e)
+        {
+            this.CombineVy446CmdSend();
+        }
+
+        /// <summary>
+        /// If you press the key then event is excute.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IntegratedForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // ASCII value of escape key is 27.
+            // toolStripStatusLabel4.Text = "Escape";
+
+            if (e.KeyChar == Convert.ToChar("c"))
+            {
+                this.ConnectMethod();
+            }
+
+            if (e.KeyChar == Convert.ToChar("d"))
+            {
+                this.DisconnectMethod();
+            }
+
+            if (e.KeyChar == Convert.ToChar("q"))
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Initialize WebBrowser event for google earth 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BodyGeMapCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            // for google earth
+            this._drawMap = new FieldMap.DrawMap(this.GeWebBrowser);
+            this.toolStripStatusLabel4.Text = this._drawMap.debugMsg;
         }
 
         #endregion

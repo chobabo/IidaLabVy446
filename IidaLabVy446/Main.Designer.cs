@@ -133,6 +133,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Main";
             this.Text = "VY446, Vy50 [ver 0.1]";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

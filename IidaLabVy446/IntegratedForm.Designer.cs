@@ -62,6 +62,7 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.IntegratedTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BodyWgs84ToCartesianCheckBox = new System.Windows.Forms.CheckBox();
             this.BodyGeMapCheckBox = new System.Windows.Forms.CheckBox();
             this.BodyModelComboBox = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -98,9 +99,23 @@
             this.label64 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.LidarLateralControlCheckBox = new System.Windows.Forms.CheckBox();
+            this.LidarHeaderControlComboBox = new System.Windows.Forms.ComboBox();
+            this.LidarHeaderControlCheckBox = new System.Windows.Forms.CheckBox();
             this.LidarSplitAndMergeCheckBox = new System.Windows.Forms.CheckBox();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.LidarHeightControlLateralStateTxtBox = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.LidarHeightControlInitializeLateralTxtBox = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox = new System.Windows.Forms.TextBox();
+            this.LidarHeightControlGroundDeviationTxtBox = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.LidarHeightControlAdTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.LidarDeviceInfoStartAngleTxtBox = new System.Windows.Forms.TextBox();
             this.LidarDeviceInfoResolutionTxtBox = new System.Windows.Forms.TextBox();
@@ -160,19 +175,19 @@
             this.Vy50_ROBOTMODE_CheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.Vy50_gps_Sv_TxtBox = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.Vy50_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy50_gps_Heading_TxtBox = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.Vy50_gps_Altitude_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy50_gps_Longitude_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy50_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.Vy50_gps_Heading_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy50_gps_Utc_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy50_gps_Longitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.Vy50_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label37 = new System.Windows.Forms.Label();
             this.Vy50_ReadCnt_TxtBox = new System.Windows.Forms.TextBox();
@@ -205,7 +220,40 @@
             this.Vy50_us_LRPos_TxtBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.Vy446_FgSitsuden_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_FgTofuku_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_FgKakikomi_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_KARITORI_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_SAGYOKI_ON_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_SAGYOKI_OFF_CheckBox = new System.Windows.Forms.CheckBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.Vy446_HAZARD_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_BUZZER_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_ENGINE_STOP_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_BUZZER2_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_YELLOW_LAMP_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_RED_LAMP_CheckBox = new System.Windows.Forms.CheckBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.Vy446_CLUTCH_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_AUTO_RETURN_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_CMD_KARITAKA_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_KARITAKA_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Vy446_CMD_AUGER_CLD_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_CMD_AUGER_MTR_TxtBox = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.Vy446_AUTOPOS_CheckBox = new System.Windows.Forms.CheckBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.Vy446_SendData_Button = new System.Windows.Forms.Button();
+            this.Vy446_CMD_HST_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_CMD_SOKO_TxtBox = new System.Windows.Forms.TextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.Vy446_RobotMode_CheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.Vy446_ReadCnt_TxtBox = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.Vy446_RESERVE_B_TxtBox = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
@@ -233,30 +281,39 @@
             this.label50 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.Vy446_roll_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_pitch_TxtBox = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.Vy446_gps_compass_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_compass_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_roll_TxtBox = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Vy446_pitch_TxtBox = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
             this.Vy446_heading_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_avilability_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
-            this.Vy446_gps_Sv_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy446_gps_Altitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_compass_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy446_gps_Longitude_TxtBox = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.Vy446_gps_Sv_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy446_gps_Latitude_TxtBox = new System.Windows.Forms.TextBox();
             this.Vy446_gps_Utc_TxtBox = new System.Windows.Forms.TextBox();
+            this.Vy446_gps_Quality_TxtBox = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
+            this.Vy446_avilability_TxtBox = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.BodyWgs84ToCartesianX_TxtBox = new System.Windows.Forms.TextBox();
+            this.BodyWgs84ToCartesianZ_TxtBox = new System.Windows.Forms.TextBox();
+            this.BodyWgs84ToCartesianY_TxtBox = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.zg2 = new ZedGraph.ZedGraphControl();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.GeWebBrowser = new System.Windows.Forms.WebBrowser();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -274,6 +331,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox19.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -282,9 +340,12 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -501,7 +562,7 @@
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(41, 138);
+            this.ConnectButton.Location = new System.Drawing.Point(41, 51);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(75, 23);
             this.ConnectButton.TabIndex = 2;
@@ -511,7 +572,7 @@
             // 
             // DisconnectButton
             // 
-            this.DisconnectButton.Location = new System.Drawing.Point(119, 138);
+            this.DisconnectButton.Location = new System.Drawing.Point(119, 51);
             this.DisconnectButton.Name = "DisconnectButton";
             this.DisconnectButton.Size = new System.Drawing.Size(75, 23);
             this.DisconnectButton.TabIndex = 3;
@@ -521,7 +582,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(41, 167);
+            this.ExitButton.Location = new System.Drawing.Point(41, 80);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(153, 23);
             this.ExitButton.TabIndex = 4;
@@ -532,7 +593,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 108);
+            this.label8.Location = new System.Drawing.Point(39, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 12);
             this.label8.TabIndex = 5;
@@ -541,7 +602,7 @@
             // TimerIntervalTxtBox
             // 
             this.TimerIntervalTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.TimerIntervalTxtBox.Location = new System.Drawing.Point(94, 105);
+            this.TimerIntervalTxtBox.Location = new System.Drawing.Point(94, 18);
             this.TimerIntervalTxtBox.Name = "TimerIntervalTxtBox";
             this.TimerIntervalTxtBox.Size = new System.Drawing.Size(100, 19);
             this.TimerIntervalTxtBox.TabIndex = 6;
@@ -554,9 +615,9 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 618);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(660, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(869, 23);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -590,6 +651,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BodyWgs84ToCartesianCheckBox);
             this.groupBox3.Controls.Add(this.BodyGeMapCheckBox);
             this.groupBox3.Controls.Add(this.BodyModelComboBox);
             this.groupBox3.Controls.Add(this.label36);
@@ -607,20 +669,31 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(422, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 361);
+            this.groupBox3.Size = new System.Drawing.Size(200, 445);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Combine Body";
             // 
+            // BodyWgs84ToCartesianCheckBox
+            // 
+            this.BodyWgs84ToCartesianCheckBox.AutoSize = true;
+            this.BodyWgs84ToCartesianCheckBox.Location = new System.Drawing.Point(8, 291);
+            this.BodyWgs84ToCartesianCheckBox.Name = "BodyWgs84ToCartesianCheckBox";
+            this.BodyWgs84ToCartesianCheckBox.Size = new System.Drawing.Size(127, 16);
+            this.BodyWgs84ToCartesianCheckBox.TabIndex = 15;
+            this.BodyWgs84ToCartesianCheckBox.Text = "WGS84 to Cartesian";
+            this.BodyWgs84ToCartesianCheckBox.UseVisualStyleBackColor = true;
+            // 
             // BodyGeMapCheckBox
             // 
             this.BodyGeMapCheckBox.AutoSize = true;
-            this.BodyGeMapCheckBox.Location = new System.Drawing.Point(8, 273);
+            this.BodyGeMapCheckBox.Location = new System.Drawing.Point(8, 269);
             this.BodyGeMapCheckBox.Name = "BodyGeMapCheckBox";
             this.BodyGeMapCheckBox.Size = new System.Drawing.Size(90, 16);
             this.BodyGeMapCheckBox.TabIndex = 14;
             this.BodyGeMapCheckBox.Text = "Google Earth";
             this.BodyGeMapCheckBox.UseVisualStyleBackColor = true;
+            this.BodyGeMapCheckBox.CheckStateChanged += new System.EventHandler(this.BodyGeMapCheckBox_CheckStateChanged);
             // 
             // BodyModelComboBox
             // 
@@ -768,7 +841,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(639, 603);
+            this.tabControl1.Size = new System.Drawing.Size(846, 485);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
@@ -782,7 +855,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(631, 577);
+            this.tabPage1.Size = new System.Drawing.Size(838, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Setting";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -794,9 +867,9 @@
             this.groupBox15.Controls.Add(this.DisconnectButton);
             this.groupBox15.Controls.Add(this.ExitButton);
             this.groupBox15.Controls.Add(this.label8);
-            this.groupBox15.Location = new System.Drawing.Point(422, 375);
+            this.groupBox15.Location = new System.Drawing.Point(628, 333);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(200, 196);
+            this.groupBox15.Size = new System.Drawing.Size(200, 118);
             this.groupBox15.TabIndex = 11;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Event";
@@ -812,7 +885,7 @@
             this.groupBox14.Controls.Add(this.label79);
             this.groupBox14.Controls.Add(this.TcpIpServerCheckBox);
             this.groupBox14.Controls.Add(this.TcpIpClientCheckBox);
-            this.groupBox14.Location = new System.Drawing.Point(216, 373);
+            this.groupBox14.Location = new System.Drawing.Point(628, 6);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(200, 198);
             this.groupBox14.TabIndex = 10;
@@ -862,7 +935,7 @@
             this.TcpIpServerIpTxtBox.Name = "TcpIpServerIpTxtBox";
             this.TcpIpServerIpTxtBox.Size = new System.Drawing.Size(100, 19);
             this.TcpIpServerIpTxtBox.TabIndex = 4;
-            this.TcpIpServerIpTxtBox.Text = "10.226.128.31";
+            this.TcpIpServerIpTxtBox.Text = "172.27.2.3";
             // 
             // label80
             // 
@@ -909,9 +982,9 @@
             this.groupBox10.Controls.Add(this.AmedasShowButton);
             this.groupBox10.Controls.Add(this.AmedasComBox);
             this.groupBox10.Controls.Add(this.label64);
-            this.groupBox10.Location = new System.Drawing.Point(6, 373);
+            this.groupBox10.Location = new System.Drawing.Point(628, 210);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(204, 198);
+            this.groupBox10.Size = new System.Drawing.Size(200, 117);
             this.groupBox10.TabIndex = 9;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Amedas Weather";
@@ -974,13 +1047,16 @@
             this.groupBox5.Controls.Add(this.VisionSaveCheckBox);
             this.groupBox5.Location = new System.Drawing.Point(216, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 361);
+            this.groupBox5.Size = new System.Drawing.Size(200, 445);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Machine Vision";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.LidarLateralControlCheckBox);
+            this.groupBox4.Controls.Add(this.LidarHeaderControlComboBox);
+            this.groupBox4.Controls.Add(this.LidarHeaderControlCheckBox);
             this.groupBox4.Controls.Add(this.LidarSplitAndMergeCheckBox);
             this.groupBox4.Controls.Add(this.label70);
             this.groupBox4.Controls.Add(this.LidarAvailableCheckBox);
@@ -998,10 +1074,42 @@
             this.groupBox4.Controls.Add(this.LidarHostTxtBox);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(204, 361);
+            this.groupBox4.Size = new System.Drawing.Size(204, 445);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Laser Range Finder";
+            // 
+            // LidarLateralControlCheckBox
+            // 
+            this.LidarLateralControlCheckBox.AutoSize = true;
+            this.LidarLateralControlCheckBox.Location = new System.Drawing.Point(8, 317);
+            this.LidarLateralControlCheckBox.Name = "LidarLateralControlCheckBox";
+            this.LidarLateralControlCheckBox.Size = new System.Drawing.Size(100, 16);
+            this.LidarLateralControlCheckBox.TabIndex = 8;
+            this.LidarLateralControlCheckBox.Text = "Lateral Control";
+            this.LidarLateralControlCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // LidarHeaderControlComboBox
+            // 
+            this.LidarHeaderControlComboBox.BackColor = System.Drawing.Color.Yellow;
+            this.LidarHeaderControlComboBox.FormattingEnabled = true;
+            this.LidarHeaderControlComboBox.Items.AddRange(new object[] {
+            "Normal",
+            "S-A-M"});
+            this.LidarHeaderControlComboBox.Location = new System.Drawing.Point(115, 293);
+            this.LidarHeaderControlComboBox.Name = "LidarHeaderControlComboBox";
+            this.LidarHeaderControlComboBox.Size = new System.Drawing.Size(78, 20);
+            this.LidarHeaderControlComboBox.TabIndex = 7;
+            // 
+            // LidarHeaderControlCheckBox
+            // 
+            this.LidarHeaderControlCheckBox.AutoSize = true;
+            this.LidarHeaderControlCheckBox.Location = new System.Drawing.Point(8, 295);
+            this.LidarHeaderControlCheckBox.Name = "LidarHeaderControlCheckBox";
+            this.LidarHeaderControlCheckBox.Size = new System.Drawing.Size(101, 16);
+            this.LidarHeaderControlCheckBox.TabIndex = 6;
+            this.LidarHeaderControlCheckBox.Text = "Header Control";
+            this.LidarHeaderControlCheckBox.UseVisualStyleBackColor = true;
             // 
             // LidarSplitAndMergeCheckBox
             // 
@@ -1024,16 +1132,124 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox19);
             this.tabPage2.Controls.Add(this.groupBox13);
             this.tabPage2.Controls.Add(this.groupBox12);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(631, 577);
+            this.tabPage2.Size = new System.Drawing.Size(838, 459);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LRF";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.LidarHeightControlLateralStateTxtBox);
+            this.groupBox19.Controls.Add(this.label94);
+            this.groupBox19.Controls.Add(this.label93);
+            this.groupBox19.Controls.Add(this.LidarHeightControlInitializeLateralTxtBox);
+            this.groupBox19.Controls.Add(this.label91);
+            this.groupBox19.Controls.Add(this.LidarHeightControlInitializeMinimumAdValueTxtBox);
+            this.groupBox19.Controls.Add(this.LidarHeightControlGroundDeviationTxtBox);
+            this.groupBox19.Controls.Add(this.label90);
+            this.groupBox19.Controls.Add(this.label82);
+            this.groupBox19.Controls.Add(this.LidarHeightControlAdTxtBox);
+            this.groupBox19.Location = new System.Drawing.Point(349, 119);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(208, 156);
+            this.groupBox19.TabIndex = 3;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Header Control";
+            // 
+            // LidarHeightControlLateralStateTxtBox
+            // 
+            this.LidarHeightControlLateralStateTxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.LidarHeightControlLateralStateTxtBox.Location = new System.Drawing.Point(92, 120);
+            this.LidarHeightControlLateralStateTxtBox.Name = "LidarHeightControlLateralStateTxtBox";
+            this.LidarHeightControlLateralStateTxtBox.Size = new System.Drawing.Size(100, 19);
+            this.LidarHeightControlLateralStateTxtBox.TabIndex = 17;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(6, 123);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(73, 12);
+            this.label94.TabIndex = 16;
+            this.label94.Text = "State Lateral:";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(6, 73);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(71, 12);
+            this.label93.TabIndex = 4;
+            this.label93.Text = "Intial Lateral:";
+            // 
+            // LidarHeightControlInitializeLateralTxtBox
+            // 
+            this.LidarHeightControlInitializeLateralTxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.LidarHeightControlInitializeLateralTxtBox.Location = new System.Drawing.Point(92, 70);
+            this.LidarHeightControlInitializeLateralTxtBox.Name = "LidarHeightControlInitializeLateralTxtBox";
+            this.LidarHeightControlInitializeLateralTxtBox.Size = new System.Drawing.Size(100, 19);
+            this.LidarHeightControlInitializeLateralTxtBox.TabIndex = 15;
+            this.LidarHeightControlInitializeLateralTxtBox.Text = "-0.2";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(6, 48);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(77, 12);
+            this.label91.TabIndex = 14;
+            this.label91.Text = "Initial Min AD:";
+            // 
+            // LidarHeightControlInitializeMinimumAdValueTxtBox
+            // 
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Location = new System.Drawing.Point(92, 45);
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Name = "LidarHeightControlInitializeMinimumAdValueTxtBox";
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Size = new System.Drawing.Size(100, 19);
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.TabIndex = 4;
+            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text = "400";
+            // 
+            // LidarHeightControlGroundDeviationTxtBox
+            // 
+            this.LidarHeightControlGroundDeviationTxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.LidarHeightControlGroundDeviationTxtBox.Location = new System.Drawing.Point(92, 20);
+            this.LidarHeightControlGroundDeviationTxtBox.Name = "LidarHeightControlGroundDeviationTxtBox";
+            this.LidarHeightControlGroundDeviationTxtBox.Size = new System.Drawing.Size(100, 19);
+            this.LidarHeightControlGroundDeviationTxtBox.TabIndex = 13;
+            this.LidarHeightControlGroundDeviationTxtBox.Text = "0.0";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(6, 23);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(51, 12);
+            this.label90.TabIndex = 12;
+            this.label90.Text = "Gnd Dev:";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(6, 98);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(60, 12);
+            this.label82.TabIndex = 10;
+            this.label82.Text = "Height AD:";
+            // 
+            // LidarHeightControlAdTxtBox
+            // 
+            this.LidarHeightControlAdTxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.LidarHeightControlAdTxtBox.Location = new System.Drawing.Point(92, 95);
+            this.LidarHeightControlAdTxtBox.Name = "LidarHeightControlAdTxtBox";
+            this.LidarHeightControlAdTxtBox.Size = new System.Drawing.Size(100, 19);
+            this.LidarHeightControlAdTxtBox.TabIndex = 11;
             // 
             // groupBox13
             // 
@@ -1045,7 +1261,7 @@
             this.groupBox13.Controls.Add(this.label74);
             this.groupBox13.Location = new System.Drawing.Point(349, 6);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(276, 269);
+            this.groupBox13.Size = new System.Drawing.Size(208, 107);
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Device Specification";
@@ -1113,9 +1329,9 @@
             this.groupBox12.Controls.Add(this.label73);
             this.groupBox12.Controls.Add(this.label72);
             this.groupBox12.Controls.Add(this.label71);
-            this.groupBox12.Location = new System.Drawing.Point(6, 281);
+            this.groupBox12.Location = new System.Drawing.Point(563, 6);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(619, 290);
+            this.groupBox12.Size = new System.Drawing.Size(208, 269);
             this.groupBox12.TabIndex = 1;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Split-And-Merge";
@@ -1123,7 +1339,7 @@
             // LidarSplitAndMergeGroundHeightTxtBox
             // 
             this.LidarSplitAndMergeGroundHeightTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarSplitAndMergeGroundHeightTxtBox.Location = new System.Drawing.Point(261, 51);
+            this.LidarSplitAndMergeGroundHeightTxtBox.Location = new System.Drawing.Point(92, 133);
             this.LidarSplitAndMergeGroundHeightTxtBox.Name = "LidarSplitAndMergeGroundHeightTxtBox";
             this.LidarSplitAndMergeGroundHeightTxtBox.Size = new System.Drawing.Size(100, 19);
             this.LidarSplitAndMergeGroundHeightTxtBox.TabIndex = 9;
@@ -1131,7 +1347,7 @@
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(175, 54);
+            this.label78.Location = new System.Drawing.Point(6, 136);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(80, 12);
             this.label78.TabIndex = 8;
@@ -1140,7 +1356,7 @@
             // LidarSplitAndMergeSegIndexTxtBox
             // 
             this.LidarSplitAndMergeSegIndexTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarSplitAndMergeSegIndexTxtBox.Location = new System.Drawing.Point(261, 26);
+            this.LidarSplitAndMergeSegIndexTxtBox.Location = new System.Drawing.Point(92, 108);
             this.LidarSplitAndMergeSegIndexTxtBox.Name = "LidarSplitAndMergeSegIndexTxtBox";
             this.LidarSplitAndMergeSegIndexTxtBox.Size = new System.Drawing.Size(100, 19);
             this.LidarSplitAndMergeSegIndexTxtBox.TabIndex = 7;
@@ -1148,7 +1364,7 @@
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(175, 29);
+            this.label77.Location = new System.Drawing.Point(6, 111);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(73, 12);
             this.label77.TabIndex = 6;
@@ -1157,7 +1373,7 @@
             // LidarSplitAndMergeMinNoTxtBox
             // 
             this.LidarSplitAndMergeMinNoTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeMinNoTxtBox.Location = new System.Drawing.Point(69, 76);
+            this.LidarSplitAndMergeMinNoTxtBox.Location = new System.Drawing.Point(92, 76);
             this.LidarSplitAndMergeMinNoTxtBox.Name = "LidarSplitAndMergeMinNoTxtBox";
             this.LidarSplitAndMergeMinNoTxtBox.Size = new System.Drawing.Size(100, 19);
             this.LidarSplitAndMergeMinNoTxtBox.TabIndex = 5;
@@ -1166,7 +1382,7 @@
             // LidarSplitAndMergeDeviationTxtBox
             // 
             this.LidarSplitAndMergeDeviationTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeDeviationTxtBox.Location = new System.Drawing.Point(69, 51);
+            this.LidarSplitAndMergeDeviationTxtBox.Location = new System.Drawing.Point(92, 51);
             this.LidarSplitAndMergeDeviationTxtBox.Name = "LidarSplitAndMergeDeviationTxtBox";
             this.LidarSplitAndMergeDeviationTxtBox.Size = new System.Drawing.Size(100, 19);
             this.LidarSplitAndMergeDeviationTxtBox.TabIndex = 4;
@@ -1175,7 +1391,7 @@
             // LidarSplitAndMergeThresholdTxtBox
             // 
             this.LidarSplitAndMergeThresholdTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeThresholdTxtBox.Location = new System.Drawing.Point(69, 26);
+            this.LidarSplitAndMergeThresholdTxtBox.Location = new System.Drawing.Point(92, 26);
             this.LidarSplitAndMergeThresholdTxtBox.Name = "LidarSplitAndMergeThresholdTxtBox";
             this.LidarSplitAndMergeThresholdTxtBox.Size = new System.Drawing.Size(100, 19);
             this.LidarSplitAndMergeThresholdTxtBox.TabIndex = 3;
@@ -1214,7 +1430,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(631, 577);
+            this.tabPage7.Size = new System.Drawing.Size(838, 459);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Vision";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1227,7 +1443,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(631, 577);
+            this.tabPage3.Size = new System.Drawing.Size(838, 459);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "VY50";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1270,9 +1486,9 @@
             this.groupBox11.Controls.Add(this.Vy50_AUGERHOME_CheckBox);
             this.groupBox11.Controls.Add(this.Vy50_AUGER_CheckBox);
             this.groupBox11.Controls.Add(this.Vy50_ROBOTMODE_CheckBox);
-            this.groupBox11.Location = new System.Drawing.Point(258, 6);
+            this.groupBox11.Location = new System.Drawing.Point(465, 6);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(367, 452);
+            this.groupBox11.Size = new System.Drawing.Size(367, 447);
             this.groupBox11.TabIndex = 2;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Send Command Data to Combine ECU";
@@ -1309,7 +1525,7 @@
             // 
             // Vy50_SendData_Button
             // 
-            this.Vy50_SendData_Button.Location = new System.Drawing.Point(6, 423);
+            this.Vy50_SendData_Button.Location = new System.Drawing.Point(6, 379);
             this.Vy50_SendData_Button.Name = "Vy50_SendData_Button";
             this.Vy50_SendData_Button.Size = new System.Drawing.Size(355, 23);
             this.Vy50_SendData_Button.TabIndex = 32;
@@ -1626,22 +1842,22 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.Vy50_gps_Sv_TxtBox);
-            this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.label33);
             this.groupBox7.Controls.Add(this.label32);
             this.groupBox7.Controls.Add(this.label31);
-            this.groupBox7.Controls.Add(this.label30);
-            this.groupBox7.Controls.Add(this.label29);
-            this.groupBox7.Controls.Add(this.Vy50_gps_Quality_TxtBox);
-            this.groupBox7.Controls.Add(this.Vy50_gps_Heading_TxtBox);
+            this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.Vy50_gps_Altitude_TxtBox);
-            this.groupBox7.Controls.Add(this.Vy50_gps_Longitude_TxtBox);
-            this.groupBox7.Controls.Add(this.Vy50_gps_Latitude_TxtBox);
+            this.groupBox7.Controls.Add(this.label29);
+            this.groupBox7.Controls.Add(this.Vy50_gps_Heading_TxtBox);
             this.groupBox7.Controls.Add(this.Vy50_gps_Utc_TxtBox);
+            this.groupBox7.Controls.Add(this.Vy50_gps_Latitude_TxtBox);
+            this.groupBox7.Controls.Add(this.Vy50_gps_Longitude_TxtBox);
+            this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.label28);
-            this.groupBox7.Location = new System.Drawing.Point(6, 464);
+            this.groupBox7.Controls.Add(this.Vy50_gps_Quality_TxtBox);
+            this.groupBox7.Location = new System.Drawing.Point(258, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(619, 102);
+            this.groupBox7.Size = new System.Drawing.Size(201, 447);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Received GPS";
@@ -1649,24 +1865,15 @@
             // Vy50_gps_Sv_TxtBox
             // 
             this.Vy50_gps_Sv_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy50_gps_Sv_TxtBox.Location = new System.Drawing.Point(352, 47);
+            this.Vy50_gps_Sv_TxtBox.Location = new System.Drawing.Point(66, 172);
             this.Vy50_gps_Sv_TxtBox.Name = "Vy50_gps_Sv_TxtBox";
             this.Vy50_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Sv_TxtBox.TabIndex = 14;
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(315, 50);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(22, 12);
-            this.label34.TabIndex = 13;
-            this.label34.Text = "SV:";
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(172, 50);
+            this.label33.Location = new System.Drawing.Point(6, 150);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(31, 12);
             this.label33.TabIndex = 12;
@@ -1684,37 +1891,37 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(458, 25);
+            this.label31.Location = new System.Drawing.Point(6, 125);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(31, 12);
             this.label31.TabIndex = 10;
             this.label31.Text = "高度:";
             // 
-            // label30
+            // label34
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(315, 25);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(31, 12);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "東経:";
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 174);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(22, 12);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "SV:";
+            // 
+            // Vy50_gps_Altitude_TxtBox
+            // 
+            this.Vy50_gps_Altitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy50_gps_Altitude_TxtBox.Location = new System.Drawing.Point(66, 122);
+            this.Vy50_gps_Altitude_TxtBox.Name = "Vy50_gps_Altitude_TxtBox";
+            this.Vy50_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_gps_Altitude_TxtBox.TabIndex = 5;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(172, 25);
+            this.label29.Location = new System.Drawing.Point(6, 75);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 12);
             this.label29.TabIndex = 8;
             this.label29.Text = "北緯:";
-            // 
-            // Vy50_gps_Quality_TxtBox
-            // 
-            this.Vy50_gps_Quality_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy50_gps_Quality_TxtBox.Location = new System.Drawing.Point(209, 47);
-            this.Vy50_gps_Quality_TxtBox.Name = "Vy50_gps_Quality_TxtBox";
-            this.Vy50_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy50_gps_Quality_TxtBox.TabIndex = 7;
             // 
             // Vy50_gps_Heading_TxtBox
             // 
@@ -1724,30 +1931,6 @@
             this.Vy50_gps_Heading_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Heading_TxtBox.TabIndex = 6;
             // 
-            // Vy50_gps_Altitude_TxtBox
-            // 
-            this.Vy50_gps_Altitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy50_gps_Altitude_TxtBox.Location = new System.Drawing.Point(495, 22);
-            this.Vy50_gps_Altitude_TxtBox.Name = "Vy50_gps_Altitude_TxtBox";
-            this.Vy50_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy50_gps_Altitude_TxtBox.TabIndex = 5;
-            // 
-            // Vy50_gps_Longitude_TxtBox
-            // 
-            this.Vy50_gps_Longitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy50_gps_Longitude_TxtBox.Location = new System.Drawing.Point(352, 22);
-            this.Vy50_gps_Longitude_TxtBox.Name = "Vy50_gps_Longitude_TxtBox";
-            this.Vy50_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy50_gps_Longitude_TxtBox.TabIndex = 4;
-            // 
-            // Vy50_gps_Latitude_TxtBox
-            // 
-            this.Vy50_gps_Latitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy50_gps_Latitude_TxtBox.Location = new System.Drawing.Point(209, 22);
-            this.Vy50_gps_Latitude_TxtBox.Name = "Vy50_gps_Latitude_TxtBox";
-            this.Vy50_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy50_gps_Latitude_TxtBox.TabIndex = 3;
-            // 
             // Vy50_gps_Utc_TxtBox
             // 
             this.Vy50_gps_Utc_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
@@ -1755,6 +1938,31 @@
             this.Vy50_gps_Utc_TxtBox.Name = "Vy50_gps_Utc_TxtBox";
             this.Vy50_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
             this.Vy50_gps_Utc_TxtBox.TabIndex = 2;
+            // 
+            // Vy50_gps_Latitude_TxtBox
+            // 
+            this.Vy50_gps_Latitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy50_gps_Latitude_TxtBox.Location = new System.Drawing.Point(66, 72);
+            this.Vy50_gps_Latitude_TxtBox.Name = "Vy50_gps_Latitude_TxtBox";
+            this.Vy50_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_gps_Latitude_TxtBox.TabIndex = 3;
+            // 
+            // Vy50_gps_Longitude_TxtBox
+            // 
+            this.Vy50_gps_Longitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy50_gps_Longitude_TxtBox.Location = new System.Drawing.Point(66, 97);
+            this.Vy50_gps_Longitude_TxtBox.Name = "Vy50_gps_Longitude_TxtBox";
+            this.Vy50_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_gps_Longitude_TxtBox.TabIndex = 4;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 100);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(31, 12);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "東経:";
             // 
             // label28
             // 
@@ -1764,6 +1972,14 @@
             this.label28.Size = new System.Drawing.Size(54, 12);
             this.label28.TabIndex = 2;
             this.label28.Text = "UTC時刻:";
+            // 
+            // Vy50_gps_Quality_TxtBox
+            // 
+            this.Vy50_gps_Quality_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy50_gps_Quality_TxtBox.Location = new System.Drawing.Point(66, 147);
+            this.Vy50_gps_Quality_TxtBox.Name = "Vy50_gps_Quality_TxtBox";
+            this.Vy50_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy50_gps_Quality_TxtBox.TabIndex = 7;
             // 
             // groupBox6
             // 
@@ -1799,7 +2015,7 @@
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(246, 452);
+            this.groupBox6.Size = new System.Drawing.Size(246, 447);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Received Combine Body Data";
@@ -2061,18 +2277,348 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox16);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Controls.Add(this.groupBox8);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(631, 577);
+            this.tabPage4.Size = new System.Drawing.Size(838, 459);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "VY446";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.Vy446_FgSitsuden_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_FgTofuku_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_FgKakikomi_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_KARITORI_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_SAGYOKI_ON_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_SAGYOKI_OFF_CheckBox);
+            this.groupBox16.Controls.Add(this.label89);
+            this.groupBox16.Controls.Add(this.Vy446_HAZARD_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_BUZZER_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_ENGINE_STOP_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_BUZZER2_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_YELLOW_LAMP_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_RED_LAMP_CheckBox);
+            this.groupBox16.Controls.Add(this.label88);
+            this.groupBox16.Controls.Add(this.Vy446_CLUTCH_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_AUTO_RETURN_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_CMD_KARITAKA_TxtBox);
+            this.groupBox16.Controls.Add(this.Vy446_KARITAKA_CheckBox);
+            this.groupBox16.Controls.Add(this.Vy446_CMD_AUGER_CLD_TxtBox);
+            this.groupBox16.Controls.Add(this.Vy446_CMD_AUGER_MTR_TxtBox);
+            this.groupBox16.Controls.Add(this.label87);
+            this.groupBox16.Controls.Add(this.label86);
+            this.groupBox16.Controls.Add(this.Vy446_AUTOPOS_CheckBox);
+            this.groupBox16.Controls.Add(this.label85);
+            this.groupBox16.Controls.Add(this.Vy446_SendData_Button);
+            this.groupBox16.Controls.Add(this.Vy446_CMD_HST_TxtBox);
+            this.groupBox16.Controls.Add(this.Vy446_CMD_SOKO_TxtBox);
+            this.groupBox16.Controls.Add(this.label84);
+            this.groupBox16.Controls.Add(this.label83);
+            this.groupBox16.Controls.Add(this.Vy446_RobotMode_CheckBox);
+            this.groupBox16.Location = new System.Drawing.Point(427, 8);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(405, 447);
+            this.groupBox16.TabIndex = 4;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Send Command data to Combine ECU";
+            // 
+            // Vy446_FgSitsuden_CheckBox
+            // 
+            this.Vy446_FgSitsuden_CheckBox.AutoSize = true;
+            this.Vy446_FgSitsuden_CheckBox.Location = new System.Drawing.Point(205, 289);
+            this.Vy446_FgSitsuden_CheckBox.Name = "Vy446_FgSitsuden_CheckBox";
+            this.Vy446_FgSitsuden_CheckBox.Size = new System.Drawing.Size(82, 16);
+            this.Vy446_FgSitsuden_CheckBox.TabIndex = 29;
+            this.Vy446_FgSitsuden_CheckBox.Text = "湿田スイッチ";
+            this.Vy446_FgSitsuden_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_FgTofuku_CheckBox
+            // 
+            this.Vy446_FgTofuku_CheckBox.AutoSize = true;
+            this.Vy446_FgTofuku_CheckBox.Location = new System.Drawing.Point(205, 267);
+            this.Vy446_FgTofuku_CheckBox.Name = "Vy446_FgTofuku_CheckBox";
+            this.Vy446_FgTofuku_CheckBox.Size = new System.Drawing.Size(94, 16);
+            this.Vy446_FgTofuku_CheckBox.TabIndex = 28;
+            this.Vy446_FgTofuku_CheckBox.Text = "倒伏刈スイッチ";
+            this.Vy446_FgTofuku_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_FgKakikomi_CheckBox
+            // 
+            this.Vy446_FgKakikomi_CheckBox.AutoSize = true;
+            this.Vy446_FgKakikomi_CheckBox.Location = new System.Drawing.Point(205, 245);
+            this.Vy446_FgKakikomi_CheckBox.Name = "Vy446_FgKakikomi_CheckBox";
+            this.Vy446_FgKakikomi_CheckBox.Size = new System.Drawing.Size(106, 16);
+            this.Vy446_FgKakikomi_CheckBox.TabIndex = 27;
+            this.Vy446_FgKakikomi_CheckBox.Text = "強制掻込スイッチ";
+            this.Vy446_FgKakikomi_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_KARITORI_CheckBox
+            // 
+            this.Vy446_KARITORI_CheckBox.AutoSize = true;
+            this.Vy446_KARITORI_CheckBox.Location = new System.Drawing.Point(205, 196);
+            this.Vy446_KARITORI_CheckBox.Name = "Vy446_KARITORI_CheckBox";
+            this.Vy446_KARITORI_CheckBox.Size = new System.Drawing.Size(66, 16);
+            this.Vy446_KARITORI_CheckBox.TabIndex = 26;
+            this.Vy446_KARITORI_CheckBox.Text = "刈取オン";
+            this.Vy446_KARITORI_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_SAGYOKI_ON_CheckBox
+            // 
+            this.Vy446_SAGYOKI_ON_CheckBox.AutoSize = true;
+            this.Vy446_SAGYOKI_ON_CheckBox.Location = new System.Drawing.Point(205, 171);
+            this.Vy446_SAGYOKI_ON_CheckBox.Name = "Vy446_SAGYOKI_ON_CheckBox";
+            this.Vy446_SAGYOKI_ON_CheckBox.Size = new System.Drawing.Size(78, 16);
+            this.Vy446_SAGYOKI_ON_CheckBox.TabIndex = 25;
+            this.Vy446_SAGYOKI_ON_CheckBox.Text = "作業機オン";
+            this.Vy446_SAGYOKI_ON_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_SAGYOKI_OFF_CheckBox
+            // 
+            this.Vy446_SAGYOKI_OFF_CheckBox.AutoSize = true;
+            this.Vy446_SAGYOKI_OFF_CheckBox.Location = new System.Drawing.Point(205, 146);
+            this.Vy446_SAGYOKI_OFF_CheckBox.Name = "Vy446_SAGYOKI_OFF_CheckBox";
+            this.Vy446_SAGYOKI_OFF_CheckBox.Size = new System.Drawing.Size(70, 16);
+            this.Vy446_SAGYOKI_OFF_CheckBox.TabIndex = 24;
+            this.Vy446_SAGYOKI_OFF_CheckBox.Text = "すべてオフ";
+            this.Vy446_SAGYOKI_OFF_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(203, 128);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(73, 12);
+            this.label89.TabIndex = 23;
+            this.label89.Text = "作業機クラッチ";
+            // 
+            // Vy446_HAZARD_CheckBox
+            // 
+            this.Vy446_HAZARD_CheckBox.AutoSize = true;
+            this.Vy446_HAZARD_CheckBox.Location = new System.Drawing.Point(205, 102);
+            this.Vy446_HAZARD_CheckBox.Name = "Vy446_HAZARD_CheckBox";
+            this.Vy446_HAZARD_CheckBox.Size = new System.Drawing.Size(63, 16);
+            this.Vy446_HAZARD_CheckBox.TabIndex = 22;
+            this.Vy446_HAZARD_CheckBox.Text = "ハザード";
+            this.Vy446_HAZARD_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_BUZZER_CheckBox
+            // 
+            this.Vy446_BUZZER_CheckBox.AutoSize = true;
+            this.Vy446_BUZZER_CheckBox.Location = new System.Drawing.Point(205, 77);
+            this.Vy446_BUZZER_CheckBox.Name = "Vy446_BUZZER_CheckBox";
+            this.Vy446_BUZZER_CheckBox.Size = new System.Drawing.Size(53, 16);
+            this.Vy446_BUZZER_CheckBox.TabIndex = 21;
+            this.Vy446_BUZZER_CheckBox.Text = "ブザー";
+            this.Vy446_BUZZER_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_ENGINE_STOP_CheckBox
+            // 
+            this.Vy446_ENGINE_STOP_CheckBox.AutoSize = true;
+            this.Vy446_ENGINE_STOP_CheckBox.Location = new System.Drawing.Point(205, 52);
+            this.Vy446_ENGINE_STOP_CheckBox.Name = "Vy446_ENGINE_STOP_CheckBox";
+            this.Vy446_ENGINE_STOP_CheckBox.Size = new System.Drawing.Size(85, 16);
+            this.Vy446_ENGINE_STOP_CheckBox.TabIndex = 20;
+            this.Vy446_ENGINE_STOP_CheckBox.Text = "エンジン停止";
+            this.Vy446_ENGINE_STOP_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_BUZZER2_CheckBox
+            // 
+            this.Vy446_BUZZER2_CheckBox.AutoSize = true;
+            this.Vy446_BUZZER2_CheckBox.Location = new System.Drawing.Point(6, 339);
+            this.Vy446_BUZZER2_CheckBox.Name = "Vy446_BUZZER2_CheckBox";
+            this.Vy446_BUZZER2_CheckBox.Size = new System.Drawing.Size(60, 16);
+            this.Vy446_BUZZER2_CheckBox.TabIndex = 19;
+            this.Vy446_BUZZER2_CheckBox.Text = "警告音";
+            this.Vy446_BUZZER2_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_YELLOW_LAMP_CheckBox
+            // 
+            this.Vy446_YELLOW_LAMP_CheckBox.AutoSize = true;
+            this.Vy446_YELLOW_LAMP_CheckBox.Location = new System.Drawing.Point(6, 317);
+            this.Vy446_YELLOW_LAMP_CheckBox.Name = "Vy446_YELLOW_LAMP_CheckBox";
+            this.Vy446_YELLOW_LAMP_CheckBox.Size = new System.Drawing.Size(62, 16);
+            this.Vy446_YELLOW_LAMP_CheckBox.TabIndex = 18;
+            this.Vy446_YELLOW_LAMP_CheckBox.Text = "黄ランプ";
+            this.Vy446_YELLOW_LAMP_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_RED_LAMP_CheckBox
+            // 
+            this.Vy446_RED_LAMP_CheckBox.AutoSize = true;
+            this.Vy446_RED_LAMP_CheckBox.Location = new System.Drawing.Point(6, 295);
+            this.Vy446_RED_LAMP_CheckBox.Name = "Vy446_RED_LAMP_CheckBox";
+            this.Vy446_RED_LAMP_CheckBox.Size = new System.Drawing.Size(62, 16);
+            this.Vy446_RED_LAMP_CheckBox.TabIndex = 17;
+            this.Vy446_RED_LAMP_CheckBox.Text = "赤ランプ";
+            this.Vy446_RED_LAMP_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(6, 271);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(48, 12);
+            this.label88.TabIndex = 16;
+            this.label88.Text = "パトライト";
+            // 
+            // Vy446_CLUTCH_CheckBox
+            // 
+            this.Vy446_CLUTCH_CheckBox.AutoSize = true;
+            this.Vy446_CLUTCH_CheckBox.Location = new System.Drawing.Point(6, 220);
+            this.Vy446_CLUTCH_CheckBox.Name = "Vy446_CLUTCH_CheckBox";
+            this.Vy446_CLUTCH_CheckBox.Size = new System.Drawing.Size(80, 16);
+            this.Vy446_CLUTCH_CheckBox.TabIndex = 15;
+            this.Vy446_CLUTCH_CheckBox.Text = "排出クラッチ";
+            this.Vy446_CLUTCH_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_AUTO_RETURN_CheckBox
+            // 
+            this.Vy446_AUTO_RETURN_CheckBox.AutoSize = true;
+            this.Vy446_AUTO_RETURN_CheckBox.Location = new System.Drawing.Point(6, 195);
+            this.Vy446_AUTO_RETURN_CheckBox.Name = "Vy446_AUTO_RETURN_CheckBox";
+            this.Vy446_AUTO_RETURN_CheckBox.Size = new System.Drawing.Size(72, 16);
+            this.Vy446_AUTO_RETURN_CheckBox.TabIndex = 14;
+            this.Vy446_AUTO_RETURN_CheckBox.Text = "自動収納";
+            this.Vy446_AUTO_RETURN_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_CMD_KARITAKA_TxtBox
+            // 
+            this.Vy446_CMD_KARITAKA_TxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.Vy446_CMD_KARITAKA_TxtBox.Location = new System.Drawing.Point(99, 243);
+            this.Vy446_CMD_KARITAKA_TxtBox.Name = "Vy446_CMD_KARITAKA_TxtBox";
+            this.Vy446_CMD_KARITAKA_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_CMD_KARITAKA_TxtBox.TabIndex = 13;
+            this.Vy446_CMD_KARITAKA_TxtBox.Text = "680";
+            // 
+            // Vy446_KARITAKA_CheckBox
+            // 
+            this.Vy446_KARITAKA_CheckBox.AutoSize = true;
+            this.Vy446_KARITAKA_CheckBox.Location = new System.Drawing.Point(6, 245);
+            this.Vy446_KARITAKA_CheckBox.Name = "Vy446_KARITAKA_CheckBox";
+            this.Vy446_KARITAKA_CheckBox.Size = new System.Drawing.Size(74, 16);
+            this.Vy446_KARITAKA_CheckBox.TabIndex = 12;
+            this.Vy446_KARITAKA_CheckBox.Text = "刈高自動:";
+            this.Vy446_KARITAKA_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Vy446_CMD_AUGER_CLD_TxtBox
+            // 
+            this.Vy446_CMD_AUGER_CLD_TxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.Vy446_CMD_AUGER_CLD_TxtBox.Location = new System.Drawing.Point(99, 168);
+            this.Vy446_CMD_AUGER_CLD_TxtBox.Name = "Vy446_CMD_AUGER_CLD_TxtBox";
+            this.Vy446_CMD_AUGER_CLD_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_CMD_AUGER_CLD_TxtBox.TabIndex = 11;
+            this.Vy446_CMD_AUGER_CLD_TxtBox.Text = "753";
+            // 
+            // Vy446_CMD_AUGER_MTR_TxtBox
+            // 
+            this.Vy446_CMD_AUGER_MTR_TxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.Vy446_CMD_AUGER_MTR_TxtBox.Location = new System.Drawing.Point(99, 143);
+            this.Vy446_CMD_AUGER_MTR_TxtBox.Name = "Vy446_CMD_AUGER_MTR_TxtBox";
+            this.Vy446_CMD_AUGER_MTR_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_CMD_AUGER_MTR_TxtBox.TabIndex = 10;
+            this.Vy446_CMD_AUGER_MTR_TxtBox.Text = "92";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(6, 171);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(55, 12);
+            this.label87.TabIndex = 9;
+            this.label87.Text = "上下旋回:";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(6, 146);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(55, 12);
+            this.label86.TabIndex = 8;
+            this.label86.Text = "左右旋回:";
+            // 
+            // Vy446_AUTOPOS_CheckBox
+            // 
+            this.Vy446_AUTOPOS_CheckBox.AutoSize = true;
+            this.Vy446_AUTOPOS_CheckBox.Location = new System.Drawing.Point(6, 127);
+            this.Vy446_AUTOPOS_CheckBox.Name = "Vy446_AUTOPOS_CheckBox";
+            this.Vy446_AUTOPOS_CheckBox.Size = new System.Drawing.Size(94, 16);
+            this.Vy446_AUTOPOS_CheckBox.TabIndex = 7;
+            this.Vy446_AUTOPOS_CheckBox.Text = "自動位置決め";
+            this.Vy446_AUTOPOS_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(6, 103);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(58, 12);
+            this.label85.TabIndex = 6;
+            this.label85.Text = "排出オーガ";
+            // 
+            // Vy446_SendData_Button
+            // 
+            this.Vy446_SendData_Button.Location = new System.Drawing.Point(6, 366);
+            this.Vy446_SendData_Button.Name = "Vy446_SendData_Button";
+            this.Vy446_SendData_Button.Size = new System.Drawing.Size(393, 23);
+            this.Vy446_SendData_Button.TabIndex = 5;
+            this.Vy446_SendData_Button.Text = "Vy446 Send Data";
+            this.Vy446_SendData_Button.UseVisualStyleBackColor = true;
+            this.Vy446_SendData_Button.Click += new System.EventHandler(this.Vy446_SendData_Button_Click);
+            // 
+            // Vy446_CMD_HST_TxtBox
+            // 
+            this.Vy446_CMD_HST_TxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.Vy446_CMD_HST_TxtBox.Location = new System.Drawing.Point(99, 75);
+            this.Vy446_CMD_HST_TxtBox.Name = "Vy446_CMD_HST_TxtBox";
+            this.Vy446_CMD_HST_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_CMD_HST_TxtBox.TabIndex = 4;
+            this.Vy446_CMD_HST_TxtBox.Text = "1405";
+            // 
+            // Vy446_CMD_SOKO_TxtBox
+            // 
+            this.Vy446_CMD_SOKO_TxtBox.BackColor = System.Drawing.Color.Yellow;
+            this.Vy446_CMD_SOKO_TxtBox.Location = new System.Drawing.Point(99, 50);
+            this.Vy446_CMD_SOKO_TxtBox.Name = "Vy446_CMD_SOKO_TxtBox";
+            this.Vy446_CMD_SOKO_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_CMD_SOKO_TxtBox.TabIndex = 3;
+            this.Vy446_CMD_SOKO_TxtBox.Text = "430";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(6, 78);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(87, 12);
+            this.label84.TabIndex = 2;
+            this.label84.Text = "主変速ポテンショ:";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(6, 53);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(75, 12);
+            this.label83.TabIndex = 1;
+            this.label83.Text = "操向ポテンショ:";
+            // 
+            // Vy446_RobotMode_CheckBox
+            // 
+            this.Vy446_RobotMode_CheckBox.AutoSize = true;
+            this.Vy446_RobotMode_CheckBox.Location = new System.Drawing.Point(6, 27);
+            this.Vy446_RobotMode_CheckBox.Name = "Vy446_RobotMode_CheckBox";
+            this.Vy446_RobotMode_CheckBox.Size = new System.Drawing.Size(86, 16);
+            this.Vy446_RobotMode_CheckBox.TabIndex = 0;
+            this.Vy446_RobotMode_CheckBox.Text = "ロボットモード";
+            this.Vy446_RobotMode_CheckBox.UseVisualStyleBackColor = true;
+            // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.Vy446_ReadCnt_TxtBox);
+            this.groupBox9.Controls.Add(this.label92);
             this.groupBox9.Controls.Add(this.label63);
             this.groupBox9.Controls.Add(this.Vy446_RESERVE_B_TxtBox);
             this.groupBox9.Controls.Add(this.label62);
@@ -2100,10 +2646,27 @@
             this.groupBox9.Controls.Add(this.label50);
             this.groupBox9.Location = new System.Drawing.Point(6, 6);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(208, 492);
+            this.groupBox9.Size = new System.Drawing.Size(208, 447);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Received Combine Body Data";
+            // 
+            // Vy446_ReadCnt_TxtBox
+            // 
+            this.Vy446_ReadCnt_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_ReadCnt_TxtBox.Location = new System.Drawing.Point(99, 415);
+            this.Vy446_ReadCnt_TxtBox.Name = "Vy446_ReadCnt_TxtBox";
+            this.Vy446_ReadCnt_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_ReadCnt_TxtBox.TabIndex = 21;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(6, 418);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(67, 12);
+            this.label92.TabIndex = 20;
+            this.label92.Text = "Current Cnt:";
             // 
             // label63
             // 
@@ -2325,32 +2888,32 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label49);
-            this.groupBox8.Controls.Add(this.label48);
-            this.groupBox8.Controls.Add(this.label47);
-            this.groupBox8.Controls.Add(this.label46);
-            this.groupBox8.Controls.Add(this.label45);
-            this.groupBox8.Controls.Add(this.label44);
-            this.groupBox8.Controls.Add(this.label43);
-            this.groupBox8.Controls.Add(this.label42);
             this.groupBox8.Controls.Add(this.label41);
-            this.groupBox8.Controls.Add(this.label40);
-            this.groupBox8.Controls.Add(this.Vy446_roll_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_pitch_TxtBox);
+            this.groupBox8.Controls.Add(this.label46);
             this.groupBox8.Controls.Add(this.Vy446_gps_compass_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_compass_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_roll_TxtBox);
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Controls.Add(this.Vy446_pitch_TxtBox);
+            this.groupBox8.Controls.Add(this.label45);
+            this.groupBox8.Controls.Add(this.label48);
             this.groupBox8.Controls.Add(this.Vy446_heading_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_avilability_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Quality_TxtBox);
-            this.groupBox8.Controls.Add(this.Vy446_gps_Sv_TxtBox);
             this.groupBox8.Controls.Add(this.Vy446_gps_Altitude_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_compass_TxtBox);
             this.groupBox8.Controls.Add(this.Vy446_gps_Longitude_TxtBox);
+            this.groupBox8.Controls.Add(this.label47);
             this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Sv_TxtBox);
             this.groupBox8.Controls.Add(this.Vy446_gps_Latitude_TxtBox);
             this.groupBox8.Controls.Add(this.Vy446_gps_Utc_TxtBox);
+            this.groupBox8.Controls.Add(this.Vy446_gps_Quality_TxtBox);
             this.groupBox8.Controls.Add(this.label38);
-            this.groupBox8.Location = new System.Drawing.Point(220, 6);
+            this.groupBox8.Controls.Add(this.Vy446_avilability_TxtBox);
+            this.groupBox8.Controls.Add(this.label42);
+            this.groupBox8.Controls.Add(this.label44);
+            this.groupBox8.Controls.Add(this.label43);
+            this.groupBox8.Location = new System.Drawing.Point(220, 8);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(194, 330);
+            this.groupBox8.Size = new System.Drawing.Size(201, 447);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Received GPS";
@@ -2358,29 +2921,20 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(6, 296);
+            this.label49.Location = new System.Drawing.Point(8, 295);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(36, 12);
             this.label49.TabIndex = 3;
             this.label49.Text = "ロール:";
             // 
-            // label48
+            // label41
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 271);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(32, 12);
-            this.label48.TabIndex = 3;
-            this.label48.Text = "ピッチ:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(6, 246);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(65, 12);
-            this.label47.TabIndex = 3;
-            this.label47.Text = "GPSコンパス:";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 96);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(31, 12);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "高度:";
             // 
             // label46
             // 
@@ -2391,6 +2945,39 @@
             this.label46.TabIndex = 3;
             this.label46.Text = "ジャイロ方位:";
             // 
+            // Vy446_gps_compass_TxtBox
+            // 
+            this.Vy446_gps_compass_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(80, 243);
+            this.Vy446_gps_compass_TxtBox.Name = "Vy446_gps_compass_TxtBox";
+            this.Vy446_gps_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_compass_TxtBox.TabIndex = 10;
+            // 
+            // Vy446_roll_TxtBox
+            // 
+            this.Vy446_roll_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(80, 293);
+            this.Vy446_roll_TxtBox.Name = "Vy446_roll_TxtBox";
+            this.Vy446_roll_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_roll_TxtBox.TabIndex = 12;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 71);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(31, 12);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "経度:";
+            // 
+            // Vy446_pitch_TxtBox
+            // 
+            this.Vy446_pitch_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(80, 268);
+            this.Vy446_pitch_TxtBox.Name = "Vy446_pitch_TxtBox";
+            this.Vy446_pitch_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_pitch_TxtBox.TabIndex = 11;
+            // 
             // label45
             // 
             this.label45.AutoSize = true;
@@ -2399,6 +2986,123 @@
             this.label45.Size = new System.Drawing.Size(67, 12);
             this.label45.TabIndex = 3;
             this.label45.Text = "磁気コンパス:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(8, 270);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(32, 12);
+            this.label48.TabIndex = 3;
+            this.label48.Text = "ピッチ:";
+            // 
+            // Vy446_heading_TxtBox
+            // 
+            this.Vy446_heading_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(80, 193);
+            this.Vy446_heading_TxtBox.Name = "Vy446_heading_TxtBox";
+            this.Vy446_heading_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_heading_TxtBox.TabIndex = 8;
+            // 
+            // Vy446_gps_Altitude_TxtBox
+            // 
+            this.Vy446_gps_Altitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(80, 93);
+            this.Vy446_gps_Altitude_TxtBox.Name = "Vy446_gps_Altitude_TxtBox";
+            this.Vy446_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Altitude_TxtBox.TabIndex = 5;
+            // 
+            // Vy446_compass_TxtBox
+            // 
+            this.Vy446_compass_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(80, 218);
+            this.Vy446_compass_TxtBox.Name = "Vy446_compass_TxtBox";
+            this.Vy446_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_compass_TxtBox.TabIndex = 9;
+            // 
+            // Vy446_gps_Longitude_TxtBox
+            // 
+            this.Vy446_gps_Longitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(80, 68);
+            this.Vy446_gps_Longitude_TxtBox.Name = "Vy446_gps_Longitude_TxtBox";
+            this.Vy446_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Longitude_TxtBox.TabIndex = 4;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(8, 245);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(65, 12);
+            this.label47.TabIndex = 3;
+            this.label47.Text = "GPSコンパス:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 46);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(31, 12);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "緯度:";
+            // 
+            // Vy446_gps_Sv_TxtBox
+            // 
+            this.Vy446_gps_Sv_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(80, 118);
+            this.Vy446_gps_Sv_TxtBox.Name = "Vy446_gps_Sv_TxtBox";
+            this.Vy446_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Sv_TxtBox.TabIndex = 3;
+            // 
+            // Vy446_gps_Latitude_TxtBox
+            // 
+            this.Vy446_gps_Latitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(80, 43);
+            this.Vy446_gps_Latitude_TxtBox.Name = "Vy446_gps_Latitude_TxtBox";
+            this.Vy446_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Latitude_TxtBox.TabIndex = 2;
+            // 
+            // Vy446_gps_Utc_TxtBox
+            // 
+            this.Vy446_gps_Utc_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(80, 18);
+            this.Vy446_gps_Utc_TxtBox.Name = "Vy446_gps_Utc_TxtBox";
+            this.Vy446_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Utc_TxtBox.TabIndex = 1;
+            // 
+            // Vy446_gps_Quality_TxtBox
+            // 
+            this.Vy446_gps_Quality_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(80, 143);
+            this.Vy446_gps_Quality_TxtBox.Name = "Vy446_gps_Quality_TxtBox";
+            this.Vy446_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_gps_Quality_TxtBox.TabIndex = 6;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 25);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(54, 12);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "UTC時刻:";
+            // 
+            // Vy446_avilability_TxtBox
+            // 
+            this.Vy446_avilability_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(80, 168);
+            this.Vy446_avilability_TxtBox.Name = "Vy446_avilability_TxtBox";
+            this.Vy446_avilability_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.Vy446_avilability_TxtBox.TabIndex = 7;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 121);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 12);
+            this.label42.TabIndex = 3;
+            this.label42.Text = "衛星数:";
             // 
             // label44
             // 
@@ -2418,166 +3122,117 @@
             this.label43.TabIndex = 3;
             this.label43.Text = "品質:";
             // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 121);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(43, 12);
-            this.label42.TabIndex = 3;
-            this.label42.Text = "衛星数:";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 96);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(31, 12);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "高度:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(6, 71);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(31, 12);
-            this.label40.TabIndex = 13;
-            this.label40.Text = "経度:";
-            // 
-            // Vy446_roll_TxtBox
-            // 
-            this.Vy446_roll_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_roll_TxtBox.Location = new System.Drawing.Point(80, 293);
-            this.Vy446_roll_TxtBox.Name = "Vy446_roll_TxtBox";
-            this.Vy446_roll_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_roll_TxtBox.TabIndex = 12;
-            // 
-            // Vy446_pitch_TxtBox
-            // 
-            this.Vy446_pitch_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_pitch_TxtBox.Location = new System.Drawing.Point(80, 268);
-            this.Vy446_pitch_TxtBox.Name = "Vy446_pitch_TxtBox";
-            this.Vy446_pitch_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_pitch_TxtBox.TabIndex = 11;
-            // 
-            // Vy446_gps_compass_TxtBox
-            // 
-            this.Vy446_gps_compass_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_compass_TxtBox.Location = new System.Drawing.Point(80, 243);
-            this.Vy446_gps_compass_TxtBox.Name = "Vy446_gps_compass_TxtBox";
-            this.Vy446_gps_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_compass_TxtBox.TabIndex = 10;
-            // 
-            // Vy446_compass_TxtBox
-            // 
-            this.Vy446_compass_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_compass_TxtBox.Location = new System.Drawing.Point(80, 218);
-            this.Vy446_compass_TxtBox.Name = "Vy446_compass_TxtBox";
-            this.Vy446_compass_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_compass_TxtBox.TabIndex = 9;
-            // 
-            // Vy446_heading_TxtBox
-            // 
-            this.Vy446_heading_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_heading_TxtBox.Location = new System.Drawing.Point(80, 193);
-            this.Vy446_heading_TxtBox.Name = "Vy446_heading_TxtBox";
-            this.Vy446_heading_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_heading_TxtBox.TabIndex = 8;
-            // 
-            // Vy446_avilability_TxtBox
-            // 
-            this.Vy446_avilability_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_avilability_TxtBox.Location = new System.Drawing.Point(80, 168);
-            this.Vy446_avilability_TxtBox.Name = "Vy446_avilability_TxtBox";
-            this.Vy446_avilability_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_avilability_TxtBox.TabIndex = 7;
-            // 
-            // Vy446_gps_Quality_TxtBox
-            // 
-            this.Vy446_gps_Quality_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Quality_TxtBox.Location = new System.Drawing.Point(80, 143);
-            this.Vy446_gps_Quality_TxtBox.Name = "Vy446_gps_Quality_TxtBox";
-            this.Vy446_gps_Quality_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Quality_TxtBox.TabIndex = 6;
-            // 
-            // Vy446_gps_Sv_TxtBox
-            // 
-            this.Vy446_gps_Sv_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Sv_TxtBox.Location = new System.Drawing.Point(80, 118);
-            this.Vy446_gps_Sv_TxtBox.Name = "Vy446_gps_Sv_TxtBox";
-            this.Vy446_gps_Sv_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Sv_TxtBox.TabIndex = 3;
-            // 
-            // Vy446_gps_Altitude_TxtBox
-            // 
-            this.Vy446_gps_Altitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Altitude_TxtBox.Location = new System.Drawing.Point(80, 93);
-            this.Vy446_gps_Altitude_TxtBox.Name = "Vy446_gps_Altitude_TxtBox";
-            this.Vy446_gps_Altitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Altitude_TxtBox.TabIndex = 5;
-            // 
-            // Vy446_gps_Longitude_TxtBox
-            // 
-            this.Vy446_gps_Longitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Longitude_TxtBox.Location = new System.Drawing.Point(80, 68);
-            this.Vy446_gps_Longitude_TxtBox.Name = "Vy446_gps_Longitude_TxtBox";
-            this.Vy446_gps_Longitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Longitude_TxtBox.TabIndex = 4;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 46);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(31, 12);
-            this.label39.TabIndex = 3;
-            this.label39.Text = "緯度:";
-            // 
-            // Vy446_gps_Latitude_TxtBox
-            // 
-            this.Vy446_gps_Latitude_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Latitude_TxtBox.Location = new System.Drawing.Point(80, 43);
-            this.Vy446_gps_Latitude_TxtBox.Name = "Vy446_gps_Latitude_TxtBox";
-            this.Vy446_gps_Latitude_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Latitude_TxtBox.TabIndex = 2;
-            // 
-            // Vy446_gps_Utc_TxtBox
-            // 
-            this.Vy446_gps_Utc_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.Vy446_gps_Utc_TxtBox.Location = new System.Drawing.Point(80, 18);
-            this.Vy446_gps_Utc_TxtBox.Name = "Vy446_gps_Utc_TxtBox";
-            this.Vy446_gps_Utc_TxtBox.Size = new System.Drawing.Size(100, 19);
-            this.Vy446_gps_Utc_TxtBox.TabIndex = 1;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(6, 25);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(54, 12);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "UTC時刻:";
-            // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.GeWebBrowser);
+            this.tabPage5.Controls.Add(this.groupBox18);
+            this.tabPage5.Controls.Add(this.groupBox17);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(631, 577);
+            this.tabPage5.Size = new System.Drawing.Size(838, 459);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "GoogleEarth";
+            this.tabPage5.Text = "GPS";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.BodyWgs84ToCartesianX_TxtBox);
+            this.groupBox18.Controls.Add(this.BodyWgs84ToCartesianZ_TxtBox);
+            this.groupBox18.Controls.Add(this.BodyWgs84ToCartesianY_TxtBox);
+            this.groupBox18.Controls.Add(this.label97);
+            this.groupBox18.Controls.Add(this.label96);
+            this.groupBox18.Controls.Add(this.label95);
+            this.groupBox18.Controls.Add(this.zg2);
+            this.groupBox18.Location = new System.Drawing.Point(466, 6);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(366, 447);
+            this.groupBox18.TabIndex = 2;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Off-Line Mode with ZedGraph";
+            // 
+            // BodyWgs84ToCartesianX_TxtBox
+            // 
+            this.BodyWgs84ToCartesianX_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.BodyWgs84ToCartesianX_TxtBox.Location = new System.Drawing.Point(79, 328);
+            this.BodyWgs84ToCartesianX_TxtBox.Name = "BodyWgs84ToCartesianX_TxtBox";
+            this.BodyWgs84ToCartesianX_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.BodyWgs84ToCartesianX_TxtBox.TabIndex = 6;
+            // 
+            // BodyWgs84ToCartesianZ_TxtBox
+            // 
+            this.BodyWgs84ToCartesianZ_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.BodyWgs84ToCartesianZ_TxtBox.Location = new System.Drawing.Point(79, 378);
+            this.BodyWgs84ToCartesianZ_TxtBox.Name = "BodyWgs84ToCartesianZ_TxtBox";
+            this.BodyWgs84ToCartesianZ_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.BodyWgs84ToCartesianZ_TxtBox.TabIndex = 5;
+            // 
+            // BodyWgs84ToCartesianY_TxtBox
+            // 
+            this.BodyWgs84ToCartesianY_TxtBox.BackColor = System.Drawing.Color.GreenYellow;
+            this.BodyWgs84ToCartesianY_TxtBox.Location = new System.Drawing.Point(79, 353);
+            this.BodyWgs84ToCartesianY_TxtBox.Name = "BodyWgs84ToCartesianY_TxtBox";
+            this.BodyWgs84ToCartesianY_TxtBox.Size = new System.Drawing.Size(100, 19);
+            this.BodyWgs84ToCartesianY_TxtBox.TabIndex = 4;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(6, 381);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(67, 12);
+            this.label97.TabIndex = 3;
+            this.label97.Text = "Cartesian Z:";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(6, 356);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(67, 12);
+            this.label96.TabIndex = 2;
+            this.label96.Text = "Cartesian Y:";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(6, 331);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(67, 12);
+            this.label95.TabIndex = 1;
+            this.label95.Text = "Cartesian X:";
+            // 
+            // zg2
+            // 
+            this.zg2.Location = new System.Drawing.Point(6, 18);
+            this.zg2.Name = "zg2";
+            this.zg2.ScrollGrace = 0D;
+            this.zg2.ScrollMaxX = 0D;
+            this.zg2.ScrollMaxY = 0D;
+            this.zg2.ScrollMaxY2 = 0D;
+            this.zg2.ScrollMinX = 0D;
+            this.zg2.ScrollMinY = 0D;
+            this.zg2.ScrollMinY2 = 0D;
+            this.zg2.Size = new System.Drawing.Size(354, 300);
+            this.zg2.TabIndex = 0;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.GeWebBrowser);
+            this.groupBox17.Location = new System.Drawing.Point(6, 6);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(454, 447);
+            this.groupBox17.TabIndex = 1;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "On-Line Mode with Google Earth";
             // 
             // GeWebBrowser
             // 
             this.GeWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GeWebBrowser.Location = new System.Drawing.Point(3, 3);
+            this.GeWebBrowser.Location = new System.Drawing.Point(3, 15);
             this.GeWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.GeWebBrowser.Name = "GeWebBrowser";
             this.GeWebBrowser.ScrollBarsEnabled = false;
-            this.GeWebBrowser.Size = new System.Drawing.Size(625, 571);
+            this.GeWebBrowser.Size = new System.Drawing.Size(448, 429);
             this.GeWebBrowser.TabIndex = 0;
             // 
             // tabPage6
@@ -2586,7 +3241,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(631, 577);
+            this.tabPage6.Size = new System.Drawing.Size(838, 459);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Weather";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2598,7 +3253,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(619, 565);
+            this.dataGridView1.Size = new System.Drawing.Size(826, 447);
             this.dataGridView1.TabIndex = 0;
             // 
             // CommunicationTimer
@@ -2609,11 +3264,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 641);
+            this.ClientSize = new System.Drawing.Size(869, 530);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "IntegratedForm";
             this.Text = "Integrated Control System For Autonomous Combine Harvester(For Vy50, Vy446)";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegratedForm_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).EndInit();
@@ -2634,6 +3290,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -2647,11 +3305,16 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -2893,5 +3556,62 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.CheckBox TcpIpIsAvailableCheckBox;
         private System.Windows.Forms.Timer CommunicationTimer;
+        private System.Windows.Forms.CheckBox LidarHeaderControlCheckBox;
+        private System.Windows.Forms.TextBox LidarHeightControlAdTxtBox;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.CheckBox Vy446_RobotMode_CheckBox;
+        private System.Windows.Forms.TextBox Vy446_CMD_HST_TxtBox;
+        private System.Windows.Forms.TextBox Vy446_CMD_SOKO_TxtBox;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Button Vy446_SendData_Button;
+        private System.Windows.Forms.TextBox Vy446_CMD_AUGER_CLD_TxtBox;
+        private System.Windows.Forms.TextBox Vy446_CMD_AUGER_MTR_TxtBox;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.CheckBox Vy446_AUTOPOS_CheckBox;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.CheckBox Vy446_CLUTCH_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_AUTO_RETURN_CheckBox;
+        private System.Windows.Forms.TextBox Vy446_CMD_KARITAKA_TxtBox;
+        private System.Windows.Forms.CheckBox Vy446_KARITAKA_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_BUZZER2_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_YELLOW_LAMP_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_RED_LAMP_CheckBox;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.CheckBox Vy446_KARITORI_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_SAGYOKI_ON_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_SAGYOKI_OFF_CheckBox;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.CheckBox Vy446_HAZARD_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_BUZZER_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_ENGINE_STOP_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_FgKakikomi_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_FgTofuku_CheckBox;
+        private System.Windows.Forms.CheckBox Vy446_FgSitsuden_CheckBox;
+        private System.Windows.Forms.TextBox LidarHeightControlGroundDeviationTxtBox;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.ComboBox LidarHeaderControlComboBox;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private ZedGraph.ZedGraphControl zg2;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox LidarHeightControlInitializeMinimumAdValueTxtBox;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox Vy446_ReadCnt_TxtBox;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.TextBox LidarHeightControlInitializeLateralTxtBox;
+        private System.Windows.Forms.CheckBox LidarLateralControlCheckBox;
+        private System.Windows.Forms.TextBox LidarHeightControlLateralStateTxtBox;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.CheckBox BodyWgs84ToCartesianCheckBox;
+        private System.Windows.Forms.TextBox BodyWgs84ToCartesianX_TxtBox;
+        private System.Windows.Forms.TextBox BodyWgs84ToCartesianZ_TxtBox;
+        private System.Windows.Forms.TextBox BodyWgs84ToCartesianY_TxtBox;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label95;
     }
 }

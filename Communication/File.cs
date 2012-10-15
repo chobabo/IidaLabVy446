@@ -105,25 +105,41 @@ namespace Communication
                 // vy50
                 if (_bodyDevice == 0)
                 {
-                    if(lineArr.Length - 362 == 83)
-                    {
-                        this.bodyReadCount = Convert.ToInt32(lineArr[362]);
+                    this.AddToBodyData(82, lineArr);
+                }
 
-                        int chkSum = Convert.ToInt32(lineArr[363]);
-
-                        if (chkSum == 205)
-                        {
-                            for (int i = 363; i < 445; i++)
-                            {
-                                this.bodyData.Add(Convert.ToInt32(lineArr[i]));
-                            }
-                        }
-                    }
+                // vy446
+                if (_bodyDevice == 1)
+                {
+                    this.AddToBodyData(142, lineArr);
                 }
 
             }
             else
             { 
+            }
+        }
+
+        /// <summary>
+        /// Add To Body Data
+        /// </summary>
+        /// <param name="_dataLength"></param>
+        /// <param name="lineArr"></param>
+        private void AddToBodyData(int _dataLength, string[] lineArr)
+        {
+            if (lineArr.Length - 362 == _dataLength + 1)
+            {
+                this.bodyReadCount = Convert.ToInt32(lineArr[362]);
+
+                int chkSum = Convert.ToInt32(lineArr[363]);
+
+                if (chkSum == 205)
+                {
+                    for (int i = 363; i < 363 + _dataLength; i++)
+                    {
+                        this.bodyData.Add(Convert.ToInt32(lineArr[i]));
+                    }
+                }
             }
         }
 
