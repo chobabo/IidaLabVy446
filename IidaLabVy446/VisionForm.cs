@@ -9,13 +9,33 @@ namespace IidaLabVy446
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using System.Diagnostics;
     using OpenCvSharp;
     using MachineVision;
-    using System.Diagnostics;
+    using Algorithm;
 
     public partial class VisionForm : Form
     {
+        #region fields
+        
+        /// <summary>
+        /// using cut-edge
+        /// </summary>
+        private Algorithm.Eaef eaef;
+
+        /// <summary>
+        /// using file I/O
+        /// </summary>
         private MachineVision.File mvFile;
+
+        /// <summary>
+        /// gets or sets read count of timer
+        /// </summary>
+        private int readCnt { get; set; }
+
+        #endregion
+
+        #region constructor
 
         /// <summary>
         /// basic constructor
@@ -24,6 +44,10 @@ namespace IidaLabVy446
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region event
 
         /// <summary>
         /// timer event
@@ -34,15 +58,29 @@ namespace IidaLabVy446
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            
+
             if (this.mvFile.cap.QueryFrame() != null)
             {
+                if (this.CutEdgeCheckBox.Checked == true)
+                {
+                    this.eaef.Run(this.mvFile.cap.QueryFrame(), ZgcGraph1);
+                    this.pBoxIpl1.ImageIpl = this.mvFile.cap.QueryFrame();
+                    this.pBoxIpl2.ImageIpl = this.eaef.ipmImg;
+                    this.pBoxIpl3.ImageIpl = this.eaef.norImg;
+                    this.pBoxIpl4.ImageIpl = this.eaef.dstImg;
+                    this.label5.Text = Convert.ToString(this.eaef.lateralThreshold);
+                    this.label7.Text = Convert.ToString(this.eaef.lateralDistance) + " m";
+                    this.label8.Text = this.eaef.lateralOffset;
+                }
+                else
+                {
+                    this.pBoxIpl1.ImageIpl = this.mvFile.cap.QueryFrame();
+                }
+
                 if (this.SaveAviCheckBox.Checked == true)
                 {
                     this.mvFile.writer.WriteFrame(this.mvFile.cap.QueryFrame());
                 }
-
-                this.pBoxIpl1.ImageIpl = this.mvFile.cap.QueryFrame();
             }
             else
             {
@@ -51,9 +89,22 @@ namespace IidaLabVy446
                 this.mvFile.Dispose();
             }
 
+            // count debug
+            //this.toolStripStatusLabel6.Text = Convert.ToString(this.readCnt);
+            this.readCnt++;
+
             watch.Stop();
+
+            // total elapsed time
             this.toolStripStatusLabel2.Text =
                 Convert.ToString(watch.Elapsed.TotalMilliseconds) + " milliseconds";
+
+            // algorithm elapsed time
+            if (this.CutEdgeCheckBox.Checked == true)
+            {
+                this.label3.Text =
+                    Convert.ToString(this.eaef.elapsedTime) + " milliseconds";
+            }
         }
 
         /// <summary>
@@ -63,11 +114,18 @@ namespace IidaLabVy446
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            this.readCnt = 0;
+
             this.mvFile = new MachineVision.File(
                 this.SaveAviCheckBox.Checked,
                 this.ReadAviCheckBox.Checked,
                 Convert.ToInt32(this.IntervalTxtBox.Text)
                 );
+
+            if (this.CutEdgeCheckBox.Checked == true)
+            {
+                this.eaef = new Eaef(ZgcGraph1);
+            }
 
             this.MachineVisionTimer.Interval = Convert.ToInt32(this.IntervalTxtBox.Text);
             this.MachineVisionTimer.Enabled = true;
@@ -88,14 +146,30 @@ namespace IidaLabVy446
         }
 
         /// <summary>
+        /// save event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            this.eaef.SaveData();
+        }
+
+        /// <summary>
         /// Exit event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            if (this.CutEdgeCheckBox.Checked == true)
+            {
+                this.eaef.Dispose();
+            } 
             this.Close();
         }
+
+        #endregion
 
 
     }
