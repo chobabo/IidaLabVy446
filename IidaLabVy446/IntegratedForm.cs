@@ -328,7 +328,7 @@ namespace IidaLabVy446
         private CombineBody.File _bodyFile;
         private CombineBody.Vy50 _vy50;
         private CombineBody.Vy446 _vy446;
-        private FieldMap.Wgs84ToCartesian _wgs84;
+        private FieldMap.Cgps _cgps;
         private FieldMap.Graph _offLineGraph;
         private FieldMap.DrawMap _drawMap;
 
@@ -336,6 +336,10 @@ namespace IidaLabVy446
         /// combine data of string type
         /// </summary>
         private string combineData { get; set; }
+
+        private bool offLineInit { get; set; }
+        private double offLineMapX { get; set; }
+        private double offLineMapY { get; set; }
 
         /// <summary>
         /// Connect Combine Body using RS-232C
@@ -378,7 +382,11 @@ namespace IidaLabVy446
 
             if (this.BodyWgs84ToCartesianCheckBox.Checked == true)
             {
-                this._wgs84 = new Wgs84ToCartesian(5, 1);
+                this.offLineInit = false;
+                this.offLineMapX = 0.0;
+                this.offLineMapY = 0.0;
+
+                this._cgps = new Cgps(5, 1);
 
                 this._offLineGraph = new FieldMap.Graph();
                 this._offLineGraph.CreateGraph(zg2);
@@ -1033,13 +1041,23 @@ namespace IidaLabVy446
         /// <param name="_alt"></param>
         private void CombineOffLineMap(double _lat, double _lon, double _alt)
         {
-            this._wgs84.Wgs84ToXyh(_lat, _lon, _alt);
+            this._cgps.w84toxyh(_lat, _lon, _alt);
 
-            this._offLineGraph.AddDataToGraph(zg2, this._wgs84.result.x, this._wgs84.result.y);
+            if (this.offLineInit == false)
+            {
+                this.offLineMapX = this._cgps.result.x;
+                this.offLineMapY = this._cgps.result.y;
+                this.offLineInit = true;
+            }
 
-            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this._wgs84.result.x);
-            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this._wgs84.result.y);
-            this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._wgs84.result.z);
+            double mapX = this._cgps.result.x - this.offLineMapX;
+            double mapY = this._cgps.result.y - this.offLineMapY;
+
+            this._offLineGraph.AddDataToGraph(zg2, mapX, mapY);
+
+            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this._cgps.result.x);
+            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this._cgps.result.y);
+            this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._cgps.result.c);
         }
 
         /// <summary>
