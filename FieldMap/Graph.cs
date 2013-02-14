@@ -48,7 +48,7 @@ namespace FieldMap
             this.myPane = zgc.GraphPane;
 
             //--set the titles--//
-            this.myPane.Title.Text = "WGS-84 to Cartesian";
+            this.myPane.Title.Text = "WGS-84 to Tansverse Mercator(TM)";
             this.myPane.XAxis.Title.Text = "x";
             this.myPane.YAxis.Title.Text = "y";
 

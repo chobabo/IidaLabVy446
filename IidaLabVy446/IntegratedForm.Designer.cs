@@ -99,23 +99,8 @@
             this.label64 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.LidarLateralControlCheckBox = new System.Windows.Forms.CheckBox();
-            this.LidarHeaderControlComboBox = new System.Windows.Forms.ComboBox();
-            this.LidarHeaderControlCheckBox = new System.Windows.Forms.CheckBox();
-            this.LidarSplitAndMergeCheckBox = new System.Windows.Forms.CheckBox();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.LidarHeightControlLateralStateTxtBox = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.LidarHeightControlInitializeLateralTxtBox = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox = new System.Windows.Forms.TextBox();
-            this.LidarHeightControlGroundDeviationTxtBox = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.LidarHeightControlAdTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.LidarDeviceInfoStartAngleTxtBox = new System.Windows.Forms.TextBox();
             this.LidarDeviceInfoResolutionTxtBox = new System.Windows.Forms.TextBox();
@@ -123,17 +108,6 @@
             this.label76 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.LidarSplitAndMergeGroundHeightTxtBox = new System.Windows.Forms.TextBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.LidarSplitAndMergeSegIndexTxtBox = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.LidarSplitAndMergeMinNoTxtBox = new System.Windows.Forms.TextBox();
-            this.LidarSplitAndMergeDeviationTxtBox = new System.Windows.Forms.TextBox();
-            this.LidarSplitAndMergeThresholdTxtBox = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -331,9 +305,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox19.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -615,34 +587,34 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 508);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(869, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(869, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(95, 18);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(94, 17);
             this.toolStripStatusLabel1.Text = "Elapsed Time: ";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(78, 18);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(77, 17);
             this.toolStripStatusLabel2.Text = "milliseconds";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(108, 18);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(107, 17);
             this.toolStripStatusLabel3.Text = "Debug Message: ";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(58, 18);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 17);
             this.toolStripStatusLabel4.Text = "Message";
             // 
             // IntegratedTimer
@@ -1054,10 +1026,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.LidarLateralControlCheckBox);
-            this.groupBox4.Controls.Add(this.LidarHeaderControlComboBox);
-            this.groupBox4.Controls.Add(this.LidarHeaderControlCheckBox);
-            this.groupBox4.Controls.Add(this.LidarSplitAndMergeCheckBox);
             this.groupBox4.Controls.Add(this.label70);
             this.groupBox4.Controls.Add(this.LidarAvailableCheckBox);
             this.groupBox4.Controls.Add(this.LidarReadCheckBox);
@@ -1079,48 +1047,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Laser Range Finder";
             // 
-            // LidarLateralControlCheckBox
-            // 
-            this.LidarLateralControlCheckBox.AutoSize = true;
-            this.LidarLateralControlCheckBox.Location = new System.Drawing.Point(8, 317);
-            this.LidarLateralControlCheckBox.Name = "LidarLateralControlCheckBox";
-            this.LidarLateralControlCheckBox.Size = new System.Drawing.Size(100, 16);
-            this.LidarLateralControlCheckBox.TabIndex = 8;
-            this.LidarLateralControlCheckBox.Text = "Lateral Control";
-            this.LidarLateralControlCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // LidarHeaderControlComboBox
-            // 
-            this.LidarHeaderControlComboBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarHeaderControlComboBox.FormattingEnabled = true;
-            this.LidarHeaderControlComboBox.Items.AddRange(new object[] {
-            "Normal",
-            "S-A-M"});
-            this.LidarHeaderControlComboBox.Location = new System.Drawing.Point(115, 293);
-            this.LidarHeaderControlComboBox.Name = "LidarHeaderControlComboBox";
-            this.LidarHeaderControlComboBox.Size = new System.Drawing.Size(78, 20);
-            this.LidarHeaderControlComboBox.TabIndex = 7;
-            // 
-            // LidarHeaderControlCheckBox
-            // 
-            this.LidarHeaderControlCheckBox.AutoSize = true;
-            this.LidarHeaderControlCheckBox.Location = new System.Drawing.Point(8, 295);
-            this.LidarHeaderControlCheckBox.Name = "LidarHeaderControlCheckBox";
-            this.LidarHeaderControlCheckBox.Size = new System.Drawing.Size(101, 16);
-            this.LidarHeaderControlCheckBox.TabIndex = 6;
-            this.LidarHeaderControlCheckBox.Text = "Header Control";
-            this.LidarHeaderControlCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // LidarSplitAndMergeCheckBox
-            // 
-            this.LidarSplitAndMergeCheckBox.AutoSize = true;
-            this.LidarSplitAndMergeCheckBox.Location = new System.Drawing.Point(8, 273);
-            this.LidarSplitAndMergeCheckBox.Name = "LidarSplitAndMergeCheckBox";
-            this.LidarSplitAndMergeCheckBox.Size = new System.Drawing.Size(110, 16);
-            this.LidarSplitAndMergeCheckBox.TabIndex = 5;
-            this.LidarSplitAndMergeCheckBox.Text = "Split-And-Merge";
-            this.LidarSplitAndMergeCheckBox.UseVisualStyleBackColor = true;
-            // 
             // label70
             // 
             this.label70.AutoSize = true;
@@ -1132,9 +1058,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox19);
             this.tabPage2.Controls.Add(this.groupBox13);
-            this.tabPage2.Controls.Add(this.groupBox12);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -1143,113 +1067,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LRF";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.LidarHeightControlLateralStateTxtBox);
-            this.groupBox19.Controls.Add(this.label94);
-            this.groupBox19.Controls.Add(this.label93);
-            this.groupBox19.Controls.Add(this.LidarHeightControlInitializeLateralTxtBox);
-            this.groupBox19.Controls.Add(this.label91);
-            this.groupBox19.Controls.Add(this.LidarHeightControlInitializeMinimumAdValueTxtBox);
-            this.groupBox19.Controls.Add(this.LidarHeightControlGroundDeviationTxtBox);
-            this.groupBox19.Controls.Add(this.label90);
-            this.groupBox19.Controls.Add(this.label82);
-            this.groupBox19.Controls.Add(this.LidarHeightControlAdTxtBox);
-            this.groupBox19.Location = new System.Drawing.Point(349, 119);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(208, 156);
-            this.groupBox19.TabIndex = 3;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Header Control";
-            // 
-            // LidarHeightControlLateralStateTxtBox
-            // 
-            this.LidarHeightControlLateralStateTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarHeightControlLateralStateTxtBox.Location = new System.Drawing.Point(92, 120);
-            this.LidarHeightControlLateralStateTxtBox.Name = "LidarHeightControlLateralStateTxtBox";
-            this.LidarHeightControlLateralStateTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarHeightControlLateralStateTxtBox.TabIndex = 17;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(6, 123);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(73, 12);
-            this.label94.TabIndex = 16;
-            this.label94.Text = "State Lateral:";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(6, 73);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(71, 12);
-            this.label93.TabIndex = 4;
-            this.label93.Text = "Intial Lateral:";
-            // 
-            // LidarHeightControlInitializeLateralTxtBox
-            // 
-            this.LidarHeightControlInitializeLateralTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarHeightControlInitializeLateralTxtBox.Location = new System.Drawing.Point(92, 70);
-            this.LidarHeightControlInitializeLateralTxtBox.Name = "LidarHeightControlInitializeLateralTxtBox";
-            this.LidarHeightControlInitializeLateralTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarHeightControlInitializeLateralTxtBox.TabIndex = 15;
-            this.LidarHeightControlInitializeLateralTxtBox.Text = "-0.2";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(6, 48);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(77, 12);
-            this.label91.TabIndex = 14;
-            this.label91.Text = "Initial Min AD:";
-            // 
-            // LidarHeightControlInitializeMinimumAdValueTxtBox
-            // 
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Location = new System.Drawing.Point(92, 45);
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Name = "LidarHeightControlInitializeMinimumAdValueTxtBox";
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.TabIndex = 4;
-            this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text = "400";
-            // 
-            // LidarHeightControlGroundDeviationTxtBox
-            // 
-            this.LidarHeightControlGroundDeviationTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarHeightControlGroundDeviationTxtBox.Location = new System.Drawing.Point(92, 20);
-            this.LidarHeightControlGroundDeviationTxtBox.Name = "LidarHeightControlGroundDeviationTxtBox";
-            this.LidarHeightControlGroundDeviationTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarHeightControlGroundDeviationTxtBox.TabIndex = 13;
-            this.LidarHeightControlGroundDeviationTxtBox.Text = "0.0";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(6, 23);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(51, 12);
-            this.label90.TabIndex = 12;
-            this.label90.Text = "Gnd Dev:";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(6, 98);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(60, 12);
-            this.label82.TabIndex = 10;
-            this.label82.Text = "Height AD:";
-            // 
-            // LidarHeightControlAdTxtBox
-            // 
-            this.LidarHeightControlAdTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarHeightControlAdTxtBox.Location = new System.Drawing.Point(92, 95);
-            this.LidarHeightControlAdTxtBox.Name = "LidarHeightControlAdTxtBox";
-            this.LidarHeightControlAdTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarHeightControlAdTxtBox.TabIndex = 11;
             // 
             // groupBox13
             // 
@@ -1316,113 +1133,6 @@
             this.label74.Size = new System.Drawing.Size(41, 12);
             this.label74.TabIndex = 0;
             this.label74.Text = "Length:";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.LidarSplitAndMergeGroundHeightTxtBox);
-            this.groupBox12.Controls.Add(this.label78);
-            this.groupBox12.Controls.Add(this.LidarSplitAndMergeSegIndexTxtBox);
-            this.groupBox12.Controls.Add(this.label77);
-            this.groupBox12.Controls.Add(this.LidarSplitAndMergeMinNoTxtBox);
-            this.groupBox12.Controls.Add(this.LidarSplitAndMergeDeviationTxtBox);
-            this.groupBox12.Controls.Add(this.LidarSplitAndMergeThresholdTxtBox);
-            this.groupBox12.Controls.Add(this.label73);
-            this.groupBox12.Controls.Add(this.label72);
-            this.groupBox12.Controls.Add(this.label71);
-            this.groupBox12.Location = new System.Drawing.Point(563, 6);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(208, 269);
-            this.groupBox12.TabIndex = 1;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Split-And-Merge";
-            // 
-            // LidarSplitAndMergeGroundHeightTxtBox
-            // 
-            this.LidarSplitAndMergeGroundHeightTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarSplitAndMergeGroundHeightTxtBox.Location = new System.Drawing.Point(92, 133);
-            this.LidarSplitAndMergeGroundHeightTxtBox.Name = "LidarSplitAndMergeGroundHeightTxtBox";
-            this.LidarSplitAndMergeGroundHeightTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarSplitAndMergeGroundHeightTxtBox.TabIndex = 9;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(6, 136);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(80, 12);
-            this.label78.TabIndex = 8;
-            this.label78.Text = "Ground Height:";
-            // 
-            // LidarSplitAndMergeSegIndexTxtBox
-            // 
-            this.LidarSplitAndMergeSegIndexTxtBox.BackColor = System.Drawing.Color.GreenYellow;
-            this.LidarSplitAndMergeSegIndexTxtBox.Location = new System.Drawing.Point(92, 108);
-            this.LidarSplitAndMergeSegIndexTxtBox.Name = "LidarSplitAndMergeSegIndexTxtBox";
-            this.LidarSplitAndMergeSegIndexTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarSplitAndMergeSegIndexTxtBox.TabIndex = 7;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(6, 111);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(73, 12);
-            this.label77.TabIndex = 6;
-            this.label77.Text = "Lateral Index:";
-            // 
-            // LidarSplitAndMergeMinNoTxtBox
-            // 
-            this.LidarSplitAndMergeMinNoTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeMinNoTxtBox.Location = new System.Drawing.Point(92, 76);
-            this.LidarSplitAndMergeMinNoTxtBox.Name = "LidarSplitAndMergeMinNoTxtBox";
-            this.LidarSplitAndMergeMinNoTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarSplitAndMergeMinNoTxtBox.TabIndex = 5;
-            this.LidarSplitAndMergeMinNoTxtBox.Text = "5";
-            // 
-            // LidarSplitAndMergeDeviationTxtBox
-            // 
-            this.LidarSplitAndMergeDeviationTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeDeviationTxtBox.Location = new System.Drawing.Point(92, 51);
-            this.LidarSplitAndMergeDeviationTxtBox.Name = "LidarSplitAndMergeDeviationTxtBox";
-            this.LidarSplitAndMergeDeviationTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarSplitAndMergeDeviationTxtBox.TabIndex = 4;
-            this.LidarSplitAndMergeDeviationTxtBox.Text = "0.3";
-            // 
-            // LidarSplitAndMergeThresholdTxtBox
-            // 
-            this.LidarSplitAndMergeThresholdTxtBox.BackColor = System.Drawing.Color.Yellow;
-            this.LidarSplitAndMergeThresholdTxtBox.Location = new System.Drawing.Point(92, 26);
-            this.LidarSplitAndMergeThresholdTxtBox.Name = "LidarSplitAndMergeThresholdTxtBox";
-            this.LidarSplitAndMergeThresholdTxtBox.Size = new System.Drawing.Size(100, 19);
-            this.LidarSplitAndMergeThresholdTxtBox.TabIndex = 3;
-            this.LidarSplitAndMergeThresholdTxtBox.Text = "0.3";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 79);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(43, 12);
-            this.label73.TabIndex = 2;
-            this.label73.Text = "Min_No:";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(6, 54);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(55, 12);
-            this.label72.TabIndex = 1;
-            this.label72.Text = "Deviation:";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(6, 29);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(57, 12);
-            this.label71.TabIndex = 0;
-            this.label71.Text = "Threshold:";
             // 
             // tabPage7
             // 
@@ -3290,12 +3000,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
@@ -3524,15 +3230,7 @@
         private System.Windows.Forms.CheckBox Vy50_YELLOWPATLITE_CheckBox;
         private System.Windows.Forms.CheckBox Vy50_REDPATLITE_CheckBox;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.CheckBox LidarSplitAndMergeCheckBox;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox LidarSplitAndMergeMinNoTxtBox;
-        private System.Windows.Forms.TextBox LidarSplitAndMergeDeviationTxtBox;
-        private System.Windows.Forms.TextBox LidarSplitAndMergeThresholdTxtBox;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label71;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox LidarDeviceInfoStartAngleTxtBox;
         private System.Windows.Forms.TextBox LidarDeviceInfoResolutionTxtBox;
@@ -3540,10 +3238,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.TextBox LidarSplitAndMergeSegIndexTxtBox;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.TextBox LidarSplitAndMergeGroundHeightTxtBox;
-        private System.Windows.Forms.Label label78;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox TcpIpPortTxtBox;
@@ -3556,9 +3250,6 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.CheckBox TcpIpIsAvailableCheckBox;
         private System.Windows.Forms.Timer CommunicationTimer;
-        private System.Windows.Forms.CheckBox LidarHeaderControlCheckBox;
-        private System.Windows.Forms.TextBox LidarHeightControlAdTxtBox;
-        private System.Windows.Forms.Label label82;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.CheckBox Vy446_RobotMode_CheckBox;
         private System.Windows.Forms.TextBox Vy446_CMD_HST_TxtBox;
@@ -3590,22 +3281,11 @@
         private System.Windows.Forms.CheckBox Vy446_FgKakikomi_CheckBox;
         private System.Windows.Forms.CheckBox Vy446_FgTofuku_CheckBox;
         private System.Windows.Forms.CheckBox Vy446_FgSitsuden_CheckBox;
-        private System.Windows.Forms.TextBox LidarHeightControlGroundDeviationTxtBox;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.ComboBox LidarHeaderControlComboBox;
         private System.Windows.Forms.GroupBox groupBox18;
         private ZedGraph.ZedGraphControl zg2;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox LidarHeightControlInitializeMinimumAdValueTxtBox;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.TextBox Vy446_ReadCnt_TxtBox;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.TextBox LidarHeightControlInitializeLateralTxtBox;
-        private System.Windows.Forms.CheckBox LidarLateralControlCheckBox;
-        private System.Windows.Forms.TextBox LidarHeightControlLateralStateTxtBox;
-        private System.Windows.Forms.Label label94;
         private System.Windows.Forms.CheckBox BodyWgs84ToCartesianCheckBox;
         private System.Windows.Forms.TextBox BodyWgs84ToCartesianX_TxtBox;
         private System.Windows.Forms.TextBox BodyWgs84ToCartesianZ_TxtBox;

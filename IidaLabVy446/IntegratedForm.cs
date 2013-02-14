@@ -35,8 +35,6 @@ namespace IidaLabVy446
         private SickLidar.Graph graph;
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
-        private Algorithm.SplitAndMerge sam;
-        private Algorithm.HeaderControl hControl;
 
         /// <summary>
         /// gets or sets adapt split and merge
@@ -94,10 +92,6 @@ namespace IidaLabVy446
                     this.LidarReadCheckBox.Checked
                     );
             }
-
-            this.LidarInitializeSplitAndMerge();
-
-            this.LidarInitializeHeaderControl();
         }
 
         /// <summary>
@@ -133,8 +127,6 @@ namespace IidaLabVy446
             }
 
             this.LidarInitializeInformation();
-            this.LidarPlaySplitAndMerge();
-            this.LidarPlayHeaderControl();
 
             // server mode
             if (this.TcpIpServerCheckBox.Checked == true)
@@ -155,129 +147,6 @@ namespace IidaLabVy446
                 this.LidarDeviceInfoStartAngleTxtBox.Text = Convert.ToString(this.sickLidar.startAngle);
                 this.isIniLidarInfo = true;
             } 
-        }
-
-        /// <summary>
-        /// Lidar Initialize Split-And-Merge
-        /// </summary>
-        private void LidarInitializeSplitAndMerge()
-        {
-            if (this.LidarSplitAndMergeCheckBox.Checked == true)
-            {
-                this.isSam = true;
-                this.sam = new Algorithm.SplitAndMerge(
-                    this.LidarSelectComboBox.SelectedIndex,
-                    Convert.ToDouble(this.LidarSplitAndMergeThresholdTxtBox.Text),
-                    Convert.ToDouble(this.LidarSplitAndMergeDeviationTxtBox.Text),
-                    Convert.ToInt32(this.LidarSplitAndMergeMinNoTxtBox.Text)
-                    );
-            }
-            else
-            {
-                this.isSam = false;
-            }
-        }
-
-        /// <summary>
-        /// Lidar Play Split-And-Merge
-        /// </summary>
-        private void LidarPlaySplitAndMerge()
-        {
-            // split-and-merge 
-            if (this.LidarSplitAndMergeCheckBox.Checked == true)
-            {
-                this.sam.start(
-                    this.sickLidar.orgList,
-                    this.sickLidar.steps,
-                    this.sickLidar.startAngle,
-                    Convert.ToDouble(this.LidarScalingTxtBox.Text)
-                    );
-
-                this.graph.UpdataSplitAndMergeGraph(this.sam.lateralSeg, this.sam.groundHeight, zg1, this.isSam);
-
-                this.LidarSplitAndMergeSegIndexTxtBox.Text = Convert.ToString(this.sam.lateralSeg);
-                this.LidarSplitAndMergeGroundHeightTxtBox.Text = Convert.ToString(this.sam.groundHeight);
-            }
-        }
-
-        /// <summary>
-        /// Lidar Initialize Header Control
-        /// </summary>
-        private void LidarInitializeHeaderControl()
-        {
-            if (this.LidarHeaderControlCheckBox.Checked == true)
-            {
-                this.hControl = new Algorithm.HeaderControl(
-                    this.BodyModelComboBox.SelectedIndex,
-                    Convert.ToDouble(this.LidarHeightControlGroundDeviationTxtBox.Text),
-                    Convert.ToDouble(this.LidarHeightControlInitializeLateralTxtBox.Text)
-                    );
-            }
-        }
-
-        /// <summary>
-        /// Lidar Play Header Control
-        /// </summary>
-        private void LidarPlayHeaderControl()
-        {
-            // normal mode
-            if (this.LidarHeaderControlComboBox.SelectedIndex == 0)
-            {
-                if (this.LidarHeaderControlCheckBox.Checked == true)
-                {
-                    this.hControl.CalculateAvgGndHeight(this.sickLidar.cartesianList);
-
-                    if (this.hControl.isControl == true)
-                    {
-                        this.LidarPlayHeaderControlSendCmd();
-                    }
-                }
-            }
-
-            // split-and-merge and head control
-            if (this.LidarHeaderControlComboBox.SelectedIndex == 1)
-            {
-                if (this.LidarSplitAndMergeCheckBox.Checked == true && this.LidarHeaderControlCheckBox.Checked == true)
-                {
-                    this.hControl.CalculateAdValue(this.sam.lateralSeg, this.sam.groundHeight);
-
-                    if (this.hControl.isControl == true)
-                    {
-                        this.LidarPlayHeaderControlSendCmd();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Lidar Play Header Control Send Command
-        /// </summary>
-        private void LidarPlayHeaderControlSendCmd()
-        {
-            // send header command
-            if ((this.hControl.groundHeightAD < this.hControl.maxHeight) && (this.hControl.groundHeightAD > this.hControl.minHeight))
-            {
-                this.LidarHeightControlAdTxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
-            }
-            else
-            {
-                this.LidarHeightControlAdTxtBox.Text = this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text;
-                this.hControl.groundHeightAD = Convert.ToInt32(this.LidarHeightControlInitializeMinimumAdValueTxtBox.Text);
-            }
-
-            // lateral state debug
-            if (this.LidarLateralControlCheckBox.Checked == true)
-            {
-                this.LidarHeightControlLateralStateTxtBox.Text =
-                    this.hControl.LateralDirectionToString(this.hControl.lateralSegAD);
-            }
-
-            if (this.BodyAvailableCheckBox.Checked == true && this.BodyReadCheckBox.Checked == false)
-            {
-                // header of combine body control
-                this.CombineBodyHeaderControl(false, true);
-            }
-
         }
 
         #endregion
@@ -1050,13 +919,13 @@ namespace IidaLabVy446
                 this.offLineInit = true;
             }
 
-            double mapX = this._cgps.result.x - this.offLineMapX;
-            double mapY = this._cgps.result.y - this.offLineMapY;
+            double mapY = this._cgps.result.x - this.offLineMapX;
+            double mapX = this._cgps.result.y - this.offLineMapY;
 
             this._offLineGraph.AddDataToGraph(zg2, mapX, mapY);
 
-            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this._cgps.result.x);
-            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this._cgps.result.y);
+            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(mapY);
+            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(mapX);
             this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._cgps.result.c);
         }
 
@@ -1087,14 +956,14 @@ namespace IidaLabVy446
                 this.Vy446_KARITAKA_CheckBox.Checked = _thenState;
             } 
 
-            this.Vy446_CMD_KARITAKA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
+            //this.Vy446_CMD_KARITAKA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
 
-            // send lateral command
-            if (this.LidarLateralControlCheckBox.Checked == true)
-            {
-                // 1. 操舵量コマンド：左操舵最大(250)，中立(430)，右操舵最大(660) - ok
-                this.Vy446_CMD_SOKO_TxtBox.Text = Convert.ToString(this.hControl.lateralSegAD);
-            }
+            //// send lateral command
+            //if (this.LidarLateralControlCheckBox.Checked == true)
+            //{
+            //    // 1. 操舵量コマンド：左操舵最大(250)，中立(430)，右操舵最大(660) - ok
+            //    this.Vy446_CMD_SOKO_TxtBox.Text = Convert.ToString(this.hControl.lateralSegAD);
+            //}
 
             this.CombineVy446CmdSend();
         }
@@ -1126,7 +995,7 @@ namespace IidaLabVy446
                 this.Vy50_KARITAKASA_CheckBox.Checked = _thenState;
             }
 
-            this.Vy50_KARITAKASA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
+            //this.Vy50_KARITAKASA_TxtBox.Text = Convert.ToString(this.hControl.groundHeightAD);
 
             this.CombineVy50CmdSend();
         }
@@ -1202,7 +1071,7 @@ namespace IidaLabVy446
                 Convert.ToDouble(this.LidarScalingTxtBox.Text)
                    );
 
-            this.LidarInitializeSplitAndMerge();
+            //this.LidarInitializeSplitAndMerge();
         }
 
         /// <summary>
@@ -1216,7 +1085,7 @@ namespace IidaLabVy446
             {
                 this.sickLidar.ConvertTcpDataToPolar(this.tcpFile.lidarData);
                 this.sickLidar.ConvertPolarToCartesian();
-                this.LidarPlaySplitAndMerge();
+                //this.LidarPlaySplitAndMerge();
                 this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
 
                 this.toolStripStatusLabel4.Text = Convert.ToString(this.tcpFile.lidarReadCount);
@@ -1411,10 +1280,10 @@ namespace IidaLabVy446
                             this._bodyFile.closeSave();
                         }
 
-                        if (this.LidarHeaderControlCheckBox.Checked == true)
-                        {
-                            this.CombineBodyHeaderControl(true, false);
-                        }
+                        //if (this.LidarHeaderControlCheckBox.Checked == true)
+                        //{
+                        //    this.CombineBodyHeaderControl(true, false);
+                        //}
                         
                         this._bodySerialConnect.Dispose();
                     }

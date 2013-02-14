@@ -167,8 +167,12 @@ namespace FieldMap
             int datum = 0;
 
             // STEP 1 : WGS-84 to XYZ
+            double lat = this.deg2rad(lat84);
+            double lon = this.deg2rad(lon84);
+            double alt = this.deg2rad(alt84);
+
             datum = 1;
-            XYZ84 xyz84 = this.dms_to_XYZ(datum, lat84, lon84, alt84);
+            XYZ84 xyz84 = this.dms_to_XYZ(datum, lat, lon, alt);
 
             // STEP 2 : WGS-84 to TOKYO
             XYZ_Tokyo tokyo = this.WGS84_to_Tokyo(this.param, xyz84);
@@ -178,6 +182,16 @@ namespace FieldMap
             LLA lla = this.XYZ_to_dms(datum, tokyo);
 
             result = this.bl2xy(lla, this.zone);
+        }
+
+        /// <summary>
+        /// degree to radian
+        /// </summary>
+        /// <param name="deg"></param>
+        /// <returns></returns>
+        private double deg2rad(double deg)
+        {
+            return (deg * Math.PI / 180.0);
         }
 
         /// <summary>
