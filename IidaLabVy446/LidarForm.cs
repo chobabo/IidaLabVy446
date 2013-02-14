@@ -10,16 +10,33 @@ using System.Windows.Forms;
 using SickLidar;
 using System.Diagnostics;
 
+using OpenTK;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
+
 namespace IidaLabVy446
 {
     public partial class LidarForm : Form
     {
+        #region fields
+
         private SickLidar.Graph graph;
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
 
-        //for read file
+        /// <summary>
+        /// for debug of count
+        /// </summary>
         private int readLidarCount { get; set; }
+
+        /// <summary>
+        /// is openGL load
+        /// </summary>
+        private bool glLoaded { get; set; }
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// basic constructor
@@ -30,6 +47,10 @@ namespace IidaLabVy446
             InitializeComponent();
             this.graph.CreateGraph(zg1);
         }
+
+        #endregion
+
+        #region event
 
         /// <summary>
         /// connect event
@@ -141,5 +162,72 @@ namespace IidaLabVy446
         {
             this.Close();
         }
+
+        #endregion
+
+        #region OpenGL
+
+        /// <summary>
+        /// gl control load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void glControl1_Load(object sender, EventArgs e)
+        {
+            this.glLoaded = true;
+            
+            // GLコントロールを複数使うときはこれでカレントを指定します
+            glControl1.MakeCurrent();
+
+            // Yey! .NET Colors can be used directly!
+            GL.ClearColor(Color.Black);
+
+            // Setup View Port
+            this.SetupViewport();
+        }
+
+        /// <summary>
+        /// Setup View Port
+        /// </summary>
+        private void SetupViewport()
+        {
+            int w = glControl1.Width;
+            int h = glControl1.Height;
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+
+            // Bottom-left corner pixel has coordinate (0, 0)
+            GL.Ortho(0, 200, 0, 200, -1, 1);
+
+            // Use all of the glControl painting area
+            GL.Viewport(0, 0, w, h); 
+        }
+
+        /// <summary>
+        /// openGL paint event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void glControl1_Paint(object sender, PaintEventArgs e)
+        {
+            if (!this.glLoaded) // Play nice
+                return;
+
+            glControl1.MakeCurrent(); ////GLコントロールを複数使うときはこれでカレントを指定します
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+            GL.Color3(Color.Yellow);
+            GL.Begin(BeginMode.Triangles);
+            GL.Vertex2(10, 20);
+            GL.Vertex2(100, 20);
+            GL.Vertex2(100, 50);
+            GL.End();
+            glControl1.SwapBuffers();
+        }
+
+        #endregion
+
+
     }
 }
