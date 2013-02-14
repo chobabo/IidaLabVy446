@@ -313,7 +313,7 @@
             this.groupBox4.Controls.Add(this.glControl1);
             this.groupBox4.Location = new System.Drawing.Point(433, 24);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(431, 326);
+            this.groupBox4.Size = new System.Drawing.Size(416, 429);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OpenGL";
@@ -323,7 +323,7 @@
             this.glControl1.BackColor = System.Drawing.Color.Black;
             this.glControl1.Location = new System.Drawing.Point(6, 18);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(419, 300);
+            this.glControl1.Size = new System.Drawing.Size(400, 400);
             this.glControl1.TabIndex = 0;
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);

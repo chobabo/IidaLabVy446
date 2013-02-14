@@ -118,6 +118,7 @@ namespace IidaLabVy446
                     this.sickLidar.ConvertReadDataToPolar(this.readLidarCount, this.lidarFile.readData);
                     this.sickLidar.ConvertPolarToCartesian();
                     this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, false);
+                    this.UpdateScene();
                     this.readLidarCount++;
                 }
                 else
@@ -175,12 +176,6 @@ namespace IidaLabVy446
         private void glControl1_Load(object sender, EventArgs e)
         {
             this.glLoaded = true;
-            
-            // GLコントロールを複数使うときはこれでカレントを指定します
-            glControl1.MakeCurrent();
-
-            // Yey! .NET Colors can be used directly!
-            GL.ClearColor(Color.Black);
 
             // Setup View Port
             this.SetupViewport();
@@ -191,16 +186,53 @@ namespace IidaLabVy446
         /// </summary>
         private void SetupViewport()
         {
+            // GLコントロールを複数使うときはこれでカレントを指定します
+            glControl1.MakeCurrent();
+
+            // backgroung color
+            GL.ClearColor(Color.Black);
+           
+            // client window size
             int w = glControl1.Width;
             int h = glControl1.Height;
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-
-            // Bottom-left corner pixel has coordinate (0, 0)
-            GL.Ortho(0, 200, 0, 200, -1, 1);
 
             // Use all of the glControl painting area
-            GL.Viewport(0, 0, w, h); 
+            GL.Viewport(0, 0, w, h);
+
+            // Aspect ratio
+            double aspect_ratio = (double)w / (double)h;
+
+            // perspective view
+            OpenTK.Matrix4 perspective = OpenTK.Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)aspect_ratio, 1, 64);
+
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadMatrix(ref perspective);
+        }
+
+        const float rotation_speed = 10.0f;
+        float angle { get; set; }
+
+        /// <summary>
+        /// Update Scene of OpenGL display
+        /// </summary>
+        private void UpdateScene()
+        {
+            // GLコントロールを複数使うときはこれでカレントを指定します
+            glControl1.MakeCurrent();
+
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+            Matrix4 lookat = Matrix4.LookAt(5, 5, 5, 0, 0, 0, 0, 1, 0);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadMatrix(ref lookat);
+
+            angle += rotation_speed;
+            GL.Rotate(angle, 0.0f, 1.0f, 0.0f);
+
+            this.Cartesian();
+            //DrawCube();
+
+            glControl1.SwapBuffers();
         }
 
         /// <summary>
@@ -210,22 +242,79 @@ namespace IidaLabVy446
         /// <param name="e"></param>
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
-            if (!this.glLoaded) // Play nice
+            // Play nice
+            if (!this.glLoaded) 
                 return;
-
-            glControl1.MakeCurrent(); ////GLコントロールを複数使うときはこれでカレントを指定します
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.MatrixMode(MatrixMode.Modelview);
-            GL.LoadIdentity();
-            GL.Color3(Color.Yellow);
-            GL.Begin(BeginMode.Triangles);
-            GL.Vertex2(10, 20);
-            GL.Vertex2(100, 20);
-            GL.Vertex2(100, 50);
-            GL.End();
-            glControl1.SwapBuffers();
         }
 
+        /// <summary>
+        /// Cartesian coordinates
+        /// </summary>
+        private void Cartesian()
+        {
+            GL.Begin(BeginMode.Lines);
+            
+            GL.Color3(Color.Red);
+            GL.Vertex3(0.0f, 0.0f, 0.0f);
+            GL.Vertex3(1.0f, 0.0f, 0.0f);
+
+            GL.Color3(Color.Green);
+            GL.Vertex3(0.0f, 0.0f, 0.0f);
+            GL.Vertex3(0.0f, 1.0f, 0.0f);
+
+            GL.Color3(Color.Blue);
+            GL.Vertex3(0.0f, 0.0f, 0.0f);
+            GL.Vertex3(0.0f, 0.0f, 1.0f);
+            
+            GL.End();
+        }
+
+        /// <summary>
+        /// Example Draw Cube
+        /// </summary>
+        private void DrawCube()
+        {
+            GL.Begin(BeginMode.Quads);
+
+            GL.Color3(Color.Silver);
+            GL.Vertex3(-1.0f, -1.0f, -1.0f);
+            GL.Vertex3(-1.0f, 1.0f, -1.0f);
+            GL.Vertex3(1.0f, 1.0f, -1.0f);
+            GL.Vertex3(1.0f, -1.0f, -1.0f);
+
+            GL.Color3(Color.Honeydew);
+            GL.Vertex3(-1.0f, -1.0f, -1.0f);
+            GL.Vertex3(1.0f, -1.0f, -1.0f);
+            GL.Vertex3(1.0f, -1.0f, 1.0f);
+            GL.Vertex3(-1.0f, -1.0f, 1.0f);
+
+            GL.Color3(Color.Moccasin);
+
+            GL.Vertex3(-1.0f, -1.0f, -1.0f);
+            GL.Vertex3(-1.0f, -1.0f, 1.0f);
+            GL.Vertex3(-1.0f, 1.0f, 1.0f);
+            GL.Vertex3(-1.0f, 1.0f, -1.0f);
+
+            GL.Color3(Color.IndianRed);
+            GL.Vertex3(-1.0f, -1.0f, 1.0f);
+            GL.Vertex3(1.0f, -1.0f, 1.0f);
+            GL.Vertex3(1.0f, 1.0f, 1.0f);
+            GL.Vertex3(-1.0f, 1.0f, 1.0f);
+
+            GL.Color3(Color.PaleVioletRed);
+            GL.Vertex3(-1.0f, 1.0f, -1.0f);
+            GL.Vertex3(-1.0f, 1.0f, 1.0f);
+            GL.Vertex3(1.0f, 1.0f, 1.0f);
+            GL.Vertex3(1.0f, 1.0f, -1.0f);
+
+            GL.Color3(Color.ForestGreen);
+            GL.Vertex3(1.0f, -1.0f, -1.0f);
+            GL.Vertex3(1.0f, 1.0f, -1.0f);
+            GL.Vertex3(1.0f, 1.0f, 1.0f);
+            GL.Vertex3(1.0f, -1.0f, 1.0f);
+
+            GL.End();
+        }
         #endregion
 
 
