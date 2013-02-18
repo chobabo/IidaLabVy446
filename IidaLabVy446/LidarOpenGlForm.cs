@@ -42,7 +42,7 @@ namespace IidaLabVy446
             this.transY = 0;
             this.transZ = 0;
         }
-        
+
         #endregion
 
         #region Methods
@@ -56,8 +56,8 @@ namespace IidaLabVy446
             int h = glControl1.Height;
 
             // Use all of the glControl painting area
-            GL.Viewport(0, 0, w, h); 
-            
+            GL.Viewport(0, 0, w, h);
+
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
 
@@ -90,7 +90,7 @@ namespace IidaLabVy446
             GL.Vertex3(0, 0, 0);
             GL.Vertex3(0, 0, 2);
 
-            GL.End(); 
+            GL.End();
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace IidaLabVy446
         private void glControl1_Load(object sender, EventArgs e)
         {
             this.loaded = true;
-            
+
             // Yey! .NET Colors can be used directly!
             GL.ClearColor(Color.White);
             GL.Enable(EnableCap.DepthTest);
@@ -168,7 +168,7 @@ namespace IidaLabVy446
             }
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            
+
             float eyeVal = 5.0f;
             Matrix4 lookat = Matrix4.LookAt(-eyeVal * (float)Math.Sin(MathHelper.DegreesToRadians(45)), eyeVal, eyeVal, 0, 0, 0, 0, 1, 0);
             GL.MatrixMode(MatrixMode.Modelview);
@@ -183,7 +183,7 @@ namespace IidaLabVy446
 
             this.DrawCoordinates();
             this.DrawGround();
-            
+
 
             glControl1.SwapBuffers();
         }
@@ -224,7 +224,7 @@ namespace IidaLabVy446
                 this.transY--;
                 glControl1.Invalidate();
             }
-            
+
             if (e.KeyCode == Keys.O)
             {
                 this.transY++;
