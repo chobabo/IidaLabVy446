@@ -35,6 +35,7 @@ namespace IidaLabVy446
         private SickLidar.Graph graph;
         private SickLidar.SickLidar sickLidar;
         private SickLidar.File lidarFile;
+        private LidarOpenGlForm lidarOpenGlForm;
 
         /// <summary>
         /// gets or sets adapt split and merge
@@ -91,6 +92,13 @@ namespace IidaLabVy446
                     this.LidarSaveCheckBox.Checked, 
                     this.LidarReadCheckBox.Checked
                     );
+            }
+
+            // openGl display
+            if (this.LidarOpenGlCheckBox.Checked == true)
+            {
+                this.lidarOpenGlForm = new LidarOpenGlForm();
+                this.lidarOpenGlForm.Show();
             }
         }
 
@@ -209,6 +217,12 @@ namespace IidaLabVy446
         private bool offLineInit { get; set; }
         private double offLineMapX { get; set; }
         private double offLineMapY { get; set; }
+
+        /// <summary>
+        /// Transverse Mecartor 
+        /// </summary>
+        private double tmX { get; set; }
+        private double tmY { get; set; }
 
         /// <summary>
         /// Connect Combine Body using RS-232C
@@ -919,13 +933,13 @@ namespace IidaLabVy446
                 this.offLineInit = true;
             }
 
-            double mapY = this._cgps.result.x - this.offLineMapX;
-            double mapX = this._cgps.result.y - this.offLineMapY;
+            this.tmY = this._cgps.result.x - this.offLineMapX;
+            this.tmX = this._cgps.result.y - this.offLineMapY;
 
-            this._offLineGraph.AddDataToGraph(zg2, mapX, mapY);
+            this._offLineGraph.AddDataToGraph(zg2, this.tmX, this.tmY);
 
-            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(mapY);
-            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(mapX);
+            this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this.tmX);
+            this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this.tmY);
             this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._cgps.result.c);
         }
 

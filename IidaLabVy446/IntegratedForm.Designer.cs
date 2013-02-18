@@ -99,7 +99,6 @@
             this.label64 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label70 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.LidarDeviceInfoStartAngleTxtBox = new System.Windows.Forms.TextBox();
@@ -292,6 +291,7 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CommunicationTimer = new System.Windows.Forms.Timer(this.components);
+            this.LidarOpenGlCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxIpl1)).BeginInit();
@@ -1026,7 +1026,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label70);
+            this.groupBox4.Controls.Add(this.LidarOpenGlCheckBox);
             this.groupBox4.Controls.Add(this.LidarAvailableCheckBox);
             this.groupBox4.Controls.Add(this.LidarReadCheckBox);
             this.groupBox4.Controls.Add(this.label1);
@@ -1046,15 +1046,6 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Laser Range Finder";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(6, 251);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(100, 12);
-            this.label70.TabIndex = 4;
-            this.label70.Text = "3. Adapt Algorithm";
             // 
             // tabPage2
             // 
@@ -2970,6 +2961,16 @@
             // 
             this.CommunicationTimer.Tick += new System.EventHandler(this.CommunicationTimer_Tick);
             // 
+            // LidarOpenGlCheckBox
+            // 
+            this.LidarOpenGlCheckBox.AutoSize = true;
+            this.LidarOpenGlCheckBox.Location = new System.Drawing.Point(8, 247);
+            this.LidarOpenGlCheckBox.Name = "LidarOpenGlCheckBox";
+            this.LidarOpenGlCheckBox.Size = new System.Drawing.Size(64, 16);
+            this.LidarOpenGlCheckBox.TabIndex = 4;
+            this.LidarOpenGlCheckBox.Text = "OpenGL";
+            this.LidarOpenGlCheckBox.UseVisualStyleBackColor = true;
+            // 
             // IntegratedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3230,7 +3231,6 @@
         private System.Windows.Forms.CheckBox Vy50_YELLOWPATLITE_CheckBox;
         private System.Windows.Forms.CheckBox Vy50_REDPATLITE_CheckBox;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox LidarDeviceInfoStartAngleTxtBox;
         private System.Windows.Forms.TextBox LidarDeviceInfoResolutionTxtBox;
@@ -3293,5 +3293,6 @@
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.CheckBox LidarOpenGlCheckBox;
     }
 }
