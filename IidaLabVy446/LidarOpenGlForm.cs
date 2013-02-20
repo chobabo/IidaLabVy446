@@ -1,31 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
-using OpenTK;
-using OpenTK.Graphics;
-using OpenTK.Graphics.OpenGL;
-
+﻿
 namespace IidaLabVy446
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+
+    using OpenTK;
+    using OpenTK.Graphics;
+    using OpenTK.Graphics.OpenGL;
+    using SickLidar;
+
     public partial class LidarOpenGlForm : Form
     {
         #region fields
 
+        /// <summary>
+        /// is loaded?
+        /// </summary>
         private bool loaded { get; set; }
 
+        /// <summary>
+        /// translate value
+        /// </summary>
         private int transX { get; set; }
-
         private int transY { get; set; }
-
         private int transZ { get; set; }
 
+        /// <summary>
+        /// roatate value
+        /// </summary>
         private double angle { get; set; }
+
+        /// <summary>
+        /// Crop points
+        /// </summary>
+        private List<SickLidar.CartesianPoint> crop;
 
         #endregion
 
@@ -41,6 +55,8 @@ namespace IidaLabVy446
             this.transX = 0;
             this.transY = 0;
             this.transZ = 0;
+
+            this.crop = new List<SickLidar.CartesianPoint>();
         }
 
         #endregion
@@ -118,6 +134,36 @@ namespace IidaLabVy446
             GL.End();
         }
 
+        /// <summary>
+        /// add crop points to list
+        /// </summary>
+        /// <param name="_list"></param>
+        public void AddCrop(List<SickLidar.CartesianPoint> _list)
+        {
+
+            for (int i = 0; i < _list.Count; i++)
+            {
+                this.crop.Add(new SickLidar.CartesianPoint(_list[i].x, _list[i].y, _list[i].z));
+            }
+
+            glControl1.Invalidate();
+        }
+
+        /// <summary>
+        /// Draw crop stand on the openGL form
+        /// </summary>
+        private void DrawCrop()
+        {
+            GL.Begin(BeginMode.Points);
+            GL.PointSize(2);
+            GL.Color3(Color.Violet);
+            for (int i = 0; i < this.crop.Count; i++)
+            {
+                GL.Vertex3(this.crop[i].x, this.crop[i].y, this.crop[i].z);
+            }
+            GL.End();
+        }
+
         #endregion
 
         #region Event
@@ -183,7 +229,7 @@ namespace IidaLabVy446
 
             this.DrawCoordinates();
             this.DrawGround();
-
+            this.DrawCrop();
 
             glControl1.SwapBuffers();
         }

@@ -48,6 +48,11 @@ namespace IidaLabVy446
         private bool isIniLidarInfo { get; set; }
 
         /// <summary>
+        /// gets or sets measured lidar data
+        /// </summary>
+        private bool isLidarData { get; set; }
+
+        /// <summary>
         /// gets or sets lidar data of string type
         /// </summary>
         private string lidarData { get; set; }
@@ -107,6 +112,8 @@ namespace IidaLabVy446
         /// </summary>
         private void LidarPlay()
         {
+            this.isLidarData = false;
+
             if (this.LidarReadCheckBox.Checked == false)
             {
                 this.sickLidar.RequestScan();
@@ -126,6 +133,8 @@ namespace IidaLabVy446
                     this.sickLidar.ConvertReadDataToPolar(this.readCount, this.lidarFile.readData);
                     this.sickLidar.ConvertPolarToCartesian();
                     this.graph.UpdateGraph(this.sickLidar.cartesianList, zg1, this.isSam);
+
+                    this.isLidarData = true;
                     //this.readCount++;
                 }
                 else
@@ -223,6 +232,8 @@ namespace IidaLabVy446
         /// </summary>
         private double tmX { get; set; }
         private double tmY { get; set; }
+        private double tmZ { get; set; }
+        private bool isTmData { get; set; }
 
         /// <summary>
         /// Connect Combine Body using RS-232C
@@ -281,6 +292,8 @@ namespace IidaLabVy446
         /// </summary>
         private void CombineBodyPlay()
         {
+            this.isTmData = false;
+
             if (this.BodyReadCheckBox.Checked == false)
             {
                 this._bodySerialConnect.DataReceived();
@@ -935,12 +948,15 @@ namespace IidaLabVy446
 
             this.tmY = this._cgps.result.x - this.offLineMapX;
             this.tmX = this._cgps.result.y - this.offLineMapY;
+            this.tmZ = this._cgps.result.c;
 
             this._offLineGraph.AddDataToGraph(zg2, this.tmX, this.tmY);
 
             this.BodyWgs84ToCartesianX_TxtBox.Text = Convert.ToString(this.tmX);
             this.BodyWgs84ToCartesianY_TxtBox.Text = Convert.ToString(this.tmY);
-            this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this._cgps.result.c);
+            this.BodyWgs84ToCartesianZ_TxtBox.Text = Convert.ToString(this.tmZ);
+
+            this.isTmData = true;
         }
 
         /// <summary>
@@ -1209,6 +1225,53 @@ namespace IidaLabVy446
 
         #endregion
 
+        #region Draw 3D CropStand state on OpenGL
+        
+        private Algorithm.CropStand cropStand;
+
+        /// <summary>
+        /// initialization of crop stand class
+        /// </summary>
+        /// <param name="_isLidar"></param>
+        /// <param name="_isBody"></param>
+        /// <param name="_isOpenGl"></param>
+        private void InitializeCropStand(bool _isLidar, bool _isBody, bool _isOpenGl)
+        {
+            if ((_isLidar == true) && (_isBody == true) && (_isOpenGl == true))
+            {
+                this.cropStand = new CropStand(this.BodyModelComboBox.SelectedIndex);
+            }
+        }
+
+        /// <summary>
+        /// Draw Crop stand on OpenGL
+        /// </summary>
+        /// <param name="_lidar"></param>
+        /// <param name="_tm"></param>
+        private void DrawCropStand(bool _lidar, bool _tm)
+        {
+            if ((_lidar == true) && (_tm == true))
+            {
+                double heading_angle = 0.0;
+
+                if (this.BodyModelComboBox.SelectedIndex == 0)
+                {
+                    // vy50 model
+                    heading_angle = this._vy50.gps_Heading;
+                }
+
+                if (this.BodyModelComboBox.SelectedIndex == 1)
+                {
+                    // Vy446 model
+                }
+
+                this.cropStand.CalculatePosition(this.sickLidar.cartesianList, this.tmX, this.tmY, this.tmZ, heading_angle);
+                this.lidarOpenGlForm.AddCrop(this.cropStand.result);
+            }
+        }
+
+        #endregion
+
         #region Event Methods
 
         /// <summary>
@@ -1234,6 +1297,13 @@ namespace IidaLabVy446
                 {
                     this.MachineVisionConnect();
                 }
+
+                // check for crop stand
+                this.InitializeCropStand(
+                    this.LidarAvailableCheckBox.Checked,
+                    this.BodyAvailableCheckBox.Checked,
+                    this.LidarOpenGlCheckBox.Checked
+                    );
 
                 this.IntegratedTimer.Interval = Convert.ToInt32(this.TimerIntervalTxtBox.Text);
                 this.IntegratedTimer.Enabled = true;
@@ -1406,6 +1476,12 @@ namespace IidaLabVy446
             if (this.BodyAvailableCheckBox.Checked == true)
             {
                 this.CombineBodyPlay();
+            }
+
+            // for crop stand
+            if ((this.LidarAvailableCheckBox.Checked == true) && (this.BodyAvailableCheckBox.Checked == true) && (this.LidarOpenGlCheckBox.Checked == true))
+            {
+                this.DrawCropStand(this.isLidarData, this.isTmData);
             }
 
             this.readCount++;
